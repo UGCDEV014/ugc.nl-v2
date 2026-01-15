@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog - UGC.NL</title>
+  <meta name="description" content="Tips, insights en updates over UGC en creator marketing.">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .blog-breadcrumb {
+      padding: var(--spacing-lg) 0;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding-left: var(--spacing-lg);
+      padding-right: var(--spacing-lg);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .blog-breadcrumb a {
+      color: var(--color-primary);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: var(--font-weight-regular);
+      transition: all 0.2s;
+    }
+    
+    .blog-breadcrumb a:hover {
+      color: #1a6fc7;
+      text-decoration: underline;
+    }
+    
+    .blog-breadcrumb-separator {
+      color: var(--color-text-secondary);
+      font-size: 14px;
+      margin: 0 4px;
+    }
+    
+    .blog-breadcrumb-current {
+      color: var(--color-text-secondary);
+      font-size: 14px;
+      font-weight: var(--font-weight-regular);
+    }
+    
+    .blog-categories {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 var(--spacing-lg) var(--spacing-xl);
+    }
+    
+    .blog-categories h2 {
+      font-size: 18px;
+      font-weight: var(--font-weight-semibold);
+      color: var(--color-text);
+      margin-bottom: var(--spacing-md);
+    }
+    
+    .blog-category-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--spacing-sm);
+    }
+    
+    .blog-category-btn {
+      padding: 10px 20px;
+      border: 1px solid var(--color-primary);
+      background: white;
+      color: var(--color-primary);
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: var(--font-weight-medium);
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    
+    .blog-category-btn:hover {
+      background: var(--color-light-blue);
+    }
+    
+    .blog-category-btn.active {
+      background: var(--color-primary);
+      color: white;
+      border-color: var(--color-primary);
+    }
+    
+    .blog-title-section {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 var(--spacing-lg) var(--spacing-2xl);
+    }
+    
+    .blog-title-section h1 {
+      font-size: clamp(20px, 2.5vw, 32px);
+      font-weight: var(--font-weight-bold);
+      color: var(--color-text);
+      margin: 0;
+    }
+    
+    .blog-featured {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 var(--spacing-lg) var(--spacing-3xl);
+    }
+    
+    .blog-featured-card {
+      background: white;
+      border-radius: 24px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      transition: all 0.3s;
+    }
+    
+    .blog-featured-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    }
+    
+    .blog-featured-content {
+      padding: var(--spacing-xl);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    
+    .blog-featured-meta {
+      font-size: 14px;
+      color: var(--color-text-secondary);
+      margin-bottom: var(--spacing-sm);
+    }
+    
+    .blog-featured-title {
+      font-size: clamp(24px, 3vw, 36px);
+      font-weight: var(--font-weight-bold);
+      color: var(--color-text);
+      margin-bottom: var(--spacing-sm);
+      line-height: 1.2;
+    }
+    
+    .blog-featured-excerpt {
+      font-size: 15px;
+      color: var(--color-text-secondary);
+      line-height: 1.5;
+      margin-bottom: var(--spacing-md);
+    }
+    
+    .blog-featured-cta {
+      display: inline-block;
+      padding: 12px 24px;
+      background: var(--color-primary);
+      color: white;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: var(--font-weight-semibold);
+      text-decoration: none;
+      transition: all 0.2s;
+      align-self: flex-start;
+    }
+    
+    .blog-featured-cta:hover {
+      background: #1a6fc7;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(36, 132, 228, 0.3);
+    }
+    
+    .blog-featured-visual {
+      position: relative;
+      background: linear-gradient(135deg, #E8F0FE 0%, #D6E7FC 100%);
+      padding: var(--spacing-lg);
+      margin: var(--spacing-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    
+    .blog-featured-tag {
+      position: absolute;
+      top: var(--spacing-lg);
+      right: var(--spacing-lg);
+      background: var(--color-primary);
+      color: white;
+      padding: 6px 16px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: var(--font-weight-semibold);
+    }
+    
+    .blog-featured-image {
+      max-width: 80%;
+      max-height: 80%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: 12px;
+    }
+    
+    .blog-grid-section {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 var(--spacing-lg) var(--spacing-3xl);
+    }
+    
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--spacing-xl);
+    }
+    
+    .blog-card {
+      background: white;
+      border-radius: 24px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s;
+    }
+    
+    .blog-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    }
+    
+    .blog-card-image {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      background: linear-gradient(135deg, #F3F7FF 0%, #E8F0FE 100%);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    
+    .blog-card-image-content {
+      max-width: 80%;
+      max-height: 80%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+    }
+    
+    .blog-card-content {
+      padding: var(--spacing-lg);
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    
+    .blog-card-meta {
+      font-size: 14px;
+      color: var(--color-text-secondary);
+      margin-bottom: var(--spacing-sm);
+    }
+    
+    .blog-card-title {
+      font-size: 20px;
+      font-weight: var(--font-weight-bold);
+      color: var(--color-text);
+      margin-bottom: var(--spacing-md);
+      line-height: 1.3;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    
+    .blog-card-cta {
+      margin-top: auto;
+      padding: 12px 24px;
+      border: 1px solid var(--color-primary);
+      background: white;
+      color: var(--color-primary);
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: var(--font-weight-semibold);
+      text-decoration: none;
+      text-align: center;
+      transition: all 0.2s;
+    }
+    
+    .blog-card-cta:hover {
+      background: var(--color-light-blue);
+    }
+    
+    .blog-pagination {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: var(--spacing-2xl) var(--spacing-lg);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: var(--spacing-sm);
+    }
+    
+    .blog-pagination-btn,
+    .blog-pagination-number {
+      padding: 10px 16px;
+      border: none;
+      background: white;
+      color: var(--color-text);
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: var(--font-weight-medium);
+      cursor: pointer;
+      transition: all 0.2s;
+      text-decoration: none;
+      display: inline-block;
+    }
+    
+    .blog-pagination-btn:hover,
+    .blog-pagination-number:hover {
+      background: var(--color-light-blue);
+    }
+    
+    .blog-pagination-number.active {
+      background: var(--color-primary);
+      color: white;
+      font-weight: var(--font-weight-bold);
+    }
+    
+    @media (max-width: 1024px) {
+      .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .blog-featured-card {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .blog-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .blog-featured-visual {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-container">
+      <a href="/" class="header-logo-link">
+        <img src="Logo/FULL LOGO.png" alt="UGC.NL" class="header-logo">
+      </a>
+      <nav class="header-nav">
+        <div class="header-dropdown">
+          <button class="header-nav-link header-dropdown-toggle" style="background: none; border: none; cursor: pointer; display: flex; align-items: center; gap: 4px;">
+            Diensten
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" style="transition: transform 0.2s;">
+              <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+        <a href="vind-creators/index.html" class="header-nav-link">Vind Creators</a>
+        <a href="succesverhalen/index.html" class="header-nav-link">Succesverhalen</a>
+      </nav>
+      <div class="header-cta">
+        <a href="/inloggen" class="header-nav-link">Inloggen</a>
+        <a href="/registreren" class="btn btn-primary">Registreer</a>
+      </div>
+      <div class="header-dropdown-menu">
+        <div class="header-dropdown-content">
+          <div class="header-dropdown-column">
+            <div class="header-dropdown-section">
+              <div class="header-dropdown-section-title">Per platform</div>
+              <a href="services/tiktok.html" class="header-dropdown-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 12px; flex-shrink: 0;">
+                  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                </svg>
+                <div>
+                  <div class="header-dropdown-item-title">TikTok</div>
+                  <div class="header-dropdown-item-description">UGC video's voor TikTok advertenties</div>
+                </div>
+              </a>
+              <a href="services/instagram.html" class="header-dropdown-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 12px; flex-shrink: 0;">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+                <div>
+                  <div class="header-dropdown-item-title">Instagram</div>
+                  <div class="header-dropdown-item-description">UGC content voor Instagram Reels en Stories</div>
+                </div>
+              </a>
+              <a href="services/facebook.html" class="header-dropdown-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 12px; flex-shrink: 0;">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                </svg>
+                <div>
+                  <div class="header-dropdown-item-title">Facebook</div>
+                  <div class="header-dropdown-item-description">UGC video's voor Facebook advertenties</div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="header-dropdown-column">
+            <div class="header-dropdown-section">
+              <div class="header-dropdown-section-title">Per bedrijfstype</div>
+              <a href="/diensten/e-commerce" class="header-dropdown-item">
+                <div>
+                  <div class="header-dropdown-item-title">E-commerce</div>
+                  <div class="header-dropdown-item-description">UGC voor webshops en online retailers</div>
+                </div>
+              </a>
+              <a href="services/agencies.html" class="header-dropdown-item">
+                <div>
+                  <div class="header-dropdown-item-title">Agencies</div>
+                  <div class="header-dropdown-item-description">UGC voor marketing bureaus</div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="header-dropdown-image-column" style="position: relative;">
+            <a href="book-a-call.html" style="position: absolute; top: 16px; left: 16px; display: inline-flex; align-items: center; gap: 8px; color: var(--color-text); font-weight: var(--font-weight-semibold); font-size: 16px; text-decoration: none; z-index: 10; background: rgba(255, 255, 255, 0.9); padding: 8px 16px; border-radius: 8px; transition: all 0.2s;">
+              Boek een demo
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+            <img src="bedrijven/meeting/meeting.png" alt="UGC.NL Services" class="header-dropdown-image" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <div class="blog-breadcrumb">
+    <a href="/">Homepage</a>
+    <span class="blog-breadcrumb-separator">></span>
+    <span class="blog-breadcrumb-current">Blog</span>
+  </div>
+
+  <!-- CATEGORY FILTERS -->
+  <div class="blog-categories">
+    <h2>Filter op categorie</h2>
+    <div class="blog-category-filters">
+      <button class="blog-category-btn active" data-category="all">Alle</button>
+      <button class="blog-category-btn" data-category="user-generated-content">User-Generated Content</button>
+      <button class="blog-category-btn" data-category="ad-performance">Ad Performance</button>
+      <button class="blog-category-btn" data-category="ugc-academy">UGC Academy</button>
+      <button class="blog-category-btn" data-category="platform">Platform</button>
+    </div>
+  </div>
+
+  <!-- PAGE TITLE -->
+  <div class="blog-title-section">
+    <h1>UGC.NL Blog</h1>
+  </div>
+
+  <!-- FEATURED BLOG POST -->
+  <div class="blog-featured">
+    <article class="blog-featured-card">
+      <div class="blog-featured-content">
+        <div>
+          <div class="blog-featured-meta">13 jan</div>
+          <h2 class="blog-featured-title">De Meta Andromeda update uitgelegd: zo pas je je UGC en creative strategie aan voor maximale performance</h2>
+          <p class="blog-featured-excerpt">De Meta Andromeda update markeert een fundamentele verschuiving in hoe advertenties op Facebook en Instagram worden gerankt en uitgeserveerd...</p>
+        </div>
+        <a href="/blog/repurposing-winning-ads" class="blog-featured-cta">Lees volledig artikel</a>
+      </div>
+      <div class="blog-featured-visual">
+        <div class="blog-featured-tag">Ad Performance</div>
+        <img src="eerste-blog/andromeda.webp" alt="Andromeda" class="blog-featured-image" />
+      </div>
+    </article>
+  </div>
+
+  <!-- BLOG GRID -->
+  <div class="blog-grid-section">
+    <div class="blog-grid">
+      <!-- Blog Card 1 -->
+      <article class="blog-card">
+        <div class="blog-card-image" style="background: linear-gradient(135deg, #E8F0FE 0%, #D6E7FC 100%);">
+          <img src="eerste-blog/andromeda.webp" alt="Andromeda" class="blog-card-image-content" />
+        </div>
+        <div class="blog-card-content">
+          <div class="blog-card-meta">7 jan</div>
+          <h3 class="blog-card-title">CreativeOps, nu live: Haal het giswerk eruit...</h3>
+          <a href="blog/repurposing-winning-ads/index.html" class="blog-card-cta">Lees volledig artikel</a>
+        </div>
+      </article>
+
+      <!-- Blog Card 2 -->
+      <article class="blog-card">
+        <div class="blog-card-image" style="background: linear-gradient(135deg, #F3E8FF 0%, #E8D6FC 100%);"></div>
+        <div class="blog-card-content">
+          <div class="blog-card-meta">22 dec</div>
+          <h3 class="blog-card-title">Van giswerk naar groei: Een praktische creatieve...</h3>
+          <a href="/blog/guesswork-to-growth" class="blog-card-cta">Lees volledig artikel</a>
+        </div>
+      </article>
+
+      <!-- Blog Card 3 -->
+      <article class="blog-card">
+        <div class="blog-card-image" style="background: linear-gradient(135deg, #E8F0FE 0%, #D6E7FC 100%);"></div>
+        <div class="blog-card-content">
+          <div class="blog-card-meta">19 dec</div>
+          <h3 class="blog-card-title">De ultieme content pipeline voor ads: Nooit meer...</h3>
+          <a href="/blog/content-pipeline" class="blog-card-cta">Lees volledig artikel</a>
+        </div>
+      </article>
+
+      <!-- Blog Card 4 -->
+      <article class="blog-card">
+        <div class="blog-card-image" style="background: linear-gradient(135deg, #E8F5E9 0%, #D6EDD6 100%);"></div>
+        <div class="blog-card-content">
+          <div class="blog-card-meta">16 dec</div>
+          <h3 class="blog-card-title">Social Commerce Trends Om In De Gaten Te Houden In 2026</h3>
+          <a href="/blog/social-commerce-trends" class="blog-card-cta">Lees volledig artikel</a>
+        </div>
+      </article>
+
+      <!-- Blog Card 5 -->
+      <article class="blog-card">
+        <div class="blog-card-image" style="background: linear-gradient(135deg, #F3E8FF 0%, #E8D6FC 100%);"></div>
+        <div class="blog-card-content">
+          <div class="blog-card-meta">10 dec</div>
+          <h3 class="blog-card-title">Ad Hooks Die Schalen: 1 Winnende Hoek Omzetten...</h3>
+          <a href="/blog/ad-hooks-scale" class="blog-card-cta">Lees volledig artikel</a>
+        </div>
+      </article>
+
+      <!-- Blog Card 6 -->
+      <article class="blog-card">
+        <div class="blog-card-image" style="background: linear-gradient(135deg, #E8F0FE 0%, #D6E7FC 100%);"></div>
+        <div class="blog-card-content">
+          <div class="blog-card-meta">5 dec</div>
+          <h3 class="blog-card-title">Waarom Je Ads Na 2-3 Weken Sterven (en Hoe Te...</h3>
+          <a href="/blog/ads-die-after-weeks" class="blog-card-cta">Lees volledig artikel</a>
+        </div>
+      </article>
+
+      <!-- Blog Card 7 -->
+      <article class="blog-card">
+        <div class="blog-card-image" style="background: linear-gradient(135deg, #F3E8FF 0%, #E8D6FC 100%);"></div>
+        <div class="blog-card-content">
+          <div class="blog-card-meta">2 dec</div>
+          <h3 class="blog-card-title">Ad Variaties Testen: Hoe Je Consistently Lift...</h3>
+          <a href="/blog/testing-ad-variations" class="blog-card-cta">Lees volledig artikel</a>
+        </div>
+      </article>
+
+      <!-- Blog Card 8 -->
+      <article class="blog-card">
+        <div class="blog-card-image" style="background: linear-gradient(135deg, #E8F0FE 0%, #D6E7FC 100%);"></div>
+        <div class="blog-card-content">
+          <div class="blog-card-meta">28 nov</div>
+          <h3 class="blog-card-title">Binnen De Campagnes: Hoe Merken Winnen Met Creato...</h3>
+          <a href="/blog/brands-win-creators" class="blog-card-cta">Lees volledig artikel</a>
+        </div>
+      </article>
+
+      <!-- Blog Card 9 -->
+      <article class="blog-card">
+        <div class="blog-card-image" style="background: linear-gradient(135deg, #E8F5E9 0%, #D6EDD6 100%);"></div>
+        <div class="blog-card-content">
+          <div class="blog-card-meta">24 nov</div>
+          <h3 class="blog-card-title">De Toekomst Van UGC: Wat Volgt Er Voor Creator Market...</h3>
+          <a href="/blog/future-ugc" class="blog-card-cta">Lees volledig artikel</a>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <!-- PAGINATION -->
+  <div class="blog-pagination">
+    <button class="blog-pagination-btn" disabled style="opacity: 0.5; cursor: not-allowed;">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M15 18l-6-6 6-6"/>
+      </svg>
+    </button>
+    <a href="/blog?page=1" class="blog-pagination-number active">1</a>
+    <a href="/blog?page=2" class="blog-pagination-number">2</a>
+    <a href="/blog?page=3" class="blog-pagination-number">3</a>
+    <span style="padding: 10px 8px; color: var(--color-text-secondary);">...</span>
+    <a href="/blog?page=19" class="blog-pagination-number">19</a>
+    <a href="/blog?page=2" class="blog-pagination-btn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M9 18l6-6-6-6"/>
+      </svg>
+    </a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Bovenste deel: 4 kolommen + branding -->
+      <div class="footer-top">
+        <nav class="footer-nav">
+        <div class="footer-column">
+            <h3 class="footer-heading">Diensten</h3>
+            <ul class="footer-links">
+              <li><a href="services/e-commerce.html" class="footer-link">E-commerce</a></li>
+              <li><a href="services/agencies.html" class="footer-link">Agencies</a></li>
+              <li><a href="services/tiktok.html" class="footer-link">TikTok</a></li>
+              <li><a href="services/instagram.html" class="footer-link">Instagram</a></li>
+              <li><a href="services/facebook.html" class="footer-link">Facebook</a></li>
+          </ul>
+        </div>
+          
+        <div class="footer-column">
+            <h3 class="footer-heading">Ontdek</h3>
+            <ul class="footer-links">
+              <li><a href="vind-creators/index.html" class="footer-link">Vind Creators</a></li>
+              <li><a href="/succesverhalen" class="footer-link">Succesverhalen</a></li>
+              <li><a href="https://support.ugc.nl" target="_blank" rel="noopener noreferrer" class="footer-link">Support</a></li>
+          </ul>
+        </div>
+          
+        <div class="footer-column">
+            <h3 class="footer-heading"><a href="blog.html" class="footer-heading-link">Blog<svg class="footer-heading-arrow" width="8" height="8" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 11L11 1M11 1H1M11 1V11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></h3>
+            <ul class="footer-links">
+              <li><a href="blog.html?category=user-generated-content" class="footer-link">User-Generated-Content</a></li>
+              <li><a href="blog.html?category=ad-performance" class="footer-link">Ad Performance</a></li>
+              <li><a href="blog.html?category=ugc-academy" class="footer-link">UGC Academy</a></li>
+              <li><a href="blog.html?category=platform" class="footer-link">Platform</a></li>
+          </ul>
+        </div>
+          
+        <div class="footer-column">
+            <h3 class="footer-heading">Contact</h3>
+            <ul class="footer-links">
+              <li><a href="boek-een-demo.html" class="footer-link">Boek een demo</a></li>
+              <li><a href="mailto:contact@ugc.nl" class="footer-link">contact@ugc.nl</a></li>
+          </ul>
+        </div>
+          
+          <!-- Branding sectie rechts -->
+          <div class="footer-branding">
+            <img src="Logo/FULL LOGO.png" alt="UGC.NL" class="footer-branding-logo">
+            <p class="footer-tagline">Brengt creators en bedrijven samen</p>
+            <div class="footer-branding-divider"></div>
+            <div class="footer-experts">
+              <span class="footer-experts-label">Experts in</span>
+              <div class="footer-platform-logos">
+                <img src="socialmedialogos/meta1.png" alt="Meta" class="footer-platform-logo">
+                <img src="socialmedialogos/tiktok1.png" alt="TikTok" class="footer-platform-logo">
+      </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+      
+      <!-- Onderste deel: bottom bar -->
+      <div class="footer-bottom">
+        <div class="footer-bottom-content">
+          <nav class="footer-socials" aria-label="Social media links">
+            <ul class="footer-socials-list">
+              <li>
+                <a href="https://www.facebook.com/profile.php?id=61554995296593" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                  <div class="footer-social-icon-wrapper">
+                    <svg class="footer-social-icon" width="11" height="20" viewBox="0 0 11 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M7 11.5H9.5L10.5 7.5H7V5.5C7 4.47 7 3.5 9 3.5H10.5V0.14C10.174 0.0970001 8.943 0 7.643 0C4.928 0 3 1.657 3 4.7V7.5H0V11.5H3V20H7V11.5Z" fill="currentColor"></path>
+                    </svg>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/ugc.nl/" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                  <div class="footer-social-icon-wrapper">
+                    <svg class="footer-social-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" fill="currentColor"/>
+                    </svg>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.tiktok.com/@ugc.nl" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                  <div class="footer-social-icon-wrapper">
+                    <svg class="footer-social-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" fill="currentColor"/>
+                    </svg>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/company/ugc-nl/?originalSubdomain=nl" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                  <div class="footer-social-icon-wrapper">
+                    <svg class="footer-social-icon" width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M4.93994 1.99999C4.93968 2.53043 4.72871 3.03903 4.35345 3.41391C3.97819 3.7888 3.46937 3.99926 2.93894 3.99899C2.40851 3.99873 1.89991 3.78776 1.52502 3.4125C1.15014 3.03724 0.939676 2.52843 0.939942 1.99799C0.940207 1.46756 1.15117 0.958958 1.52644 0.584072C1.9017 0.209187 2.41051 -0.00127205 2.94094 -0.00100683C3.47137 -0.000741613 3.97998 0.210226 4.35486 0.585487C4.72975 0.960747 4.94021 1.46956 4.93994 1.99999ZM4.99994 5.47999H0.999942V18H4.99994V5.47999ZM11.3199 5.47999H7.33994V18H11.2799V11.43C11.2799 7.76999 16.0499 7.42999 16.0499 11.43V18H19.9999V10.07C19.9999 3.89999 12.9399 4.12999 11.2799 7.15999L11.3199 5.47999Z" fill="currentColor"></path>
+                    </svg>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/@UGCNL" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                  <div class="footer-social-icon-wrapper">
+                    <svg class="footer-social-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="currentColor"/>
+                    </svg>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </nav>
+          
+          <div class="footer-bottom-right">
+            <nav class="footer-policies" aria-label="Legal links">
+              <ul class="footer-policies-list">
+                <li><a href="voorwaarden.html" class="footer-policy-link">Algemene voorwaarden</a></li>
+                <li><a href="privacy.html" class="footer-policy-link">Privacyverklaring</a></li>
+              </ul>
+            </nav>
+            <p class="footer-address">Keizersgracht 520H, 1017EK Amsterdam @ 2026 UGC.NL. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Category filter functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const categoryButtons = document.querySelectorAll('.blog-category-btn');
+      const blogCards = document.querySelectorAll('.blog-card');
+      
+      // Check for URL parameter to set initial category
+      const urlParams = new URLSearchParams(window.location.search);
+      const categoryParam = urlParams.get('category');
+      
+      if (categoryParam) {
+        // Find and activate the button with matching data-category
+        categoryButtons.forEach(btn => {
+          if (btn.getAttribute('data-category') === categoryParam) {
+            categoryButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+          }
+        });
+      }
+      
+      categoryButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          // Remove active class from all buttons
+          categoryButtons.forEach(btn => btn.classList.remove('active'));
+          // Add active class to clicked button
+          this.classList.add('active');
+          
+          const category = this.getAttribute('data-category');
+          
+          // Update URL without reloading page
+          const newUrl = category === 'all' 
+            ? window.location.pathname 
+            : `${window.location.pathname}?category=${category}`;
+          window.history.pushState({}, '', newUrl);
+          
+          // Filter blog cards (placeholder - would need data attributes on cards)
+          if (category === 'all') {
+            blogCards.forEach(card => {
+              card.style.display = 'block';
+            });
+          } else {
+            // In a real implementation, cards would have data-category attributes
+            blogCards.forEach(card => {
+              card.style.display = 'block';
+            });
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

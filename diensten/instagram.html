@@ -1,0 +1,1683 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UGC voor Instagram - UGC.NL</title>
+  <meta name="description" content="Instagram video ads, geoptimaliseerd om te converteren. Werk samen met 5,000+ creators met bewezen resultaten en ontvang data-gedreven video ad briefs.">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    .agencies-hero {
+      padding: var(--spacing-3xl) 0;
+      background: white;
+    }
+    
+    .agencies-hero-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--spacing-3xl);
+      align-items: center;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 var(--spacing-lg);
+    }
+    
+    .agencies-hero-left h1 {
+      font-size: clamp(32px, 4.5vw, 48px);
+      font-weight: var(--font-weight-bold);
+      color: var(--color-text);
+      margin-bottom: var(--spacing-md);
+      line-height: 1.2;
+    }
+    
+    .agencies-hero-left p {
+      font-size: 18px;
+      color: var(--color-text-secondary);
+      margin-bottom: var(--spacing-xl);
+      line-height: 1.6;
+    }
+    
+    .agencies-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 var(--spacing-xl) 0;
+    }
+    
+    .agencies-features li {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      margin-bottom: 0;
+      font-size: 16px;
+      color: var(--color-text);
+    }
+    
+    .agencies-features li::before {
+      content: '✓';
+      color: #10b981;
+      font-weight: bold;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+    
+    .agencies-cta-btn {
+      background: #2183e2;
+      color: white;
+      padding: 16px 32px;
+      border-radius: 999px;
+      font-size: 16px;
+      font-weight: var(--font-weight-semibold);
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.2s ease;
+    }
+    
+    .agencies-cta-btn:hover {
+      background: #1a6fc7;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(33, 131, 226, 0.3);
+    }
+    
+    .desktop-mockup {
+      width: 100%;
+      max-width: 600px;
+      aspect-ratio: 16/9;
+      background: #000;
+      border-radius: 16px;
+      padding: 12px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      position: relative;
+      z-index: 2;
+      overflow: hidden;
+    }
+    
+    .desktop-mockup video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 8px;
+      display: block;
+    }
+    
+    .desktop-mockup-mute-btn {
+      position: absolute;
+      top: 24px;
+      left: 24px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 10;
+      transition: all 0.2s;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .desktop-mockup-mute-btn:hover {
+      background: rgba(255, 255, 255, 1);
+      transform: scale(1.05);
+    }
+    
+    .desktop-mockup-mute-icon {
+      width: 20px;
+      height: 20px;
+      color: var(--color-text);
+    }
+    
+    /* Category Filters */
+    .agencies-category-filters {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: var(--spacing-sm);
+      margin-bottom: var(--spacing-xl);
+      padding: 0 var(--spacing-lg);
+    }
+    
+    .agencies-category-btn {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 20px;
+      background: transparent;
+      color: var(--color-text);
+      font-size: 14px;
+      font-weight: var(--font-weight-medium);
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    
+    .agencies-category-btn:hover {
+      background: rgba(255, 255, 255, 0.5);
+    }
+    
+    .agencies-category-btn.active {
+      background: white;
+      color: var(--color-text);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .agencies-category-btn svg {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+    }
+    
+    /* Country Selection Buttons */
+    .agencies-country-btn {
+      display: flex;
+      align-items: center;
+      padding: 6px 12px;
+      border: 1px solid #e0e0e0;
+      border-radius: 18px;
+      background: white;
+      color: var(--color-text);
+      font-size: 12px;
+      font-weight: var(--font-weight-medium);
+      cursor: pointer;
+      transition: all 0.2s;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+    
+    .agencies-country-btn:hover {
+      background: #f8f9fa;
+      border-color: #2183e2;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .agencies-country-btn.active {
+      background: white;
+      border-color: #2183e2;
+      color: #2183e2;
+      box-shadow: 0 2px 8px rgba(33, 131, 226, 0.15);
+    }
+    
+    /* Video Carousel */
+    .agencies-video-carousel-wrapper {
+      position: relative;
+      overflow: hidden;
+      margin: 0 auto;
+      padding: 0 var(--spacing-lg);
+    }
+    
+    .agencies-video-carousel {
+      display: flex;
+      gap: var(--spacing-2xl);
+      overflow-x: auto;
+      overflow-y: hidden;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      padding: var(--spacing-xl) 0;
+      cursor: grab;
+      justify-content: center;
+      padding-left: calc(50% - 140px);
+      padding-right: calc(50% - 140px);
+    }
+    
+    .agencies-video-carousel::-webkit-scrollbar {
+      display: none;
+    }
+    
+    .agencies-video-carousel:active {
+      cursor: grabbing;
+    }
+    
+    .agencies-video-card {
+      flex: 0 0 280px;
+      scroll-snap-align: center;
+      background: white;
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    
+    .agencies-video-card.active {
+      transform: scale(1.05);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      z-index: 2;
+    }
+    
+    .agencies-video-tag {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 4px 12px;
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: var(--font-weight-semibold);
+      color: var(--color-text);
+      z-index: 3;
+    }
+    
+    .agencies-video-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 9/16;
+      background: #000;
+      overflow: hidden;
+      border-radius: 32px;
+    }
+    
+    .agencies-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 32px;
+    }
+    
+    .agencies-video-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+      color: white;
+      padding: 12px;
+      font-size: 12px;
+      font-weight: var(--font-weight-medium);
+      z-index: 2;
+    }
+    
+    .agencies-video-play-btn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 48px;
+      height: 48px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      color: var(--color-text);
+      z-index: 3;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+    
+    .agencies-video-creator {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--spacing-md);
+      background: white;
+    }
+    
+    .agencies-video-creator-info {
+      flex: 1;
+    }
+    
+    .agencies-video-creator-name {
+      font-size: 14px;
+      font-weight: var(--font-weight-semibold);
+      color: var(--color-text);
+      margin-bottom: 4px;
+    }
+    
+    .agencies-video-creator-rating {
+      font-size: 12px;
+      color: var(--color-text-secondary);
+      margin-bottom: 2px;
+    }
+    
+    .agencies-video-creator-location {
+      font-size: 11px;
+      color: var(--color-text-secondary);
+    }
+    
+    .agencies-video-creator-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #2183e2 0%, #1a6fc7 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+    
+    @media (max-width: 968px) {
+      .agencies-video-card {
+        flex: 0 0 240px;
+      }
+      
+      .agencies-video-carousel {
+        gap: var(--spacing-xl);
+        padding-left: calc(50% - 120px);
+        padding-right: calc(50% - 120px);
+      }
+      
+      .agencies-category-filters {
+        justify-content: flex-start;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+      }
+      
+      .agencies-category-filters::-webkit-scrollbar {
+        display: none;
+      }
+    }
+    
+    @media (max-width: 968px) {
+      .agencies-hero-content {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-container">
+      <a href="/" class="header-logo-link">
+        <img src="../Logo/FULL LOGO.png" alt="UGC.NL" class="header-logo">
+      </a>
+      <nav class="header-nav">
+        <div class="header-dropdown">
+          <button class="header-nav-link header-dropdown-toggle" style="background: none; border: none; cursor: pointer; display: flex; align-items: center; gap: 4px;">
+            Diensten
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" style="transition: transform 0.2s;">
+              <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+        <a href="../vind-creators/index.html" class="header-nav-link">Vind Creators</a>
+        <a href="../succesverhalen/index.html" class="header-nav-link">Succesverhalen</a>
+      </nav>
+      <div class="header-cta">
+        <a href="/inloggen" class="header-nav-link">Inloggen</a>
+        <a href="/registreren" class="btn btn-primary">Registreer</a>
+      </div>
+      <div class="header-dropdown-menu">
+        <div class="header-dropdown-content">
+          <div class="header-dropdown-column">
+            <div class="header-dropdown-section">
+              <div class="header-dropdown-section-title">Per platform</div>
+              <a href="tiktok.html" class="header-dropdown-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 12px; flex-shrink: 0;">
+                  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                </svg>
+                <div>
+                  <div class="header-dropdown-item-title">TikTok</div>
+                  <div class="header-dropdown-item-description">UGC video's voor TikTok advertenties</div>
+                </div>
+              </a>
+              <a href="instagram.html" class="header-dropdown-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 12px; flex-shrink: 0;">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+                <div>
+                  <div class="header-dropdown-item-title">Instagram</div>
+                  <div class="header-dropdown-item-description">UGC content voor Instagram Reels en Stories</div>
+                </div>
+              </a>
+              <a href="facebook.html" class="header-dropdown-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 12px; flex-shrink: 0;">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                </svg>
+                <div>
+                  <div class="header-dropdown-item-title">Facebook</div>
+                  <div class="header-dropdown-item-description">UGC video's voor Facebook advertenties</div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="header-dropdown-column">
+            <div class="header-dropdown-section">
+              <div class="header-dropdown-section-title">Per bedrijfstype</div>
+              <a href="e-commerce.html" class="header-dropdown-item">
+                <div>
+                  <div class="header-dropdown-item-title">E-commerce</div>
+                  <div class="header-dropdown-item-description">UGC voor webshops en online retailers</div>
+                </div>
+              </a>
+              <a href="agencies.html" class="header-dropdown-item">
+                <div>
+                  <div class="header-dropdown-item-title">Agencies</div>
+                  <div class="header-dropdown-item-description">UGC voor marketing bureaus</div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="header-dropdown-image-column" style="position: relative;">
+            <a href="../boek-een-demo.html" style="position: absolute; top: 16px; left: 16px; display: inline-flex; align-items: center; gap: 8px; color: var(--color-text); font-weight: var(--font-weight-semibold); font-size: 16px; text-decoration: none; z-index: 10; background: rgba(255, 255, 255, 0.9); padding: 8px 16px; border-radius: 8px; transition: all 0.2s;">
+              Boek een demo
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+            <img src="../bedrijven/meeting/meeting.png" alt="UGC.NL Services" class="header-dropdown-image" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero-section section bg-fade-blue" style="padding-top: var(--spacing-3xl);">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-3xl); align-items: center; margin-bottom: var(--spacing-3xl);">
+        <div>
+          <div style="display: inline-block; background: rgba(36, 132, 228, 0.1); color: #2484E4; padding: 6px 16px; border-radius: 20px; font-size: 12px; font-weight: var(--font-weight-semibold); margin-bottom: var(--spacing-md);">
+            Instagram UGC-advertenties, ondersteund door gescreende creators
+          </div>
+          <h1 class="mb-md" style="text-align: left;">Instagram video ads, geoptimaliseerd om te converteren</h1>
+          <p class="body-large mb-lg" style="color: var(--color-text-secondary); text-align: left;">
+            Verhoog je omzet met hoogwaardige Instagram UGC advertentievideo's van UGC.NL. Werk samen met 1,500+ creators en ontvang direct converterende UGC-video's, geoptimaliseerd voor ROAS, CTR en Hook Rate.
+          </p>
+          <div style="display: flex; gap: var(--spacing-md); flex-wrap: wrap;">
+            <a href="/registreren" class="btn btn-primary">Ontdek creators - het is gratis!</a>
+          </div>
+        </div>
+        <div class="hero-visual" style="position: relative;">
+          <!-- Comments Badge - Left of phone (top) -->
+          <div class="stats-badge" style="position: absolute; left: 20px; top: 30%; transform: translateY(-50%); background: rgba(255, 255, 255, 0.95); border-radius: 16px; padding: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; z-index: 10; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); width: 80px; height: 80px;">
+            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: block; color: var(--color-text);">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="currentColor" opacity="0.1"/>
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              <circle cx="9" cy="11" r="1.5" fill="currentColor"/>
+              <circle cx="12" cy="11" r="1.5" fill="currentColor"/>
+              <circle cx="15" cy="11" r="1.5" fill="currentColor"/>
+            </svg>
+            <div style="font-size: 16px; font-weight: bold; color: var(--color-text);">100K</div>
+          </div>
+          <!-- Experts in Instagram Badge - Left of phone -->
+          <div class="stats-badge" style="position: absolute; left: -10px; top: 70%; transform: translateY(-50%); background: rgba(255, 255, 255, 0.95); border-radius: 16px; padding: 16px 20px; display: flex; flex-direction: column; align-items: center; gap: 8px; z-index: 10; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); max-width: 140px;">
+            <div style="font-size: 14px; font-weight: var(--font-weight-semibold); color: var(--color-text); margin-bottom: 4px;">Experts in:</div>
+            <img src="../socialmedialogos/insta1.png" alt="Instagram" style="width: 90px; height: auto; object-fit: contain;">
+          </div>
+          <img src="../fadebehindframe/fadebehind.png" alt="" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 500px; height: 500px; object-fit: contain; z-index: 1; pointer-events: none;">
+          <div class="phone-mockup" style="height: 520px; width: 290px; position: relative; z-index: 2;">
+            <video src="../videosecommercepage/1ecommerce.mp4" autoplay loop muted playsinline style="object-fit: cover; object-position: center 85%;"></video>
+          </div>
+          <!-- ROAS Badge - Right of phone -->
+          <div class="stats-badge" style="position: absolute; right: 10px; top: 25%; transform: translateY(-50%); background: rgba(255, 255, 255, 0.95); border-radius: 16px; padding: 16px 20px; display: flex; flex-direction: column; align-items: center; gap: 8px; z-index: 10; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); max-width: 200px;">
+            <div style="width: 48px; height: 48px; background: var(--color-light-blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 4px; color: var(--color-primary);">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: block;">
+                <!-- Bar chart style with upward trend -->
+                <rect x="3" y="16" width="3" height="4" fill="currentColor" rx="1"/>
+                <rect x="7" y="12" width="3" height="8" fill="currentColor" rx="1"/>
+                <rect x="11" y="8" width="3" height="12" fill="currentColor" rx="1"/>
+                <rect x="15" y="4" width="3" height="16" fill="currentColor" rx="1"/>
+                <rect x="19" y="2" width="3" height="18" fill="currentColor" rx="1"/>
+              </svg>
+            </div>
+            <div style="font-size: 24px; font-weight: bold; color: var(--color-primary);">7.5x ROAS</div>
+            <div style="font-size: 12px; color: var(--color-text-secondary); text-align: center;">op Instagram met UGC.NL video's vs. andere creatives</div>
+          </div>
+        </div>
+      </div>
+      <!-- MERKEN CARROUSEL -->
+      <div style="padding-top: var(--spacing-xl);">
+        <p class="body-small mb-md text-center" style="color: var(--color-text-secondary);">Vertrouwd door 2,000+ merken</p>
+        <div class="carrousel-container" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--spacing-xl); padding: var(--spacing-lg) 0;">
+          <div class="brand-logo">
+            <img src="../brandlogos/ABN_AMRO_Logo_1991_print.png" alt="ABN AMRO" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+            <span class="brand-fallback" style="display: none; font-size: 14px; color: var(--color-text-secondary);">ABN AMRO</span>
+          </div>
+          <div class="brand-logo">
+            <img src="../brandlogos/Colgate.png" alt="Colgate" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+            <span class="brand-fallback" style="display: none; font-size: 14px; color: var(--color-text-secondary);">Colgate</span>
+          </div>
+          <div class="brand-logo">
+            <img src="../brandlogos/Dyson.png" alt="Dyson" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+            <span class="brand-fallback" style="display: none; font-size: 14px; color: var(--color-text-secondary);">Dyson</span>
+          </div>
+          <div class="brand-logo">
+            <img src="../brandlogos/Kellogs.png" alt="Kellogg's" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+            <span class="brand-fallback" style="display: none; font-size: 14px; color: var(--color-text-secondary);">Kellogg's</span>
+          </div>
+          <div class="brand-logo">
+            <img src="../brandlogos/L'Oréal_logo.png" alt="L'Oréal" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+            <span class="brand-fallback" style="display: none; font-size: 14px; color: var(--color-text-secondary);">L'Oréal</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CREATOR VIDEOS CAROUSEL SECTION -->
+  <section class="section bg-fade-blue-strong" style="padding: var(--spacing-3xl) 0;">
+    <div class="container" style="max-width: 1400px;">
+      <!-- Header with Title and Country Selection -->
+      <div style="text-align: center; margin-bottom: var(--spacing-xl);">
+        <p style="font-size: 14px; color: var(--color-text); margin-bottom: var(--spacing-sm);">Creators in de talen:</p>
+        <div style="display: flex; justify-content: center; gap: var(--spacing-sm); flex-wrap: wrap; margin-bottom: var(--spacing-md);">
+          <div class="agencies-country-btn" style="pointer-events: none; cursor: default;">
+            <img src="../landiconen/nederland.svg" alt="Nederlands" style="width: 14px; height: 14px; object-fit: cover; flex-shrink: 0; margin-right: 4px; border-radius: 9px;">
+            Nederlands
+          </div>
+          <div class="agencies-country-btn" style="pointer-events: none; cursor: default;">
+            <img src="../landiconen/belgië.svg" alt="Vlaams" style="width: 14px; height: 14px; object-fit: cover; flex-shrink: 0; margin-right: 4px; border-radius: 9px;">
+            Vlaams
+          </div>
+          <div class="agencies-country-btn" style="pointer-events: none; cursor: default;">
+            <img src="../landiconen/vereningd koninkrijk.svg" alt="Engels" style="width: 14px; height: 14px; object-fit: cover; flex-shrink: 0; margin-right: 4px; border-radius: 9px;">
+            Engels
+          </div>
+          <div class="agencies-country-btn" style="pointer-events: none; cursor: default;">
+            <img src="../landiconen/duitsland.svg" alt="Duits" style="width: 14px; height: 14px; object-fit: cover; flex-shrink: 0; margin-right: 4px; border-radius: 9px;">
+            Duits
+          </div>
+        </div>
+        <h2 style="font-size: clamp(32px, 4vw, 48px); font-weight: var(--font-weight-bold); color: var(--color-text); margin: 0;">Echte creators. Echte resultaten.</h2>
+      </div>
+      
+      <!-- Category Filters -->
+      <div class="agencies-category-filters">
+        <button class="agencies-category-btn active" data-category="all">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+            <path d="M2 17l10 5 10-5"></path>
+            <path d="M2 12l10 5 10-5"></path>
+          </svg>
+          Alle
+        </button>
+        <button class="agencies-category-btn" data-category="beauty">
+          <img src="../nicheiconen/Beauty.svg" alt="Beauty" style="width: 16px; height: 16px; object-fit: contain; flex-shrink: 0;">
+          Beauty
+        </button>
+        <button class="agencies-category-btn" data-category="fashion">
+          <img src="../nicheiconen/Fashion.svg" alt="Fashion" style="width: 16px; height: 16px; object-fit: contain; flex-shrink: 0;">
+          Fashion
+        </button>
+        <button class="agencies-category-btn" data-category="food">
+          <img src="../nicheiconen/Food & health.svg" alt="Food & Health" style="width: 16px; height: 16px; object-fit: contain; flex-shrink: 0;">
+          Food & Health
+        </button>
+        <button class="agencies-category-btn" data-category="fitness">
+          <img src="../nicheiconen/Fitness.svg" alt="Fitness" style="width: 16px; height: 16px; object-fit: contain; flex-shrink: 0;">
+          Fitness
+        </button>
+        <button class="agencies-category-btn" data-category="tech">
+          <img src="../nicheiconen/Tech.svg" alt="Tech" style="width: 16px; height: 16px; object-fit: contain; flex-shrink: 0;">
+          Tech
+        </button>
+        <button class="agencies-category-btn" data-category="home">
+          <img src="../nicheiconen/Home & interior.svg" alt="Home & Interior" style="width: 16px; height: 16px; object-fit: contain; flex-shrink: 0;">
+          Home & Interior
+        </button>
+        <button class="agencies-category-btn" data-category="travel">
+          <img src="../nicheiconen/Travel.svg" alt="Travel" style="width: 16px; height: 16px; object-fit: contain; flex-shrink: 0;">
+          Travel
+        </button>
+        <button class="agencies-category-btn" data-category="family">
+          <img src="../nicheiconen/Family & Kids.svg" alt="Family & Kids" style="width: 16px; height: 16px; object-fit: contain; flex-shrink: 0;">
+          Family & Kids
+        </button>
+        <button class="agencies-category-btn" data-category="pets">
+          <img src="../nicheiconen/Pets.svg" alt="Pets" style="width: 16px; height: 16px; object-fit: contain; flex-shrink: 0;">
+          Pets
+        </button>
+        <button class="agencies-category-btn" data-category="recruitment">
+          <img src="../nicheiconen/Recruitment.svg" alt="Recruitment" style="width: 16px; height: 16px; object-fit: contain; flex-shrink: 0;">
+          Recruitment
+        </button>
+      </div>
+
+      <!-- Swipeable Video Carousel -->
+      <div class="agencies-video-carousel-wrapper">
+        <div class="agencies-video-carousel" id="agencies-video-carousel">
+          <!-- Video Card 1 -->
+          <div class="agencies-video-card" data-category="fitness">
+            <div class="agencies-video-tag">Fitness</div>
+            <div class="agencies-video-frame">
+              <video src="../tech_homepage/Case Study van het merk_ Halsbandje.mp4" loop muted playsinline preload="metadata" class="agencies-video"></video>
+            </div>
+          </div>
+
+          <!-- Video Card 2 -->
+          <div class="agencies-video-card" data-category="beauty">
+            <div class="agencies-video-tag">Beauty</div>
+            <div class="agencies-video-frame">
+              <video src="../tech_homepage/Case Study van het merk_ ZENN Store.mp4" loop muted playsinline preload="metadata" class="agencies-video"></video>
+            </div>
+          </div>
+
+          <!-- Video Card 3 -->
+          <div class="agencies-video-card active" data-category="food">
+            <div class="agencies-video-tag">Food & Health</div>
+            <div class="agencies-video-frame">
+              <video src="../tech_homepage/Colgate Video (1).mp4" loop muted playsinline preload="metadata" class="agencies-video"></video>
+              <div class="agencies-video-play-btn">▶</div>
+            </div>
+          </div>
+
+          <!-- Video Card 4 -->
+          <div class="agencies-video-card" data-category="food">
+            <div class="agencies-video-tag">Food & Health</div>
+            <div class="agencies-video-frame">
+              <video src="../tech_homepage/UGC-creator-T.mp4" loop muted playsinline preload="metadata" class="agencies-video"></video>
+            </div>
+          </div>
+
+          <!-- Video Card 5 -->
+          <div class="agencies-video-card" data-category="fitness">
+            <div class="agencies-video-tag">Fitness</div>
+            <div class="agencies-video-frame">
+              <video src="../tech_homepage/Case Study van het merk_ Halsbandje.mp4" loop muted playsinline preload="metadata" class="agencies-video"></video>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA Button -->
+      <div style="text-align: center; margin-top: var(--spacing-xl);">
+        <a href="/registreren" class="agencies-cta-btn" style="background: #000000; color: white;">Bekijk alle creators - het is gratis!</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MERKSUCCES CARROUSEL -->
+  <section class="section bg-fade-gray">
+    <div class="container">
+      <div class="text-center mb-xl">
+        <h2 class="mb-sm">Merksucces, aangedreven door UGC.NL</h2>
+        <p class="body-large" style="color: var(--color-text-secondary);">Zie hoe merken UGC inzetten voor hogere ROAS en meer conversies.</p>
+      </div>
+      
+      <!-- Brand Tabs -->
+      <div class="case-study-tabs-container" style="display: flex; justify-content: center; gap: var(--spacing-sm); margin-bottom: var(--spacing-xl); flex-wrap: wrap; overflow-x: auto; -webkit-overflow-scrolling: touch;">
+        <button class="case-study-tab active" data-case-index="0" style="padding: 12px 24px; border: none; background: transparent; color: var(--color-text-secondary); font-size: 16px; font-weight: var(--font-weight-semibold); cursor: pointer; transition: all 0.2s; border-bottom: 2px solid transparent; white-space: nowrap;">Zenn Store</button>
+        <button class="case-study-tab" data-case-index="1" style="padding: 12px 24px; border: none; background: transparent; color: var(--color-text-secondary); font-size: 16px; font-weight: var(--font-weight-semibold); cursor: pointer; transition: all 0.2s; border-bottom: 2px solid transparent; white-space: nowrap;">BNfitness</button>
+        <button class="case-study-tab" data-case-index="2" style="padding: 12px 24px; border: none; background: transparent; color: var(--color-text-secondary); font-size: 16px; font-weight: var(--font-weight-semibold); cursor: pointer; transition: all 0.2s; border-bottom: 2px solid transparent; white-space: nowrap;">Bolderloft</button>
+        <button class="case-study-tab" data-case-index="3" style="padding: 12px 24px; border: none; background: transparent; color: var(--color-text-secondary); font-size: 16px; font-weight: var(--font-weight-semibold); cursor: pointer; transition: all 0.2s; border-bottom: 2px solid transparent; white-space: nowrap;">The Sales Academy</button>
+          </div>
+      
+      <!-- Carousel Container -->
+      <div class="case-study-carousel-wrapper" style="position: relative; max-width: 1400px; margin: 0 auto; height: 500px; display: flex; align-items: center;">
+        <!-- Navigation Arrows -->
+        <button class="case-study-nav-btn case-study-nav-prev" style="position: absolute; left: -60px; top: 50%; transform: translateY(-50%); width: 48px; height: 48px; border-radius: 50%; background: var(--color-white); border: 1px solid var(--color-border); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); transition: all 0.2s;" disabled>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M15 18l-6-6 6-6"/>
+          </svg>
+        </button>
+        <button class="case-study-nav-btn case-study-nav-next" style="position: absolute; right: -60px; top: 50%; transform: translateY(-50%); width: 48px; height: 48px; border-radius: 50%; background: var(--color-white); border: 1px solid var(--color-border); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); transition: all 0.2s;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
+        </button>
+        
+        <!-- Case Study Card -->
+        <div class="case-study-card" style="background: var(--color-white); border-radius: 32px; overflow: hidden; box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08); display: grid; grid-template-columns: 0.8fr 1.2fr; gap: var(--spacing-xl); height: 500px; max-height: 500px; border: none; padding: var(--spacing-xl); align-items: stretch;">
+          <!-- Left: Video/Image Section -->
+          <div class="case-study-media" style="position: relative; background: #f5f5f5; height: 100%; width: 100%; min-width: 0; overflow: hidden; border-radius: 24px; display: flex; align-items: center; justify-content: center; padding: var(--spacing-md); box-sizing: border-box;">
+            <button class="case-study-mute-btn" style="position: absolute; top: var(--spacing-md); left: var(--spacing-md); width: 40px; height: 40px; border-radius: 50%; background: rgba(255, 255, 255, 0.9); border: 1px solid rgba(0, 0, 0, 0.1); display: none; align-items: center; justify-content: center; cursor: pointer; z-index: 10; transition: all 0.2s; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);">
+              <svg class="case-study-mute-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--color-text);">
+                <path d="M11 5L6 9H2v6h4l5 4V5z"></path>
+                <line x1="23" y1="9" x2="17" y2="15"></line>
+                <line x1="17" y1="9" x2="23" y2="15"></line>
+              </svg>
+            </button>
+            <video class="case-study-video" loop muted playsinline autoplay preload="metadata" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; object-position: center; display: none; border-radius: 24px;"></video>
+            <img class="case-study-image" style="max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; object-position: center; display: none; border-radius: 24px;" alt="Case Study">
+        </div>
+          
+          <!-- Right: Content Section -->
+          <div class="case-study-content" style="padding-left: var(--spacing-2xl); padding-right: var(--spacing-2xl); display: flex; flex-direction: column; height: 100%; justify-content: center; align-items: flex-start; text-align: left;">
+            <!-- Brand Logo -->
+            <img class="case-study-brand-logo" src="" alt="" style="height: 48px; width: auto; max-width: 200px; object-fit: contain; object-position: left center; margin-bottom: var(--spacing-sm); border-radius: 0; display: none; flex-shrink: 0;">
+            <!-- Brand Title -->
+            <h3 class="case-study-brand-title" style="font-size: 20px; font-weight: var(--font-weight-bold); color: var(--color-text); margin-bottom: var(--spacing-md); text-align: left;"></h3>
+            
+            <!-- Testimonial -->
+            <div class="case-study-testimonial" style="flex: 0 0 auto; padding-top: 0; padding-bottom: var(--spacing-sm); display: flex; flex-direction: column; align-items: flex-start;">
+              <p class="case-study-quote" style="font-size: 15px; line-height: 1.75; color: #475569; margin-bottom: var(--spacing-md); max-width: 520px; text-align: left;"></p>
+              <p class="case-study-author" style="font-size: 13px; color: var(--color-text-secondary); margin-top: 0; text-align: left;"></p>
+          </div>
+            
+            <!-- Metrics -->
+            <div class="case-study-metrics" style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-lg); margin-top: var(--spacing-md); justify-items: flex-start; text-align: left;"></div>
+            
+            <!-- CTA Link -->
+            <div class="case-study-cta" style="margin-top: var(--spacing-md); text-align: left;">
+              <a class="case-study-link" href="#" style="color: var(--color-primary); font-size: 16px; font-weight: var(--font-weight-semibold); text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+                Lees het volledige succesverhaal
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </a>
+        </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPARISON TABLE -->
+  <section class="section bg-fade-blue-strong">
+    <div class="container">
+      <div style="max-width: 1200px; margin: 0 auto;">
+        <div class="text-center mb-xl">
+          <h2 class="mb-sm">De nieuwe standaard voor creator marketing</h2>
+          <p class="body-large" style="color: var(--color-text-secondary);">Zie waarom UGC.NL de slimmere keuze is voor hoogwaardige video's.</p>
+        </div>
+        
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table-new">
+            <thead>
+              <tr>
+                <th></th>
+                <th class="comparison-featured-header">
+                  <img src="../symbollogo/symbollogo.png" alt="UGC.NL" style="height: 48px; width: auto; display: block; margin: 0 auto;">
+                </th>
+                <th>
+                  <div style="font-size: 18px; font-weight: var(--font-weight-semibold);">Andere platforms</div>
+                </th>
+                <th>
+                  <div style="font-size: 18px; font-weight: var(--font-weight-semibold);">Agencies</div>
+                </th>
+                <th>
+                  <div style="font-size: 18px; font-weight: var(--font-weight-semibold);">Freelancers</div>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="comparison-feature-cell">
+            <div class="comparison-feature">
+                    <span>Budgetvriendelijk</span>
+                    <div class="tooltip-wrapper">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="tooltip-trigger" style="color: var(--color-text-secondary); flex-shrink: 0; cursor: pointer;">
+                      <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
+                      <text x="12" y="16" text-anchor="middle" font-size="12" font-weight="bold" fill="currentColor">i</text>
+                    </svg>
+                      <div class="tooltip-content">UGC-video's vanaf €59,-, één van de voordeligste opties in de markt</div>
+                    </div>
+            </div>
+                </td>
+                <td class="comparison-featured-cell">
+                  <div class="comparison-check">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="12" cy="12" r="12" fill="var(--color-primary)"/>
+                      <path d="M9 12l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    </svg>
+                  </div>
+                </td>
+                <td class="comparison-cell">
+            <div class="comparison-cross">✗</div>
+                </td>
+                <td class="comparison-cell">
+            <div class="comparison-cross">✗</div>
+                </td>
+                <td class="comparison-cell">
+                  <div class="comparison-cross">✗</div>
+                </td>
+              </tr>
+              <tr>
+                <td class="comparison-feature-cell">
+            <div class="comparison-feature">
+                    <span>Kosteloos annuleren</span>
+                    <div class="tooltip-wrapper">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="tooltip-trigger" style="color: var(--color-text-secondary); flex-shrink: 0; cursor: pointer;">
+                      <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
+                      <text x="12" y="16" text-anchor="middle" font-size="12" font-weight="bold" fill="currentColor">i</text>
+                    </svg>
+                      <div class="tooltip-content">Ook na levering de mogelijkheid om content te weigeren</div>
+                    </div>
+            </div>
+                </td>
+                <td class="comparison-featured-cell">
+                  <div class="comparison-check">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="12" cy="12" r="12" fill="var(--color-primary)"/>
+                      <path d="M9 12l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    </svg>
+                  </div>
+                </td>
+                <td class="comparison-cell">
+            <div class="comparison-cross">✗</div>
+                </td>
+                <td class="comparison-cell">
+            <div class="comparison-cross">✗</div>
+                </td>
+                <td class="comparison-cell">
+                  <div class="comparison-cross">✗</div>
+                </td>
+              </tr>
+              <tr>
+                <td class="comparison-feature-cell">
+            <div class="comparison-feature">
+                    <span>No cure, no pay</span>
+                    <div class="tooltip-wrapper">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="tooltip-trigger" style="color: var(--color-text-secondary); flex-shrink: 0; cursor: pointer;">
+                      <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
+                      <text x="12" y="16" text-anchor="middle" font-size="12" font-weight="bold" fill="currentColor">i</text>
+                    </svg>
+                      <div class="tooltip-content">Niet tevreden? Dan ontvang je je geld terug</div>
+                    </div>
+            </div>
+                </td>
+                <td class="comparison-featured-cell">
+                  <div class="comparison-check">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="12" cy="12" r="12" fill="var(--color-primary)"/>
+                      <path d="M9 12l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    </svg>
+                  </div>
+                </td>
+                <td class="comparison-cell">
+            <div style="color: var(--color-text-secondary);">Onbetrouwbaar</div>
+                </td>
+                <td class="comparison-cell">
+            <div class="comparison-cross">✗</div>
+                </td>
+                <td class="comparison-cell">
+                  <div class="comparison-cross">✗</div>
+                </td>
+              </tr>
+              <tr>
+                <td class="comparison-feature-cell">
+            <div class="comparison-feature">
+              <span>Advertentieklaar geleverd</span>
+                    <div class="tooltip-wrapper">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="tooltip-trigger" style="color: var(--color-text-secondary); flex-shrink: 0; cursor: pointer;">
+                      <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
+                      <text x="12" y="16" text-anchor="middle" font-size="12" font-weight="bold" fill="currentColor">i</text>
+                    </svg>
+                      <div class="tooltip-content">Video's worden volledig bewerkt en direct inzetbaar aangeleverd</div>
+                    </div>
+            </div>
+                </td>
+                <td class="comparison-featured-cell">
+                  <div class="comparison-check">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="12" cy="12" r="12" fill="var(--color-primary)"/>
+                      <path d="M9 12l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    </svg>
+                  </div>
+                </td>
+                <td class="comparison-cell">
+            <div class="comparison-cross">✗</div>
+                </td>
+                <td class="comparison-cell">
+            <div class="comparison-cross">✗</div>
+                </td>
+                <td class="comparison-cell">
+            <div class="comparison-cross">✗</div>
+                </td>
+              </tr>
+              <tr>
+                <td class="comparison-feature-cell">
+            <div class="comparison-feature">
+                    <span>Grote creatorpool</span>
+                    <div class="tooltip-wrapper">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="tooltip-trigger" style="color: var(--color-text-secondary); flex-shrink: 0; cursor: pointer;">
+                      <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
+                      <text x="12" y="16" text-anchor="middle" font-size="12" font-weight="bold" fill="currentColor">i</text>
+                    </svg>
+                      <div class="tooltip-content">Direct toegang tot meer dan 1.500 creators, zonder vooraf te betalen</div>
+                    </div>
+            </div>
+                </td>
+                <td class="comparison-featured-cell">
+                  <div class="comparison-check">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="12" cy="12" r="12" fill="var(--color-primary)"/>
+                      <path d="M9 12l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    </svg>
+                  </div>
+                </td>
+                <td class="comparison-cell">
+                  <div style="color: var(--color-text-secondary);">Onbetrouwbaar</div>
+                </td>
+                <td class="comparison-cell">
+            <div class="comparison-cross">✗</div>
+                </td>
+                <td class="comparison-cell">
+            <div class="comparison-cross">✗</div>
+                </td>
+              </tr>
+              <tr>
+                <td class="comparison-feature-cell">
+            <div class="comparison-feature">
+                    <span>Open marketplace</span>
+                    <div class="tooltip-wrapper">
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="tooltip-trigger" style="color: var(--color-text-secondary); flex-shrink: 0; cursor: pointer;">
+                      <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
+                      <text x="12" y="16" text-anchor="middle" font-size="12" font-weight="bold" fill="currentColor">i</text>
+                    </svg>
+                      <div class="tooltip-content">Direct chatten met creators, zonder pre-payments</div>
+                    </div>
+            </div>
+                </td>
+                <td class="comparison-featured-cell">
+                  <div class="comparison-check">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="12" cy="12" r="12" fill="var(--color-primary)"/>
+                      <path d="M9 12l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    </svg>
+                  </div>
+                </td>
+                <td class="comparison-cell">
+            <div class="comparison-cross">✗</div>
+                </td>
+                <td class="comparison-cell">
+            <div class="comparison-cross">✗</div>
+                </td>
+                <td class="comparison-cell">
+            <div class="comparison-cross">✗</div>
+                </td>
+              </tr>
+              <tr>
+                <td class="comparison-feature-cell"></td>
+                <td class="comparison-featured-cell comparison-button-cell">
+                  <a href="../registreren.html" class="btn btn-primary" style="background: var(--color-primary); color: var(--color-white); border: none; padding: 12px 24px; border-radius: 999px; font-weight: var(--font-weight-semibold); display: inline-block; text-decoration: none;">Probeer het nu!</a>
+                </td>
+                <td class="comparison-cell"></td>
+                <td class="comparison-cell"></td>
+                <td class="comparison-cell"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEMO BOOKING BLOCK -->
+  <section class="section">
+    <div class="container">
+      <div style="background-image: url('../Brief/bgugc/ugcfade.png'); background-size: cover; background-position: center; background-repeat: no-repeat; border-radius: 32px; padding: var(--spacing-2xl);">
+        <div style="display: grid; grid-template-columns: 0.7fr 1.3fr; gap: var(--spacing-2xl); align-items: center; max-width: 1400px; margin: 0 auto;">
+          <!-- Left: Meeting Image -->
+          <div style="display: flex; align-items: center; justify-content: flex-start;">
+            <img src="../bedrijven/meeting/meeting.png" alt="Demo" style="width: 100%; max-width: 500px; max-height: 450px; object-fit: contain; border-radius: 24px; display: block;">
+          </div>
+          
+          <!-- Right: Text and CTA -->
+          <div style="display: flex; flex-direction: column; justify-content: center; padding-left: 0;">
+            <h2 class="mb-md" style="font-size: clamp(32px, 4vw, 48px); font-weight: var(--font-weight-bold); line-height: 1.2; text-align: left;">Benieuwd naar UGC.NL? Boek snel een demo.</h2>
+            <p style="font-size: 18px; line-height: 1.6; color: var(--color-text-secondary); text-align: left; margin-bottom: var(--spacing-md);">
+              Hoi, ik ben Marko! Plan een korte demo en ontdek hoe UGC.NL je helpt om snel video briefings te maken en de juiste creators te vinden. Kies een moment dat jou uitkomt.
+            </p>
+            <a href="../boek-een-demo.html" class="btn btn-primary" style="background-color: #000000; color: white; padding: 16px 32px; font-size: 16px; font-weight: 600; align-self: flex-start;">Boek een demo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section class="section">
+    <div class="container">
+      <div class="faq-container">
+        <div class="text-center mb-xl">
+          <h2 class="mb-sm">Veelgestelde vragen</h2>
+          <p class="body-large" style="color: var(--color-text-secondary);">Alles wat je moet weten over Instagram UGC via UGC.NL</p>
+        </div>
+        <div class="faq-tab-panel active" data-panel="vind-creators">
+          <div class="faq-item">
+            <button class="faq-question">
+              Wat is UGC.NL?
+              <span class="faq-icon">▼</span>
+            </button>
+            <div class="faq-answer">
+              <p>UGC.NL is een platform waar bedrijven UGC-creators vinden die native Instagram-content maken voor advertenties en organische posts.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Wat voor Instagram-content maken creators?
+              <span class="faq-icon">▼</span>
+            </button>
+            <div class="faq-answer">
+              <p>Creators maken o.a.:</p>
+              <ul style="margin-top: 8px; padding-left: 20px;">
+                <li>Instagram Ads (hooks, scroll-stoppers)</li>
+                <li>Productdemo's & reviews</li>
+                <li>Unboxing video's</li>
+                <li>Lifestyle & storytelling content</li>
+                <li>Meerdere varianten per video</li>
+              </ul>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Waarom werkt UGC beter op Instagram?
+              <span class="faq-icon">▼</span>
+            </button>
+            <div class="faq-answer">
+              <p>UGC voelt als echte Instagram-content, niet als een advertentie. Daardoor:</p>
+              <ul style="margin-top: 8px; padding-left: 20px;">
+                <li>hogere watchtime</li>
+                <li>betere CTR</li>
+                <li>meer vertrouwen en conversies</li>
+              </ul>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Plaatsen merken opdrachten op UGC.NL?
+              <span class="faq-icon">▼</span>
+            </button>
+            <div class="faq-answer">
+              <p>Nee. Merken plaatsen geen opdrachten. Je zoekt en benadert zelf creators via de Vind Creators-pagina.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Hoe kies ik de juiste Instagram-creator?
+              <span class="faq-icon">▼</span>
+            </button>
+            <div class="faq-answer">
+              <p>Je filtert creators op ranking, rating, ervaring, leeftijd en niche, zodat je snel de beste match vindt voor jouw Instagram-campagne.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Wat kost Instagram UGC via UGC.NL?
+              <span class="faq-icon">▼</span>
+            </button>
+            <div class="faq-answer">
+              <p>Je betaalt per video, zonder abonnement. Prijzen starten vanaf €59, afhankelijk van de creator en content.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Kan ik zelf hooks, script of stijl bepalen?
+              <span class="faq-icon">▼</span>
+            </button>
+            <div class="faq-answer">
+              <p>Ja. Je levert je eigen briefing of laat de creator Instagram-hooks, script en formats ontwikkelen.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              In welke talen maken creators Instagram-content?
+              <span class="faq-icon">▼</span>
+            </button>
+            <div class="faq-answer">
+              <p>Creators maken Instagram-content in o.a. Nederlands, Engels, Duits, Frans en Spaans (afhankelijk van de creator).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <script>
+    // Case Study Data
+    const caseStudies = [
+      {
+        name: "Zenn Store",
+        brandLogo: "../brandlogoscasestudy/Zenn store.png",
+        image: "https://picsum.photos/400/600?cs1",
+        video: "../tech_homepage/Case Study van het merk_ Halsbandje.mp4",
+        hasVideo: true,
+        caption: "and made of genuine leather",
+        quote: "Met één UGC-video via UGC.NL zagen we direct betere resultaten. De content voelde authentiek en presteerde beter dan onze eerdere advertenties.",
+        author: "Daryll",
+        role: "CEO",
+        metrics: [
+          { value: "+120%", label: "toename in totale verkopen in slechts twee maanden" },
+          { value: "+200%", label: "stijging in nettowinst" }
+        ],
+        link: "/succesverhalen/intelligence-media"
+      },
+      {
+        name: "BNfitness",
+        brandLogo: "../brandlogoscasestudy/BNfitness.png",
+        image: "https://picsum.photos/400/600?cs2",
+        video: "../tech_homepage/Case Study van het merk_ ZENN Store.mp4",
+        hasVideo: true,
+        caption: "Premium quality products",
+        quote: "UGC met echte sporters werkte direct beter dan standaard fitnessadvertenties. Bovendien hadden we de video al binnen twee dagen live.",
+        author: "Bachduy",
+        role: "CEO",
+        metrics: [
+          { value: "+65%", label: "toename in nieuwe leden" },
+          { value: "+120%", label: "stijging in abonnementen" }
+        ],
+        link: "/succesverhalen/brickster"
+      },
+      {
+        name: "Bolderloft",
+        brandLogo: "../brandlogoscasestudy/Bolderloft.png",
+        image: "https://picsum.photos/400/600?cs3",
+        video: "../tech_homepage/Colgate Video (1).mp4",
+        hasVideo: true,
+        caption: "Luxury fashion collection",
+        quote: "Door onze producten te laten zien in echte huizen presteerden advertenties direct beter. UGC via UGC.NL maakte dit schaalbaar.",
+        author: "Elsa",
+        role: "Head of Growth",
+        metrics: [
+          { value: "+95%", label: "verbetering in ROAS" },
+          { value: "+180%", label: "stijging in advertentiebetrokkenheid" }
+        ],
+        link: "/succesverhalen/adore-me"
+      },
+      {
+        name: "The Sales Academy",
+        brandLogo: "../brandlogoscasestudy/The Sales Academy.png",
+        image: "https://picsum.photos/400/600?cs4",
+        video: "../tech_homepage/UGC-creator-T.mp4",
+        hasVideo: true,
+        caption: "Sustainable lifestyle products",
+        quote: "UGC met echte mensen uit het team werkte beter dan traditionele recruitment ads. De content voelde geloofwaardig en trok direct meer sollicitanten aan.",
+        author: "Jonas",
+        role: "Brand Manager",
+        metrics: [
+          { value: "+90%", label: "toename in sollicitaties" },
+          { value: "+140%", label: "stijging in kwaliteit van kandidaten" }
+        ],
+        link: "/succesverhalen/pineapple-products"
+      }
+    ];
+    
+    // Initialize Case Study Carousel
+    let currentCaseIndex = 0;
+    
+    function updateCaseStudy(index) {
+      const caseData = caseStudies[index];
+      const card = document.querySelector('.case-study-card');
+      const contentEl = card.querySelector('.case-study-content');
+      
+      // Ensure consistent card dimensions
+      card.style.height = '500px';
+      card.style.maxHeight = '500px';
+      card.style.width = '100%';
+      card.style.maxWidth = '100%';
+      
+      // Ensure media container has consistent dimensions
+      const mediaEl = card.querySelector('.case-study-media');
+      if (mediaEl) {
+        mediaEl.style.width = '100%';
+        mediaEl.style.minWidth = '0';
+        mediaEl.style.maxWidth = '100%';
+      }
+      
+      // Update media
+      const videoEl = card.querySelector('.case-study-video');
+      const imageEl = card.querySelector('.case-study-image');
+      const muteBtn = card.querySelector('.case-study-mute-btn');
+      
+      if (caseData.hasVideo) {
+        videoEl.src = caseData.video;
+        videoEl.style.display = 'block';
+        imageEl.style.display = 'none';
+        if (muteBtn) muteBtn.style.display = 'flex';
+        // Auto-play video
+        videoEl.play().catch(e => console.log('Autoplay prevented:', e));
+      } else {
+        imageEl.src = caseData.image;
+        imageEl.style.display = 'block';
+        videoEl.style.display = 'none';
+        if (muteBtn) muteBtn.style.display = 'none';
+      }
+      
+      // Update content
+      const brandLogoEl = card.querySelector('.case-study-brand-logo');
+      if (caseData.brandLogo) {
+        brandLogoEl.src = caseData.brandLogo;
+        brandLogoEl.alt = `${caseData.name} logo`;
+        brandLogoEl.style.display = 'block';
+      } else {
+        brandLogoEl.style.display = 'none';
+      }
+      card.querySelector('.case-study-brand-title').textContent = caseData.name;
+      const quoteEl = card.querySelector('.case-study-quote');
+      quoteEl.innerHTML = `"${caseData.quote}"`;
+      card.querySelector('.case-study-author').textContent = `- ${caseData.author}, ${caseData.role}`;
+      
+      // Update metrics
+      const metricsContainer = card.querySelector('.case-study-metrics');
+      metricsContainer.innerHTML = caseData.metrics.map(metric => `
+        <div style="text-align: left;">
+          <div style="font-size: 40px; font-weight: var(--font-weight-bold); color: var(--color-primary); line-height: 1; margin-bottom: 6px;">${metric.value}</div>
+          <div style="font-size: 13px; color: var(--color-text); line-height: 1.4;">${metric.label}</div>
+        </div>
+      `).join('');
+      
+      // Update link
+      card.querySelector('.case-study-link').href = caseData.link;
+      
+      // Update tabs
+      document.querySelectorAll('.case-study-tab').forEach((tab, i) => {
+        if (i === index) {
+          tab.classList.add('active');
+          tab.style.color = 'var(--color-text)';
+          tab.style.borderBottomColor = 'var(--color-primary)';
+        } else {
+          tab.classList.remove('active');
+          tab.style.color = 'var(--color-text-secondary)';
+          tab.style.borderBottomColor = 'transparent';
+        }
+      });
+      
+      // Update navigation buttons
+      const prevBtn = document.querySelector('.case-study-nav-prev');
+      const nextBtn = document.querySelector('.case-study-nav-next');
+      prevBtn.disabled = index === 0;
+      nextBtn.disabled = index === caseStudies.length - 1;
+      
+      if (prevBtn.disabled) {
+        prevBtn.style.opacity = '0.5';
+        prevBtn.style.cursor = 'not-allowed';
+      } else {
+        prevBtn.style.opacity = '1';
+        prevBtn.style.cursor = 'pointer';
+      }
+      
+      if (nextBtn.disabled) {
+        nextBtn.style.opacity = '0.5';
+        nextBtn.style.cursor = 'not-allowed';
+      } else {
+        nextBtn.style.opacity = '1';
+        nextBtn.style.cursor = 'pointer';
+      }
+    }
+    
+    // Tab click handlers
+    document.querySelectorAll('.case-study-tab').forEach((tab, index) => {
+      tab.addEventListener('click', () => {
+        currentCaseIndex = index;
+        updateCaseStudy(currentCaseIndex);
+      });
+    });
+    
+    // Navigation button handlers
+    document.querySelector('.case-study-nav-prev').addEventListener('click', () => {
+      if (currentCaseIndex > 0) {
+        currentCaseIndex--;
+        updateCaseStudy(currentCaseIndex);
+      }
+    });
+    
+    document.querySelector('.case-study-nav-next').addEventListener('click', () => {
+      if (currentCaseIndex < caseStudies.length - 1) {
+        currentCaseIndex++;
+        updateCaseStudy(currentCaseIndex);
+      }
+    });
+    
+    // Mute/Unmute button handler
+    document.addEventListener('click', (e) => {
+      const muteBtn = e.target.closest('.case-study-mute-btn');
+      if (muteBtn) {
+        const card = muteBtn.closest('.case-study-card');
+        const video = card.querySelector('.case-study-video');
+        const icon = muteBtn.querySelector('.case-study-mute-icon');
+        
+        if (video && video.style.display !== 'none') {
+          if (video.muted) {
+            video.muted = false;
+            icon.innerHTML = '<path d="M11 5L6 9H2v6h4l5 4V5z"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path><path d="M13.24 10.76a2.5 2.5 0 0 1 0 3.53"></path>';
+          } else {
+            video.muted = true;
+            icon.innerHTML = '<path d="M11 5L6 9H2v6h4l5 4V5z"></path><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line>';
+          }
+        }
+      }
+    });
+    
+    // Initialize with first case
+    updateCaseStudy(0);
+  </script>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <nav class="footer-nav">
+        <div class="footer-column">
+            <h3 class="footer-heading">Diensten</h3>
+            <ul class="footer-links">
+              <li><a href="e-commerce.html" class="footer-link">E-commerce</a></li>
+              <li><a href="agencies.html" class="footer-link">Agencies</a></li>
+              <li><a href="tiktok.html" class="footer-link">TikTok</a></li>
+              <li><a href="instagram.html" class="footer-link">Instagram</a></li>
+              <li><a href="facebook.html" class="footer-link">Facebook</a></li>
+          </ul>
+        </div>
+          
+        <div class="footer-column">
+            <h3 class="footer-heading">Ontdek</h3>
+            <ul class="footer-links">
+              <li><a href="../vind-creators/index.html" class="footer-link">Vind Creators</a></li>
+              <li><a href="/succesverhalen" class="footer-link">Succesverhalen</a></li>
+              <li><a href="https://support.ugc.nl" target="_blank" rel="noopener noreferrer" class="footer-link">Support</a></li>
+          </ul>
+        </div>
+          
+        <div class="footer-column">
+            <h3 class="footer-heading"><a href="/blog" class="footer-heading-link">Blog<svg class="footer-heading-arrow" width="8" height="8" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 11L11 1M11 1H1M11 1V11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></h3>
+            <ul class="footer-links">
+              <li><a href="../blog.html?category=user-generated-content" class="footer-link">User-Generated-Content</a></li>
+              <li><a href="../blog.html?category=ad-performance" class="footer-link">Ad Performance</a></li>
+              <li><a href="../blog.html?category=ugc-academy" class="footer-link">UGC Academy</a></li>
+              <li><a href="../blog.html?category=platform" class="footer-link">Platform</a></li>
+          </ul>
+        </div>
+          
+        <div class="footer-column">
+            <h3 class="footer-heading">Contact</h3>
+            <ul class="footer-links">
+              <li><a href="../boek-een-demo.html" class="footer-link">Boek een demo</a></li>
+              <li><a href="mailto:contact@ugc.nl" class="footer-link">contact@ugc.nl</a></li>
+          </ul>
+        </div>
+          
+          <!-- Branding sectie rechts -->
+          <div class="footer-branding">
+            <img src="../Logo/FULL LOGO.png" alt="UGC.NL" class="footer-branding-logo">
+            <p class="footer-tagline">Brengt creators en bedrijven samen</p>
+            <div class="footer-branding-divider"></div>
+            <div class="footer-experts">
+              <span class="footer-experts-label">Experts in</span>
+              <div class="footer-platform-logos">
+                <img src="../socialmedialogos/meta1.png" alt="Meta" class="footer-platform-logo">
+                <img src="../socialmedialogos/insta1.png" alt="Instagram" class="footer-platform-logo">
+      </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+      
+      <!-- Onderste deel: bottom bar -->
+      <div class="footer-bottom">
+        <div class="footer-bottom-content">
+          <nav class="footer-socials" aria-label="Social media links">
+            <ul class="footer-socials-list">
+              <li>
+                <a href="https://www.facebook.com/profile.php?id=61554995296593" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                  <div class="footer-social-icon-wrapper">
+                    <svg class="footer-social-icon" width="11" height="20" viewBox="0 0 11 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M7 11.5H9.5L10.5 7.5H7V5.5C7 4.47 7 3.5 9 3.5H10.5V0.14C10.174 0.0970001 8.943 0 7.643 0C4.928 0 3 1.657 3 4.7V7.5H0V11.5H3V20H7V11.5Z" fill="currentColor"></path>
+                    </svg>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/ugc.nl/" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                  <div class="footer-social-icon-wrapper">
+                    <svg class="footer-social-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" fill="currentColor"/>
+                    </svg>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/ugc.nl" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                  <div class="footer-social-icon-wrapper">
+                    <svg class="footer-social-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" fill="currentColor"/>
+                    </svg>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/company/ugc-nl/?originalSubdomain=nl" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                  <div class="footer-social-icon-wrapper">
+                    <svg class="footer-social-icon" width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M4.93994 1.99999C4.93968 2.53043 4.72871 3.03903 4.35345 3.41391C3.97819 3.7888 3.46937 3.99926 2.93894 3.99899C2.40851 3.99873 1.89991 3.78776 1.52502 3.4125C1.15014 3.03724 0.939676 2.52843 0.939942 1.99799C0.940207 1.46756 1.15117 0.958958 1.52644 0.584072C1.9017 0.209187 2.41051 -0.00127205 2.94094 -0.00100683C3.47137 -0.000741613 3.97998 0.210226 4.35486 0.585487C4.72975 0.960747 4.94021 1.46956 4.93994 1.99999ZM4.99994 5.47999H0.999942V18H4.99994V5.47999ZM11.3199 5.47999H7.33994V18H11.2799V11.43C11.2799 7.76999 16.0499 7.42999 16.0499 11.43V18H19.9999V10.07C19.9999 3.89999 12.9399 4.12999 11.2799 7.15999L11.3199 5.47999Z" fill="currentColor"></path>
+                    </svg>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/@UGCNL" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                  <div class="footer-social-icon-wrapper">
+                    <svg class="footer-social-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="currentColor"/>
+                    </svg>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </nav>
+          
+          <div class="footer-bottom-right">
+            <nav class="footer-policies" aria-label="Legal links">
+              <ul class="footer-policies-list">
+                <li><a href="/voorwaarden" class="footer-policy-link">Algemene voorwaarden</a></li>
+                <li><a href="/privacy" class="footer-policy-link">Privacyverklaring</a></li>
+              </ul>
+            </nav>
+            <p class="footer-address">Keizersgracht 520H, 1017EK Amsterdam @ 2026 UGC.NL. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+  <script>
+    // Desktop mockup mute/unmute functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const desktopMockup = document.querySelector('.desktop-mockup');
+      if (desktopMockup) {
+        const video = desktopMockup.querySelector('video');
+        const muteBtn = desktopMockup.querySelector('.desktop-mockup-mute-btn');
+        const muteIcon = desktopMockup.querySelector('.desktop-mockup-mute-icon');
+        
+        if (video && muteBtn && muteIcon) {
+          muteBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            if (video.muted) {
+              video.muted = false;
+              // Unmuted icon (sound on)
+              muteIcon.innerHTML = '<path d="M11 5L6 9H2v6h4l5 4V5z"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>';
+            } else {
+              video.muted = true;
+              // Muted icon (sound off)
+              muteIcon.innerHTML = '<path d="M11 5L6 9H2v6h4l5 4V5z"></path><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line>';
+            }
+          });
+        }
+      }
+
+      // Swipeable Video Carousel
+      const carousel = document.getElementById('agencies-video-carousel');
+      if (carousel) {
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+        let currentIndex = 2; // Start with center card (index 2)
+
+        // Touch/Mouse drag functionality
+        carousel.addEventListener('mousedown', (e) => {
+          isDown = true;
+          carousel.style.cursor = 'grabbing';
+          startX = e.pageX - carousel.offsetLeft;
+          scrollLeft = carousel.scrollLeft;
+        });
+
+        carousel.addEventListener('mouseleave', () => {
+          isDown = false;
+          carousel.style.cursor = 'grab';
+        });
+
+        carousel.addEventListener('mouseup', () => {
+          isDown = false;
+          carousel.style.cursor = 'grab';
+          snapToNearestCard();
+        });
+
+        carousel.addEventListener('mousemove', (e) => {
+          if (!isDown) return;
+          e.preventDefault();
+          const x = e.pageX - carousel.offsetLeft;
+          const walk = (x - startX) * 2;
+          carousel.scrollLeft = scrollLeft - walk;
+        });
+
+        // Touch events
+        let touchStartX = 0;
+        let touchScrollLeft = 0;
+
+        carousel.addEventListener('touchstart', (e) => {
+          touchStartX = e.touches[0].pageX - carousel.offsetLeft;
+          touchScrollLeft = carousel.scrollLeft;
+        });
+
+        carousel.addEventListener('touchmove', (e) => {
+          const x = e.touches[0].pageX - carousel.offsetLeft;
+          const walk = (x - touchStartX) * 1.5;
+          carousel.scrollLeft = touchScrollLeft - walk;
+        });
+
+        carousel.addEventListener('touchend', () => {
+          snapToNearestCard();
+        });
+
+        // Snap to nearest card
+        function snapToNearestCard() {
+          const cards = carousel.querySelectorAll('.agencies-video-card');
+          let nearestIndex = 0;
+          let minDistance = Infinity;
+          const carouselRect = carousel.getBoundingClientRect();
+          const carouselCenter = carouselRect.left + carouselRect.width / 2;
+
+          cards.forEach((card, index) => {
+            const cardRect = card.getBoundingClientRect();
+            const cardCenter = cardRect.left + cardRect.width / 2;
+            const distance = Math.abs(cardCenter - carouselCenter);
+
+            if (distance < minDistance) {
+              minDistance = distance;
+              nearestIndex = index;
+            }
+          });
+
+          if (nearestIndex !== currentIndex) {
+            currentIndex = nearestIndex;
+            snapToCard(nearestIndex);
+          }
+        }
+
+        function snapToCard(index) {
+          const cards = carousel.querySelectorAll('.agencies-video-card');
+          if (cards[index]) {
+            const card = cards[index];
+            const cardWidth = card.offsetWidth;
+            const gap = parseInt(getComputedStyle(carousel).gap) || 24;
+            const cardLeft = card.offsetLeft;
+            const carouselWidth = carousel.offsetWidth;
+            const targetScroll = cardLeft - (carouselWidth / 2) + (cardWidth / 2);
+
+            carousel.scrollTo({
+              left: targetScroll,
+              behavior: 'smooth'
+            });
+          }
+        }
+
+        function updateActiveCard() {
+          const cards = carousel.querySelectorAll('.agencies-video-card');
+          const carouselRect = carousel.getBoundingClientRect();
+          const carouselCenter = carouselRect.left + carouselRect.width / 2;
+          
+          cards.forEach((card, index) => {
+            const cardRect = card.getBoundingClientRect();
+            const cardCenter = cardRect.left + cardRect.width / 2;
+            const distanceFromCenter = Math.abs(cardCenter - carouselCenter);
+            const isCenter = distanceFromCenter < cardRect.width / 2;
+            
+            if (isCenter) {
+              card.classList.add('active');
+              currentIndex = index;
+              const video = card.querySelector('.agencies-video');
+              if (video) {
+                video.play().catch(() => {});
+              }
+            } else {
+              card.classList.remove('active');
+              const video = card.querySelector('.agencies-video');
+              if (video) {
+                video.pause();
+              }
+            }
+          });
+        }
+
+        // Scroll event to update active card
+        carousel.addEventListener('scroll', () => {
+          updateActiveCard();
+          clearTimeout(carousel.scrollTimeout);
+          carousel.scrollTimeout = setTimeout(() => {
+            snapToNearestCard();
+          }, 150);
+        });
+
+        // Initialize - center the carousel on the middle card
+        setTimeout(() => {
+          snapToCard(currentIndex);
+          updateActiveCard();
+        }, 100);
+
+        // Video card click to center and play
+        const cards = carousel.querySelectorAll('.agencies-video-card');
+        cards.forEach((card, index) => {
+          card.addEventListener('click', function(e) {
+            // Don't trigger if clicking on the video itself (let video controls work)
+            if (e.target.tagName === 'VIDEO') {
+              return;
+            }
+            currentIndex = index;
+            snapToCard(index);
+            updateActiveCard();
+          });
+        });
+      }
+
+      // Category Filter Functionality
+      const categoryButtons = document.querySelectorAll('.agencies-category-btn');
+      const videoCards = document.querySelectorAll('.agencies-video-card');
+
+      categoryButtons.forEach((btn) => {
+        btn.addEventListener('click', function() {
+          // Update active button
+          categoryButtons.forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+
+          const category = this.getAttribute('data-category');
+
+          // Filter videos
+          videoCards.forEach((card) => {
+            if (category === 'all' || card.getAttribute('data-category') === category) {
+              card.style.display = 'block';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+
+          // Reset carousel scroll
+          setTimeout(() => {
+            const carousel = document.getElementById('agencies-video-carousel');
+            if (carousel) {
+              carousel.scrollTo({ left: 0, behavior: 'smooth' });
+            }
+          }, 100);
+        });
+      });
+    });
+  </script>
+</body>
+</html>

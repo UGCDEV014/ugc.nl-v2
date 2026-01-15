@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boek een demo - UGC.NL</title>
+  <meta name="description" content="Plan een korte demo met UGC.NL en ontdek hoe we je kunnen helpen.">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .booking-page {
+      min-height: calc(100vh - 80px);
+      padding: var(--spacing-3xl) 0;
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(220, 235, 255, 0.4) 10%, rgba(200, 225, 255, 0.7) 30%, rgba(190, 220, 255, 0.8) 50%, rgba(210, 230, 255, 0.6) 60%, rgba(230, 240, 255, 0.5) 75%, rgba(240, 245, 255, 0.4) 85%, rgba(250, 252, 255, 0.3) 92%, rgba(255, 255, 255, 0.95) 97%, rgba(255, 255, 255, 1) 100%);
+    }
+    
+    .booking-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 var(--spacing-lg);
+    }
+    
+    .booking-header {
+      text-align: center;
+      margin-bottom: var(--spacing-xl);
+    }
+    
+    .booking-header h1 {
+      font-size: 48px;
+      font-weight: var(--font-weight-bold);
+      color: var(--color-text);
+      margin-bottom: var(--spacing-md);
+    }
+    
+    .booking-header p {
+      font-size: 18px;
+      color: var(--color-text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    .booking-bubble {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--spacing-md);
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(200, 200, 220, 0.3);
+      border-radius: 999px;
+      padding: 12px 24px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+    
+    .booking-bubble-flags {
+      display: flex;
+      align-items: center;
+    }
+    
+    .booking-bubble-flag {
+      width: 32px;
+      height: 32px;
+      border-radius: 20px;
+      border: 2px solid white;
+      object-fit: cover;
+      margin-left: -8px;
+      position: relative;
+    }
+    
+    .booking-bubble-flag:first-child {
+      margin-left: 0;
+    }
+    
+    .booking-bubble-text {
+      font-size: 16px;
+      font-weight: var(--font-weight-semibold);
+      color: var(--color-text);
+      white-space: nowrap;
+    }
+    
+    .booking-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: transparent;
+      border-radius: 0;
+      padding: 0;
+      box-shadow: none;
+      min-height: 700px;
+    }
+    
+    @media (max-width: 968px) {
+      .booking-header h1 {
+        font-size: 36px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-container">
+      <a href="/" class="header-logo-link">
+        <img src="Logo/FULL LOGO.png" alt="UGC.NL" class="header-logo">
+      </a>
+      <nav class="header-nav">
+        <div class="header-dropdown">
+          <button class="header-nav-link header-dropdown-toggle" style="background: none; border: none; cursor: pointer; display: flex; align-items: center; gap: 4px;">
+            Diensten
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" style="transition: transform 0.2s;">
+              <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+        <a href="vind-creators/index.html" class="header-nav-link">Vind Creators</a>
+        <a href="succesverhalen/index.html" class="header-nav-link">Succesverhalen</a>
+      </nav>
+      <div class="header-cta">
+        <a href="/inloggen" class="header-nav-link">Inloggen</a>
+        <a href="/registreren" class="btn btn-primary">Registreer</a>
+      </div>
+      <div class="header-dropdown-menu">
+        <div class="header-dropdown-content">
+          <div class="header-dropdown-column">
+            <div class="header-dropdown-section">
+              <div class="header-dropdown-section-title">Per platform</div>
+              <a href="diensten/tiktok.html" class="header-dropdown-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 12px; flex-shrink: 0;">
+                  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                </svg>
+                <div>
+                  <div class="header-dropdown-item-title">TikTok</div>
+                  <div class="header-dropdown-item-description">UGC video's voor TikTok advertenties</div>
+                </div>
+              </a>
+              <a href="diensten/instagram.html" class="header-dropdown-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 12px; flex-shrink: 0;">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+                <div>
+                  <div class="header-dropdown-item-title">Instagram</div>
+                  <div class="header-dropdown-item-description">UGC content voor Instagram Reels en Stories</div>
+                </div>
+              </a>
+              <a href="diensten/facebook.html" class="header-dropdown-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 12px; flex-shrink: 0;">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                </svg>
+                <div>
+                  <div class="header-dropdown-item-title">Facebook</div>
+                  <div class="header-dropdown-item-description">UGC video's voor Facebook advertenties</div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="header-dropdown-column">
+            <div class="header-dropdown-section">
+              <div class="header-dropdown-section-title">Per bedrijfstype</div>
+              <a href="diensten/e-commerce.html" class="header-dropdown-item">
+                <div>
+                  <div class="header-dropdown-item-title">E-commerce</div>
+                  <div class="header-dropdown-item-description">UGC voor webshops en online retailers</div>
+                </div>
+              </a>
+              <a href="diensten/agencies.html" class="header-dropdown-item">
+                <div>
+                  <div class="header-dropdown-item-title">Agencies</div>
+                  <div class="header-dropdown-item-description">UGC voor marketing bureaus</div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="header-dropdown-image-column" style="position: relative;">
+            <a href="boek-een-demo.html" style="position: absolute; top: 16px; left: 16px; display: inline-flex; align-items: center; gap: 8px; color: var(--color-text); font-weight: var(--font-weight-semibold); font-size: 16px; text-decoration: none; z-index: 10; background: rgba(255, 255, 255, 0.9); padding: 8px 16px; border-radius: 8px; transition: all 0.2s;">
+              Boek een demo
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+            <img src="bedrijven/meeting/meeting.png" alt="UGC.NL Services" class="header-dropdown-image" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- BOOKING PAGE -->
+  <section class="booking-page">
+    <div class="booking-container">
+      <!-- Bubble with flags -->
+      <div style="display: flex; justify-content: center; margin-bottom: var(--spacing-lg);">
+        <div class="booking-bubble">
+          <div class="booking-bubble-flags">
+            <img src="landiconen/nederland.svg" alt="Nederland" class="booking-bubble-flag">
+            <img src="landiconen/belgië.svg" alt="België" class="booking-bubble-flag">
+            <img src="landiconen/vereningd koninkrijk.svg" alt="Verenigd Koninkrijk" class="booking-bubble-flag">
+            <img src="landiconen/duitsland.svg" alt="Duitsland" class="booking-bubble-flag">
+          </div>
+          <span class="booking-bubble-text">Kies tussen 1,500+ creators</span>
+        </div>
+      </div>
+      
+      <div class="booking-header">
+        <h1>Boek een demo</h1>
+        <p>Plan een korte demo en ontdek hoe UGC.NL je helpt om snel video briefings te maken en de juiste creators te vinden.</p>
+      </div>
+      
+      <div class="booking-content">
+        <!-- Calendly inline widget begin -->
+        <div class="calendly-inline-widget" data-url="https://calendly.com/ugccall/new-meeting?hide_gdpr_banner=1" style="min-width:100%;width:100%;max-width:1200px;height:700px;"></div>
+        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+        <!-- Calendly inline widget end -->
+      </div>
+      
+      <!-- Brands Section -->
+      <div style="margin-top: calc(var(--spacing-lg) + var(--spacing-xl)); text-align: center;">
+        <p class="body-small mb-md" style="color: var(--color-text-secondary);">Vertrouwd door 2,000+ merken</p>
+        <div class="carrousel-container" style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: var(--spacing-xl); padding: var(--spacing-lg) 0;">
+          <div class="brand-logo">
+            <img src="brandlogos/ABN_AMRO_Logo_1991_print.png" alt="ABN AMRO" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+            <span class="brand-fallback" style="display: none; font-size: 14px; color: var(--color-text-secondary);">ABN AMRO</span>
+          </div>
+          <div class="brand-logo">
+            <img src="brandlogos/Colgate.png" alt="Colgate" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+            <span class="brand-fallback" style="display: none; font-size: 14px; color: var(--color-text-secondary);">Colgate</span>
+          </div>
+          <div class="brand-logo">
+            <img src="brandlogos/Dyson.png" alt="Dyson" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+            <span class="brand-fallback" style="display: none; font-size: 14px; color: var(--color-text-secondary);">Dyson</span>
+          </div>
+          <div class="brand-logo">
+            <img src="brandlogos/Kellogs.png" alt="Kellogg's" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+            <span class="brand-fallback" style="display: none; font-size: 14px; color: var(--color-text-secondary);">Kellogg's</span>
+          </div>
+          <div class="brand-logo">
+            <img src="brandlogos/L'Oréal_logo.png" alt="L'Oréal" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+            <span class="brand-fallback" style="display: none; font-size: 14px; color: var(--color-text-secondary);">L'Oréal</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-top">
+        <nav class="footer-nav">
+        <div class="footer-column">
+            <h3 class="footer-heading">Diensten</h3>
+            <ul class="footer-links">
+              <li><a href="diensten/e-commerce.html" class="footer-link">E-commerce</a></li>
+              <li><a href="diensten/agencies.html" class="footer-link">Agencies</a></li>
+              <li><a href="diensten/tiktok.html" class="footer-link">TikTok</a></li>
+              <li><a href="diensten/instagram.html" class="footer-link">Instagram</a></li>
+              <li><a href="diensten/facebook.html" class="footer-link">Facebook</a></li>
+          </ul>
+        </div>
+          
+        <div class="footer-column">
+            <h3 class="footer-heading">Ontdek</h3>
+            <ul class="footer-links">
+              <li><a href="vind-creators/index.html" class="footer-link">Vind Creators</a></li>
+              <li><a href="/succesverhalen" class="footer-link">Succesverhalen</a></li>
+              <li><a href="https://support.ugc.nl" target="_blank" rel="noopener noreferrer" class="footer-link">Support</a></li>
+          </ul>
+        </div>
+          
+        <div class="footer-column">
+            <h3 class="footer-heading"><a href="blog.html" class="footer-heading-link">Blog<svg class="footer-heading-arrow" width="8" height="8" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 11L11 1M11 1H1M11 1V11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></h3>
+            <ul class="footer-links">
+              <li><a href="blog.html?category=user-generated-content" class="footer-link">User-Generated-Content</a></li>
+              <li><a href="blog.html?category=ad-performance" class="footer-link">Ad Performance</a></li>
+              <li><a href="blog.html?category=ugc-academy" class="footer-link">UGC Academy</a></li>
+              <li><a href="blog.html?category=platform" class="footer-link">Platform</a></li>
+          </ul>
+        </div>
+          
+        <div class="footer-column">
+            <h3 class="footer-heading">Contact</h3>
+            <ul class="footer-links">
+              <li><a href="boek-een-demo.html" class="footer-link">Boek een demo</a></li>
+              <li><a href="mailto:contact@ugc.nl" class="footer-link">contact@ugc.nl</a></li>
+          </ul>
+        </div>
+          
+          <!-- Branding sectie rechts -->
+          <div class="footer-branding">
+            <img src="Logo/FULL LOGO.png" alt="UGC.NL" class="footer-branding-logo">
+            <p class="footer-tagline">Brengt creators en bedrijven samen</p>
+            <div class="footer-branding-divider"></div>
+            <div class="footer-experts">
+              <span class="footer-experts-label">Experts in</span>
+              <div class="footer-platform-logos">
+                <img src="socialmedialogos/meta1.png" alt="Meta" class="footer-platform-logo">
+                <img src="socialmedialogos/tiktok1.png" alt="TikTok" class="footer-platform-logo">
+      </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+      
+      <!-- Onderste deel: bottom bar -->
+      <div class="footer-bottom">
+        <div class="footer-bottom-content">
+          <nav class="footer-socials" aria-label="Social media links">
+            <ul class="footer-socials-list">
+              <li>
+                <a href="https://www.facebook.com/profile.php?id=61554995296593" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                  <div class="footer-social-icon-wrapper">
+                    <svg class="footer-social-icon" width="11" height="20" viewBox="0 0 11 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M7 11.5H9.5L10.5 7.5H7V5.5C7 4.47 7 3.5 9 3.5H10.5V0.14C10.174 0.0970001 8.943 0 7.643 0C4.928 0 3 1.657 3 4.7V7.5H0V11.5H3V20H7V11.5Z" fill="currentColor"></path>
+                    </svg>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/ugc.nl/" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                  <div class="footer-social-icon-wrapper">
+                    <svg class="footer-social-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" fill="currentColor"/>
+                    </svg>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.tiktok.com/@ugc.nl" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                  <div class="footer-social-icon-wrapper">
+                    <svg class="footer-social-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" fill="currentColor"/>
+                    </svg>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/company/ugc-nl/?originalSubdomain=nl" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                  <div class="footer-social-icon-wrapper">
+                    <svg class="footer-social-icon" width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M4.93994 1.99999C4.93968 2.53043 4.72871 3.03903 4.35345 3.41391C3.97819 3.7888 3.46937 3.99926 2.93894 3.99899C2.40851 3.99873 1.89991 3.78776 1.52502 3.4125C1.15014 3.03724 0.939676 2.52843 0.939942 1.99799C0.940207 1.46756 1.15117 0.958958 1.52644 0.584072C1.9017 0.209187 2.41051 -0.00127205 2.94094 -0.00100683C3.47137 -0.000741613 3.97998 0.210226 4.35486 0.585487C4.72975 0.960747 4.94021 1.46956 4.93994 1.99999ZM4.99994 5.47999H0.999942V18H4.99994V5.47999ZM11.3199 5.47999H7.33994V18H11.2799V11.43C11.2799 7.76999 16.0499 7.42999 16.0499 11.43V18H19.9999V10.07C19.9999 3.89999 12.9399 4.12999 11.2799 7.15999L11.3199 5.47999Z" fill="currentColor"></path>
+                    </svg>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/@UGCNL" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                  <div class="footer-social-icon-wrapper">
+                    <svg class="footer-social-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="currentColor"/>
+                    </svg>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </nav>
+          
+          <div class="footer-bottom-right">
+            <nav class="footer-policies" aria-label="Legal links">
+              <ul class="footer-policies-list">
+                <li><a href="/voorwaarden" class="footer-policy-link">Algemene voorwaarden</a></li>
+                <li><a href="/privacy" class="footer-policy-link">Privacyverklaring</a></li>
+              </ul>
+            </nav>
+            <p class="footer-address">Keizersgracht 520H, 1017EK Amsterdam @ 2026 UGC.NL. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

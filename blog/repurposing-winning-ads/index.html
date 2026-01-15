@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>De Meta Andromeda update uitgelegd: zo pas je je UGC en creative strategie aan - UGC.NL Blog</title>
+  <meta name="description" content="Leer wat de Meta Andromeda update betekent voor je Facebook en Instagram advertenties en hoe je je UGC en creative strategie hierop aanpast voor maximale performance.">
+  <link rel="stylesheet" href="../../../styles.css">
+  <style>
+    /* Blog Post Page Styles */
+    .blog-post-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: var(--spacing-xl) var(--spacing-lg);
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: var(--spacing-3xl);
+    }
+    
+    .blog-post-breadcrumb {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: var(--spacing-lg) var(--spacing-lg) var(--spacing-md);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .blog-post-breadcrumb a {
+      color: var(--color-primary);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: var(--font-weight-regular);
+      transition: all 0.2s;
+    }
+    
+    .blog-post-breadcrumb a:hover {
+      color: #1a6fc7;
+      text-decoration: underline;
+    }
+    
+    .blog-post-breadcrumb-separator {
+      color: var(--color-text-secondary);
+      font-size: 14px;
+      margin: 0 4px;
+    }
+    
+    .blog-post-main {
+      min-width: 0;
+    }
+    
+    .blog-post-title {
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: var(--font-weight-bold);
+      color: var(--color-text);
+      margin-bottom: var(--spacing-lg);
+      line-height: 1.2;
+    }
+    
+    .blog-post-author {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-md);
+      margin-bottom: var(--spacing-md);
+    }
+    
+    .blog-post-author-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    
+    .blog-post-author-info {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    
+    .blog-post-author-name {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      font-weight: var(--font-weight-semibold);
+      color: var(--color-text);
+    }
+    
+    .blog-post-author-badge {
+      background: var(--color-primary);
+      color: white;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: var(--font-weight-semibold);
+    }
+    
+    .blog-post-meta {
+      font-size: 14px;
+      color: var(--color-text-secondary);
+    }
+    
+    .blog-post-visual-block {
+      background: linear-gradient(135deg, #E8F0FE 0%, #D6E7FC 100%);
+      border-radius: 16px;
+      padding: 0;
+      margin: var(--spacing-2xl) 0;
+      position: relative;
+      width: 100%;
+      aspect-ratio: 429 / 240;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    
+    .blog-post-visual-block img {
+      max-width: 80%;
+      max-height: 80%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+    }
+    
+    .blog-post-calendar-image {
+      width: 120px;
+      height: 120px;
+      border-radius: 8px;
+      object-fit: cover;
+      border: 2px solid white;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      display: block;
+    }
+    
+    .blog-post-calendar-image-1 {
+      position: absolute;
+      top: 60px;
+      left: 40px;
+      z-index: 2;
+    }
+    
+    .blog-post-calendar-image-2 {
+      position: absolute;
+      top: 180px;
+      left: 40px;
+      z-index: 2;
+    }
+    
+    .blog-post-calendar-image-3 {
+      position: absolute;
+      top: 60px;
+      right: 40px;
+      z-index: 2;
+    }
+    
+    .blog-post-calendar-image-4 {
+      position: absolute;
+      top: 180px;
+      right: 40px;
+      z-index: 2;
+    }
+    
+    .blog-post-calendar-image-overlay {
+      position: absolute;
+      bottom: 8px;
+      left: 8px;
+      background: var(--color-primary);
+      color: white;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: var(--font-weight-bold);
+      border: 2px solid white;
+    }
+    
+    .blog-post-calendar-image-overlay.green {
+      background: #10B981;
+    }
+    
+    .blog-post-calendar-image-overlay.blue {
+      background: #3B82F6;
+    }
+    
+    .blog-post-calendar {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 8px;
+      margin-bottom: var(--spacing-lg);
+    }
+    
+    .blog-post-calendar-header {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 8px;
+      margin-bottom: var(--spacing-sm);
+      font-size: 12px;
+      font-weight: var(--font-weight-semibold);
+      color: var(--color-text-secondary);
+      text-align: center;
+    }
+    
+    .blog-post-calendar-day {
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      color: var(--color-text);
+      position: relative;
+    }
+    
+    .blog-post-calendar-day.highlight {
+      background: var(--color-primary);
+      color: white;
+      border-radius: 50%;
+      font-weight: var(--font-weight-semibold);
+    }
+    
+    .blog-post-calendar-day.highlight-green {
+      background: #10B981;
+      color: white;
+      border-radius: 50%;
+      font-weight: var(--font-weight-semibold);
+    }
+    
+    .blog-post-calendar-day.highlight-blue {
+      background: #3B82F6;
+      color: white;
+      border-radius: 50%;
+      font-weight: var(--font-weight-semibold);
+    }
+    
+    .blog-post-content {
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--color-text);
+    }
+    
+    .blog-post-content p {
+      margin-bottom: var(--spacing-lg);
+    }
+    
+    .blog-post-content h2 {
+      font-size: clamp(28px, 3vw, 36px);
+      font-weight: var(--font-weight-bold);
+      color: var(--color-text);
+      margin: var(--spacing-2xl) 0 var(--spacing-lg);
+      line-height: 1.3;
+    }
+    
+    .blog-post-content h3 {
+      font-size: clamp(24px, 2.5vw, 28px);
+      font-weight: var(--font-weight-bold);
+      color: var(--color-text);
+      margin: var(--spacing-xl) 0 var(--spacing-md);
+      line-height: 1.3;
+    }
+    
+    .blog-post-content strong {
+      font-weight: var(--font-weight-bold);
+    }
+    
+    .blog-post-content a {
+      color: var(--color-primary);
+      text-decoration: underline;
+    }
+    
+    .blog-post-content ul {
+      margin: var(--spacing-lg) 0;
+      padding-left: var(--spacing-xl);
+    }
+    
+    .blog-post-content li {
+      margin-bottom: var(--spacing-sm);
+      line-height: 1.7;
+    }
+    
+    .blog-post-tldr {
+      background: linear-gradient(135deg, #F3E8FF 0%, #E8D6FC 100%);
+      border-radius: 12px;
+      padding: var(--spacing-lg);
+      margin: var(--spacing-2xl) 0;
+    }
+    
+    .blog-post-tldr h3 {
+      font-size: 20px;
+      font-weight: var(--font-weight-bold);
+      color: var(--color-text);
+      margin-bottom: var(--spacing-md);
+    }
+    
+    .blog-post-tldr ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .blog-post-tldr li {
+      padding-left: var(--spacing-lg);
+      position: relative;
+      margin-bottom: var(--spacing-sm);
+    }
+    
+    .blog-post-tldr li:before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--color-text);
+      font-weight: var(--font-weight-bold);
+    }
+    
+    /* Sidebar Styles */
+    .blog-post-sidebar {
+      position: sticky;
+      top: 100px;
+      height: fit-content;
+    }
+    
+    .blog-post-toc {
+      background: white;
+      border-radius: 12px;
+      padding: var(--spacing-lg);
+      margin-bottom: var(--spacing-lg);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+    
+    .blog-post-toc-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: var(--spacing-md);
+      cursor: pointer;
+    }
+    
+    .blog-post-toc-title {
+      font-size: 16px;
+      font-weight: var(--font-weight-bold);
+      color: var(--color-text);
+    }
+    
+    .blog-post-toc-toggle {
+      transition: transform 0.3s ease;
+    }
+    
+    .blog-post-toc.collapsed .blog-post-toc-toggle {
+      transform: rotate(180deg);
+    }
+    
+    .blog-post-toc.collapsed .blog-post-toc-list {
+      display: none;
+    }
+    
+    .blog-post-toc-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .blog-post-toc-item {
+      margin-bottom: var(--spacing-sm);
+    }
+    
+    .blog-post-toc-link {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      padding: 8px 12px;
+      border-radius: 8px;
+      text-decoration: none;
+      color: var(--color-text);
+      transition: all 0.2s;
+      font-size: 14px;
+    }
+    
+    .blog-post-toc-link:hover {
+      background: var(--color-light-blue);
+    }
+    
+    .blog-post-toc-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      background: var(--color-primary);
+      color: white;
+      border-radius: 50%;
+      font-size: 12px;
+      font-weight: var(--font-weight-bold);
+      flex-shrink: 0;
+    }
+    
+    .blog-post-toc-link.active {
+      background: var(--color-light-blue);
+    }
+    
+    .blog-post-toc-link.active .blog-post-toc-number {
+      background: var(--color-primary);
+    }
+    
+    .blog-post-cta {
+      background: var(--color-primary);
+      border-radius: 12px;
+      padding: var(--spacing-lg);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      margin: var(--spacing-lg);
+      margin-top: 0;
+      border: 2px solid white;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08), 0 0 0 2px white;
+    }
+    
+    .blog-post-cta-logos {
+      display: flex;
+      gap: var(--spacing-sm);
+      margin-bottom: var(--spacing-md);
+    }
+    
+    .blog-post-cta-logo {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      font-weight: var(--font-weight-bold);
+      color: var(--color-primary);
+    }
+    
+    .blog-post-cta-title {
+      font-size: 18px;
+      font-weight: var(--font-weight-bold);
+      color: white;
+      margin-bottom: var(--spacing-sm);
+    }
+    
+    .blog-post-cta-text {
+      font-size: 14px;
+      color: white;
+      margin-bottom: var(--spacing-md);
+      opacity: 0.9;
+    }
+    
+    .blog-post-cta-button {
+      display: block;
+      width: 100%;
+      padding: 12px 24px;
+      background: white;
+      color: var(--color-primary);
+      border-radius: 8px;
+      text-align: center;
+      text-decoration: none;
+      font-weight: var(--font-weight-semibold);
+      transition: all 0.2s;
+    }
+    
+    .blog-post-cta-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+    
+    @media (max-width: 1024px) {
+      .blog-post-container {
+        grid-template-columns: 1fr;
+      }
+      
+      .blog-post-sidebar {
+        position: relative;
+        top: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-container">
+      <a href="../../../" class="header-logo-link">
+        <img src="../../../logo/FULL LOGO.png" alt="UGC.NL" class="header-logo">
+      </a>
+      <nav class="header-nav">
+        <div class="header-dropdown">
+          <button class="header-nav-link header-dropdown-toggle" style="background: none; border: none; cursor: pointer; display: flex; align-items: center; gap: 4px;">
+            Diensten
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" style="transition: transform 0.2s;">
+              <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+        <a href="../../../vind-creators/index.html" class="header-nav-link">Vind Creators</a>
+        <a href="../../../succesverhalen/index.html" class="header-nav-link">Succesverhalen</a>
+      </nav>
+      <div class="header-cta">
+        <a href="../../../login.html" class="header-nav-link">Inloggen</a>
+        <a href="../../../registreren.html" class="btn btn-primary">Registreer</a>
+      </div>
+      <div class="header-dropdown-menu">
+        <div class="header-dropdown-content">
+          <div class="header-dropdown-column">
+            <div class="header-dropdown-section">
+              <div class="header-dropdown-section-title">Per platform</div>
+              <a href="../../../diensten/tiktok.html" class="header-dropdown-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 12px; flex-shrink: 0;">
+                  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                </svg>
+                <div>
+                  <div class="header-dropdown-item-title">TikTok</div>
+                  <div class="header-dropdown-item-description">UGC video's voor TikTok advertenties</div>
+                </div>
+              </a>
+              <a href="../../../diensten/instagram.html" class="header-dropdown-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 12px; flex-shrink: 0;">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+                <div>
+                  <div class="header-dropdown-item-title">Instagram</div>
+                  <div class="header-dropdown-item-description">UGC content voor Instagram Reels en Stories</div>
+                </div>
+              </a>
+              <a href="../../../diensten/facebook.html" class="header-dropdown-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 12px; flex-shrink: 0;">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                </svg>
+                <div>
+                  <div class="header-dropdown-item-title">Facebook</div>
+                  <div class="header-dropdown-item-description">UGC video's voor Facebook advertenties</div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="header-dropdown-column">
+            <div class="header-dropdown-section">
+              <div class="header-dropdown-section-title">Per bedrijfstype</div>
+              <a href="../../../diensten/e-commerce.html" class="header-dropdown-item">
+                <div>
+                  <div class="header-dropdown-item-title">E-commerce</div>
+                  <div class="header-dropdown-item-description">UGC voor webshops en online retailers</div>
+                </div>
+              </a>
+              <a href="../../../diensten/agencies.html" class="header-dropdown-item">
+                <div>
+                  <div class="header-dropdown-item-title">Agencies</div>
+                  <div class="header-dropdown-item-description">UGC voor marketing bureaus</div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="header-dropdown-image-column" style="position: relative;">
+            <a href="../../../book-a-call.html" style="position: absolute; top: 16px; left: 16px; display: inline-flex; align-items: center; gap: 8px; color: var(--color-text); font-weight: var(--font-weight-semibold); font-size: 16px; text-decoration: none; z-index: 10; background: rgba(255, 255, 255, 0.9); padding: 8px 16px; border-radius: 8px; transition: all 0.2s;">
+              Boek een demo
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+            <img src="../../../bedrijven/meeting/meeting.png" alt="UGC.NL Services" class="header-dropdown-image" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- BREADCRUMB -->
+  <div class="blog-post-breadcrumb">
+    <a href="../../../blog.html">Blog</a>
+    <span class="blog-post-breadcrumb-separator">></span>
+    <a href="../../../blog.html">Ad Performance</a>
+    <span class="blog-post-breadcrumb-separator">></span>
+    <span style="color: var(--color-text-secondary); font-size: 14px;">De Meta Andromeda update uitgelegd</span>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="blog-post-container">
+    <main class="blog-post-main">
+      <h1 class="blog-post-title">De Meta Andromeda update uitgelegd: zo pas je je UGC en creative strategie aan voor maximale performance</h1>
+      
+      <div class="blog-post-author">
+        <img src="../../../profilepictures/01.webp" alt="Dovile Miseviciute" class="blog-post-author-avatar">
+        <div class="blog-post-author-info">
+          <div class="blog-post-author-name">
+            Dovile Miseviciute
+            <span class="blog-post-author-badge">Editor</span>
+          </div>
+          <div class="blog-post-meta">Updated: January 13, 2026 • 7 min read</div>
+        </div>
+      </div>
+
+      <div class="blog-post-visual-block">
+        <!-- Image will be placed here later -->
+      </div>
+
+      <div class="blog-post-content">
+        <p>De Meta Andromeda update markeert een fundamentele verschuiving in hoe advertenties op Facebook en Instagram worden gerankt en uitgeserveerd. Waar adverteerders jarenlang vertrouwden op targeting, doelgroepen en instellingen, ligt de focus nu ergens anders.</p>
+        
+        <p>Meta kijkt niet langer primair naar welke doelgroep je target, maar naar welke specifieke advertentie het beste past bij een individueel persoon.</p>
+        
+        <p>Deze verandering werd noodzakelijk doordat adverteerders inmiddels miljoenen creatives per maand produceren. Om die schaal aan te kunnen, ontwikkelde Meta een nieuw AI systeem dat creatives op individueel gebruikersniveau beoordeelt. Dat systeem heet Andromeda.</p>
+        
+        <p>In deze blog lees je wat Andromeda precies verandert, waarom performance soms onvoorspelbaar aanvoelt en hoe je jouw UGC en creative strategie hierop aanpast.</p>
+
+        <h2 id="wat-is-andromeda">1. Wat is de Meta Andromeda update</h2>
+        
+        <p>De Meta Andromeda update markeert een fundamentele verschuiving in hoe advertenties op Facebook en Instagram worden gerankt en uitgeserveerd. Waar adverteerders jarenlang vertrouwden op targeting, doelgroepen en instellingen, ligt de focus nu ergens anders.</p>
+        
+        <p>Meta kijkt niet langer primair naar welke doelgroep je target, maar naar welke specifieke advertentie het beste past bij een individueel persoon.</p>
+        
+        <p>Deze verandering werd noodzakelijk doordat adverteerders inmiddels miljoenen creatives per maand produceren. Om die schaal aan te kunnen, ontwikkelde Meta een nieuw AI systeem dat creatives op individueel gebruikersniveau beoordeelt. Dat systeem heet Andromeda.</p>
+
+        <h2 id="wat-verandert-andromeda">2. Wat verandert Andromeda in Facebook en Instagram ads</h2>
+        
+        <p>Andromeda verplaatst Meta van doelgroep aannames naar individuele voorspellingen.</p>
+        
+        <p>In plaats van te bepalen welke doelgroep een advertentie ziet, voorspelt Meta nu welke specifieke advertentie iemand het meest waarschijnlijk aanspreekt. Dit gebeurt op basis van realtime gebruikerssignalen, creatieve kwaliteit, engagement patronen en historische prestaties van vergelijkbare creatives.</p>
+        
+        <p>Het budget wordt hierdoor verdeeld op gebruikersniveau in plaats van op doelgroepniveau. Targeting bestaat nog steeds, maar is veel minder bepalend dan voorheen.</p>
+        
+        <p>Het directe gevolg is dat performance grotendeels wordt bepaald door hoeveel creatives je aanlevert en hoe groot de variatie tussen die creatives is.</p>
+
+        <h2 id="waarom-wisselende-resultaten">3. Waarom adverteerders wisselende resultaten zien</h2>
+        
+        <p>Sinds de introductie van Andromeda ervaren veel adverteerders schommelingen in performance. Dat voelt voor sommigen als instabiliteit, maar in werkelijkheid vergroot het systeem bestaande dynamieken.</p>
+        
+        <p>Denk aan seizoensgebonden CPM stijgingen, toenemende concurrentie en snellere herverdeling van budget door AI.</p>
+        
+        <p>Merken met weinig creatieve variatie merken deze schommelingen het sterkst. Wanneer het systeem onvoldoende invalshoeken heeft om te testen, ontstaan sneller dips in performance.</p>
+        
+        <p>Dit zijn geen fouten in het algoritme, maar signalen dat de creative strategie niet meer aansluit bij hoe Meta vandaag optimaliseert.</p>
+
+        <h2 id="wat-betekent-andromeda">4. Wat Andromeda betekent voor je advertising strategie</h2>
+        
+        <p>De Andromeda update verandert welke knoppen er echt toe doen. Niet targeting, maar creative output, variatie en structuur bepalen het succes.</p>
+        
+        <p><strong>Creatieve output is cruciaal</strong> Hoe meer creatives je aanlevert, hoe sneller Andromeda kan leren. Een consistente stroom nieuwe advertenties verkort de tijd tot nieuwe winnaars en zorgt voor stabielere resultaten.</p>
+        
+        <p><strong>Creatieve diversiteit wordt belangrijker dan ooit</strong> Creatives moeten verschillen in probleem versus oplossing, emotie versus rationaliteit, awareness niveau en tone of voice. Deze variatie geeft het algoritme sterke signalen op individueel niveau en vertraagt creative fatigue.</p>
+        
+        <p><strong>Simpele campagnestructuren presteren beter</strong> Minder campagnes en bredere targeting geven Andromeda de ruimte om budget efficiënt te verdelen. Te veel segmentatie beperkt het leerproces van het systeem.</p>
+        
+        <p><strong>Testing en scaling scheiden</strong> Nieuwe creatives concurreren slecht met bestaande winnaars. Door testcampagnes en schaalcampagnes te scheiden, krijgen nieuwe concepten voldoende data om zich te bewijzen.</p>
+
+        <h2 id="waarom-ugc-perfect">5. Waarom UGC perfect aansluit op het Andromeda algoritme</h2>
+        
+        <p>UGC content sluit naadloos aan op hoe Andromeda werkt.</p>
+        
+        <p>UGC maakt snelle productie op schaal mogelijk zonder hoge productiekosten. Elke creator brengt een andere uitstraling, invalshoek en storytelling, wat precies is wat het algoritme nodig heeft.</p>
+        
+        <p>Daarnaast voelt UGC authentiek en native aan, waardoor engagement sneller op gang komt. Dat levert sterkere eerste signalen op voor Meta, wat de leerfase verkort.</p>
+        
+        <p>UGC is ook ideaal voor continue testing. Merken kunnen wekelijks nieuwe hooks, formats en invalshoeken testen zonder dat campagnes stilvallen.</p>
+
+        <h2 id="andromeda-proof-ugc-nl">6. Andromeda proof adverteren met UGC.NL</h2>
+        
+        <p>Via UGC.NL vinden merken snel betrouwbare en vooraf gescreende UGC creators. Hierdoor kunnen zij hun creative output verhogen, meer invalshoeken testen en sneller inspelen op Meta's AI ranking.</p>
+        
+        <p>UGC.NL maakt het mogelijk om structureel verse creatives aan te leveren, precies wat nodig is om te blijven presteren onder het Andromeda algoritme.</p>
+
+        <h2 id="conclusie">Conclusie</h2>
+        
+        <p>De Meta Andromeda update maakt één ding duidelijk. Creatives zijn de nieuwe targeting.</p>
+        
+        <p>Merken die blijven groeien op Facebook en Instagram focussen niet langer op instellingen, maar op creatieve output, variatie, simpele structuren en UGC als vaste creative bron.</p>
+        
+        <p>Wil je Andromeda voor je laten werken in plaats van ertegenin? Dan is investeren in UGC en creatieve diversiteit geen optie meer, maar een vereiste.</p>
+        
+        <p>Ontdek hoe <a href="../../../boek-een-demo.html">UGC.NL je helpt om structureel Andromeda proof te adverteren</a>.</p>
+      </div>
+    </main>
+
+    <aside class="blog-post-sidebar">
+      <div class="blog-post-toc">
+        <div class="blog-post-toc-header" id="toc-toggle">
+          <h3 class="blog-post-toc-title">Post contents</h3>
+          <svg class="blog-post-toc-toggle" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 15l-6-6-6 6"/>
+          </svg>
+        </div>
+        <ul class="blog-post-toc-list">
+          <li class="blog-post-toc-item">
+            <a href="#wat-is-andromeda" class="blog-post-toc-link">
+              <span class="blog-post-toc-number">1</span>
+              <span>Wat is de Meta Andromeda update</span>
+            </a>
+          </li>
+          <li class="blog-post-toc-item">
+            <a href="#wat-verandert-andromeda" class="blog-post-toc-link">
+              <span class="blog-post-toc-number">2</span>
+              <span>Wat verandert Andromeda in Facebook en Instagram ads</span>
+            </a>
+          </li>
+          <li class="blog-post-toc-item">
+            <a href="#waarom-wisselende-resultaten" class="blog-post-toc-link">
+              <span class="blog-post-toc-number">3</span>
+              <span>Waarom adverteerders wisselende resultaten zien</span>
+            </a>
+          </li>
+          <li class="blog-post-toc-item">
+            <a href="#wat-betekent-andromeda" class="blog-post-toc-link">
+              <span class="blog-post-toc-number">4</span>
+              <span>Wat Andromeda betekent voor je advertising strategie</span>
+            </a>
+          </li>
+          <li class="blog-post-toc-item">
+            <a href="#waarom-ugc-perfect" class="blog-post-toc-link">
+              <span class="blog-post-toc-number">5</span>
+              <span>Waarom UGC perfect aansluit op het Andromeda algoritme</span>
+            </a>
+          </li>
+          <li class="blog-post-toc-item">
+            <a href="#andromeda-proof-ugc-nl" class="blog-post-toc-link">
+              <span class="blog-post-toc-number">6</span>
+              <span>Andromeda proof adverteren met UGC.NL</span>
+            </a>
+          </li>
+          <li class="blog-post-toc-item">
+            <a href="#conclusie" class="blog-post-toc-link">
+              <span class="blog-post-toc-number">7</span>
+              <span>Conclusie</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="blog-post-cta" style="margin: 0;">
+        <div class="blog-post-cta-logo">UGC.NL</div>
+        <p class="blog-post-cta-text">22,000+ brands use UGC.NL to turn UGC into high-ROAS video ads.</p>
+        <a href="../../../book-a-call.html" class="blog-post-cta-button">Learn more</a>
+      </div>
+    </aside>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Bovenste deel: 4 kolommen + branding -->
+      <div class="footer-top">
+        <nav class="footer-nav">
+        <div class="footer-column">
+            <h3 class="footer-heading">Diensten</h3>
+            <ul class="footer-links">
+              <li><a href="../../../diensten/e-commerce.html" class="footer-link">E-commerce</a></li>
+              <li><a href="../../../diensten/agencies.html" class="footer-link">Agencies</a></li>
+              <li><a href="../../../diensten/tiktok.html" class="footer-link">TikTok</a></li>
+              <li><a href="../../../diensten/instagram.html" class="footer-link">Instagram</a></li>
+              <li><a href="../../../diensten/facebook.html" class="footer-link">Facebook</a></li>
+          </ul>
+        </div>
+          
+        <div class="footer-column">
+            <h3 class="footer-heading">Ontdek</h3>
+            <ul class="footer-links">
+              <li><a href="../../../vind-creators/index.html" class="footer-link">Vind Creators</a></li>
+              <li><a href="../../../succesverhalen/index.html" class="footer-link">Succesverhalen</a></li>
+              <li><a href="https://support.ugc.nl" target="_blank" rel="noopener noreferrer" class="footer-link">Support</a></li>
+          </ul>
+        </div>
+          
+        <div class="footer-column">
+            <h3 class="footer-heading"><a href="../../../blog.html" class="footer-heading-link">Blog<svg class="footer-heading-arrow" width="8" height="8" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 11L11 1M11 1H1M11 1V11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></h3>
+            <ul class="footer-links">
+              <li><a href="../../../blog.html?category=user-generated-content" class="footer-link">User-Generated-Content</a></li>
+              <li><a href="../../../blog.html?category=ad-performance" class="footer-link">Ad Performance</a></li>
+              <li><a href="../../../blog.html?category=ugc-academy" class="footer-link">UGC Academy</a></li>
+              <li><a href="../../../blog.html?category=platform" class="footer-link">Platform</a></li>
+          </ul>
+        </div>
+          
+        <div class="footer-column">
+            <h3 class="footer-heading">Contact</h3>
+            <ul class="footer-links">
+              <li><a href="../../../boek-een-demo.html" class="footer-link">Boek een demo</a></li>
+              <li><a href="mailto:contact@ugc.nl" class="footer-link">contact@ugc.nl</a></li>
+          </ul>
+        </div>
+          
+          <!-- Branding sectie rechts -->
+          <div class="footer-branding">
+            <img src="../../../logo/FULL LOGO.png" alt="UGC.NL" class="footer-branding-logo">
+            <p class="footer-tagline">Brengt creators en bedrijven samen</p>
+            <div class="footer-branding-divider"></div>
+            <div class="footer-experts">
+              <span class="footer-experts-label">Experts in</span>
+              <div class="footer-platform-logos">
+                <img src="../../../socialmedialogos/meta1.png" alt="Meta" class="footer-platform-logo">
+                <img src="../../../socialmedialogos/tiktok1.png" alt="TikTok" class="footer-platform-logo">
+      </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+      
+      <!-- Onderste deel: bottom bar -->
+      <div class="footer-bottom">
+        <div class="footer-bottom-content">
+          <nav class="footer-socials" aria-label="Social media links">
+            <ul class="footer-socials-list">
+              <li>
+                <a href="https://www.facebook.com/profile.php?id=61554995296593" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                  <div class="footer-social-icon-wrapper">
+                    <svg class="footer-social-icon" width="11" height="20" viewBox="0 0 11 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M7 11.5H9.5L10.5 7.5H7V5.5C7 4.47 7 3.5 9 3.5H10.5V0.14C10.174 0.0970001 8.943 0 7.643 0C4.928 0 3 1.657 3 4.7V7.5H0V11.5H3V20H7V11.5Z" fill="currentColor"></path>
+                    </svg>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/ugc.nl/" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                  <div class="footer-social-icon-wrapper">
+                    <svg class="footer-social-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" fill="currentColor"/>
+                    </svg>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.tiktok.com/@ugc.nl" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                  <div class="footer-social-icon-wrapper">
+                    <svg class="footer-social-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" fill="currentColor"/>
+                    </svg>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/company/ugc-nl/?originalSubdomain=nl" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                  <div class="footer-social-icon-wrapper">
+                    <svg class="footer-social-icon" width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M4.93994 1.99999C4.93968 2.53043 4.72871 3.03903 4.35345 3.41391C3.97819 3.7888 3.46937 3.99926 2.93894 3.99899C2.40851 3.99873 1.89991 3.78776 1.52502 3.4125C1.15014 3.03724 0.939676 2.52843 0.939942 1.99799C0.940207 1.46756 1.15117 0.958958 1.52644 0.584072C1.9017 0.209187 2.41051 -0.00127205 2.94094 -0.00100683C3.47137 -0.000741613 3.97998 0.210226 4.35486 0.585487C4.72975 0.960747 4.94021 1.46956 4.93994 1.99999ZM4.99994 5.47999H0.999942V18H4.99994V5.47999ZM11.3199 5.47999H7.33994V18H11.2799V11.43C11.2799 7.76999 16.0499 7.42999 16.0499 11.43V18H19.9999V10.07C19.9999 3.89999 12.9399 4.12999 11.2799 7.15999L11.3199 5.47999Z" fill="currentColor"></path>
+                    </svg>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/@UGCNL" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                  <div class="footer-social-icon-wrapper">
+                    <svg class="footer-social-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="currentColor"/>
+                    </svg>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </nav>
+          
+          <div class="footer-bottom-right">
+            <nav class="footer-policies" aria-label="Legal links">
+              <ul class="footer-policies-list">
+                <li><a href="../../../voorwaarden.html" class="footer-policy-link">Algemene voorwaarden</a></li>
+                <li><a href="../../../privacy.html" class="footer-policy-link">Privacyverklaring</a></li>
+              </ul>
+            </nav>
+            <p class="footer-address">Keizersgracht 520H, 1017EK Amsterdam @ 2026 UGC.NL. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../../script.js"></script>
+  <script>
+    // Toggle table of contents
+    document.addEventListener('DOMContentLoaded', function() {
+      const tocToggle = document.getElementById('toc-toggle');
+      const tocContainer = document.querySelector('.blog-post-toc');
+      
+      if (tocToggle && tocContainer) {
+        tocToggle.addEventListener('click', function() {
+          tocContainer.classList.toggle('collapsed');
+        });
+      }
+    });
+  </script>
+</body>
+</html>

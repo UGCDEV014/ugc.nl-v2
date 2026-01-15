@@ -1,0 +1,1399 @@
+<!-- 
+  AANNAMES / NOTITIES:
+  - Creator profielen in hero carrousels: gebruik placeholder images (aspect ratio 9:16 voor creators)
+  - Logo's merken carrousel: placeholder zwart-wit logo's
+  - Content pieces voor verschillende secties: placeholder content gebruikt
+  - Case studies: placeholder content gebruikt
+  - Creator niches: alle 10 niches opgenomen (Tech, Food & Health, Fashion, Beauty, Pets, Fitness, Travel, Home & Interior, Recruitment, Family & Kids)
+  - Talen: Nederlands, Vlaams, Engels, Duits + "en meer" zoals gespecificeerd
+-->
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UGC.NL - Snelle, betaalbare advertentievideo's via creators</title>
+  <meta name="description" content="Verhoog je omzet met hoogwaardige UGC advertentievideo's van UGC.NL. Kom direct in contact met ervaren UGC creators.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-container">
+      <a href="/" class="header-logo-link">
+        <img src="Logo/FULL LOGO.png" alt="UGC.NL" class="header-logo">
+      </a>
+      <nav class="header-nav">
+        <a href="/services" class="header-nav-link">Services</a>
+        <a href="/vind-creators" class="header-nav-link">Vind Creators</a>
+        <a href="/blog" class="header-nav-link">Blog</a>
+        <a href="/case-studies" class="header-nav-link">Succesverhalen</a>
+      </nav>
+      <div class="header-cta">
+        <a href="/inloggen" class="header-nav-link">Inloggen</a>
+        <a href="/registreren" class="btn btn-primary">Registreer</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero-section section bg-fade-blue" style="padding-top: var(--spacing-3xl);">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-3xl); align-items: center; margin-bottom: var(--spacing-3xl);">
+        <div>
+          <div style="display: flex; align-items: center; gap: var(--spacing-sm); margin-bottom: var(--spacing-md);">
+            <span style="font-size: 14px; color: var(--color-text-secondary);">Experts in</span>
+            <img src="socialmedialogos/tiktok1.png" alt="TikTok" style="height: 20px; width: auto; opacity: 0.8;">
+            <img src="socialmedialogos/meta1.png" alt="Meta" style="height: 20px; width: auto; opacity: 0.8;">
+          </div>
+          <h1 class="mb-md" style="text-align: left;">Snelle, betaalbare advertentievideo's via creators.</h1>
+          <p class="body-large mb-lg" style="color: var(--color-text-secondary); text-align: left;">
+            Verhoog je omzet met hoogwaardige UGC advertentievideo's van UGC.NL. Kom direct in contact met ervaren UGC creators en ontvang beeldmateriaal voor effectieve social media advertenties op platforms zoals TikTok, Instagram en Facebook.
+          </p>
+          <div style="display: flex; gap: var(--spacing-md); flex-wrap: wrap;">
+            <div class="dropdown">
+              <button class="dropdown-toggle btn btn-primary">
+                Registreer gratis
+                <span>▼</span>
+              </button>
+              <div class="dropdown-menu">
+                <a href="/registreren" class="dropdown-item">Ik ben een creator</a>
+                <a href="/registreren" class="dropdown-item">Ik ben een bedrijf</a>
+              </div>
+            </div>
+            <a href="/book-a-call" class="btn btn-secondary">Boek een demo</a>
+          </div>
+          <div style="display: flex; gap: var(--spacing-lg); margin-top: var(--spacing-xl);">
+            <div>
+              <div id="creators-count" style="font-size: 32px; font-weight: bold; color: var(--color-primary);">0+</div>
+              <div style="font-size: 14px; color: var(--color-text-secondary);">Creators</div>
+            </div>
+            <div>
+              <div id="merken-count" style="font-size: 32px; font-weight: bold; color: var(--color-primary);">0+</div>
+              <div style="font-size: 14px; color: var(--color-text-secondary);">Merken</div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual" style="position: relative;">
+          <div class="phone-mockup">
+            <video src="heropic/herovid.mov" autoplay loop muted playsinline></video>
+          </div>
+          <div class="stats-badge top-left" style="max-width: 200px;">
+            <div style="font-size: 12px; color: var(--color-text-secondary); margin-bottom: 4px;">ROAS verbetering</div>
+            <div style="font-size: 24px; font-weight: bold; color: var(--color-primary);">+68%</div>
+            <div style="font-size: 12px; color: var(--color-text-secondary);">vs. traditionele ads</div>
+          </div>
+          <div class="stats-badge bottom-right" style="max-width: 220px;">
+            <div style="font-size: 12px; color: var(--color-text-secondary); margin-bottom: 4px;">Ad Performance</div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 12px;">
+              <div>
+                <div style="font-weight: bold;">ROAS 1.63</div>
+                <div style="color: #10b981; font-size: 11px;">+15% vs gemiddeld</div>
+              </div>
+              <div>
+                <div style="font-weight: bold;">CTR 1.25%</div>
+                <div style="color: #10b981; font-size: 11px;">+18% vs gemiddeld</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- MERKEN CARROUSEL -->
+      <div style="padding-top: var(--spacing-xl);">
+        <p class="body-small mb-md text-center" style="color: var(--color-text-secondary);">Vertrouwd door 2,000+ merken</p>
+        <div class="carrousel-container" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--spacing-xl); padding: var(--spacing-lg) 0;">
+          <div class="brand-logo">
+            <img src="brandlogos/ABN_AMRO_Logo_1991_print.png" alt="ABN AMRO" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+            <span class="brand-fallback" style="display: none; font-size: 14px; color: var(--color-text-secondary);">ABN AMRO</span>
+          </div>
+          <div class="brand-logo">
+            <img src="brandlogos/Colgate.png" alt="Colgate" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+            <span class="brand-fallback" style="display: none; font-size: 14px; color: var(--color-text-secondary);">Colgate</span>
+          </div>
+          <div class="brand-logo">
+            <img src="brandlogos/Dyson.png" alt="Dyson" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+            <span class="brand-fallback" style="display: none; font-size: 14px; color: var(--color-text-secondary);">Dyson</span>
+          </div>
+          <div class="brand-logo">
+            <img src="brandlogos/Kellogs.png" alt="Kellogg's" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+            <span class="brand-fallback" style="display: none; font-size: 14px; color: var(--color-text-secondary);">Kellogg's</span>
+          </div>
+          <div class="brand-logo">
+            <img src="brandlogos/L'Oréal_logo.png" alt="L'Oréal" loading="lazy" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+            <span class="brand-fallback" style="display: none; font-size: 14px; color: var(--color-text-secondary);">L'Oréal</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRUG TUSSEN MERKEN EN CREATORS -->
+  <section class="section" style="padding: var(--spacing-3xl) 0;">
+    <div class="container">
+      <div class="text-center mb-2xl">
+        <h2 class="mb-sm">Brug tussen merken en makers</h2>
+        <p class="body-large" style="color: var(--color-text-secondary); max-width: 700px; margin: 0 auto;">
+          UGC.NL koppelt bedrijven aan UGC-creators voor impactvolle advertentiecontent.
+        </p>
+      </div>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-xl);">
+        <!-- Bedrijven Blok -->
+        <div class="platform-block platform-block-light">
+          <h2 class="platform-title">Bedrijven</h2>
+          <p class="platform-subtitle">Het platform voor high-impact advertentievideo's via creators</p>
+          <p class="platform-description">
+            Vind de juiste creators, chat direct en ontvang advertentieklaar UGC dat je meteen kunt inzetten voor social ads op platforms zoals Tiktok, Instagram en Facebook.
+          </p>
+          <ul class="platform-features">
+            <li class="platform-feature-item">• <strong>Betaalbaar & transparant:</strong> Geen agency- of abonnementskosten</li>
+            <li class="platform-feature-item">• <strong>1500+ creators:</strong> Direct toegang tot gescreende creators</li>
+            <li class="platform-feature-item">• <strong>Niet goed? Geld terug:</strong> Volledige vrijheid om content te weigeren</li>
+            <li class="platform-feature-item">• <strong>Chat direct met creators:</strong> Geen tussenpersonen of agencies, maar rechtstreeks communiceren</li>
+          </ul>
+          <div class="platform-button-wrapper">
+            <a href="/registreren" class="btn btn-dark">Ontdek meer</a>
+          </div>
+          <img src="bedrijven/bedrijven.png" alt="Bedrijven" style="width: 100%; height: auto; margin-top: var(--spacing-lg); border-radius: var(--radius-md);">
+        </div>
+        
+        <!-- Creators Blok -->
+        <div class="platform-block platform-block-dark">
+          <h2 class="platform-title platform-title-dark">Creators</h2>
+          <p class="platform-subtitle platform-subtitle-dark">Verdien geld als UGC creator</p>
+          <p class="platform-description platform-description-dark">
+            Werk samen met merken die actief op zoek zijn naar UGC creators. Ontvang duidelijke briefings, maak content die past bij jouw stijl en word snel en eerlijk betaald via één overzichtelijk platform.
+          </p>
+          <ul class="platform-features platform-features-dark">
+            <li class="platform-feature-item">• <strong>Betaalde samenwerkingen:</strong> Werk met echte merken en campagnes</li>
+            <li class="platform-feature-item">• <strong>Bepaal je eigen prijzen:</strong> Jij houdt controle over je prijzen</li>
+            <li class="platform-feature-item">• <strong>Wekelijkse uitbetaling:</strong> Automatisch en betrouwbaar uitbetaald</li>
+            <li class="platform-feature-item">• <strong>Alles op één plek:</strong> Briefings, chats, opdrachten en facturen overzichtelijk geregeld</li>
+          </ul>
+          <div class="platform-button-wrapper">
+            <a href="/registreren" class="btn btn-primary">Ontdek meer</a>
+          </div>
+          <img src="Brief/creators/creators.png" alt="Creators" style="width: 100%; height: auto; margin-top: var(--spacing-lg); border-radius: var(--radius-md);">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WAAROM UGC.NL -->
+  <section class="section bg-fade-gray">
+    <div class="container">
+      <div class="text-center mb-2xl">
+        <h2 class="mb-sm">Waarom slimme merken kiezen voor UGC.NL</h2>
+        <p class="body-large" style="color: var(--color-text-secondary); max-width: 700px; margin: 0 auto;">
+          Vind creators en ontvang direct inzetbare ads.
+        </p>
+      </div>
+      <div class="grid grid-2" style="grid-template-columns: repeat(3, 1fr); gap: var(--spacing-lg);">
+        <div class="feature-card" style="text-align: left; align-items: flex-start;">
+          <div style="display: flex; justify-content: center; margin-bottom: 12px; width: 100%;">
+            <div style="width: 51.2px; height: 51.2px; border-radius: 50%; background-color: rgba(33, 131, 226, 0.15); display: flex; align-items: center; justify-content: center;">
+              <svg width="25.6" height="25.6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: var(--color-primary);">
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              </svg>
+            </div>
+          </div>
+          <div style="text-align: center; width: 100%;">
+            <h3 class="mb-xs" style="font-size: 24px; font-weight: var(--font-weight-bold); margin-bottom: 4px; text-align: center; width: 100%;">Chat direct met creators</h3>
+            <p class="mb-md" style="color: var(--color-text-secondary); font-size: 14px; margin-bottom: var(--spacing-md); text-align: center; width: 100%;">Directe toegang tot creators</p>
+          </div>
+          <p class="mb-lg" style="color: var(--color-text); font-size: 16px; line-height: 1.6; margin-bottom: var(--spacing-lg); text-align: center;">
+            Krijg direct toegang tot 1500 creators, zonder drempels of tussenpersonen.
+          </p>
+          <div style="display: flex; justify-content: center; margin-bottom: var(--spacing-lg); width: 100%;">
+            <a href="#" class="btn btn-primary" style="display: flex; align-items: center; justify-content: center; width: fit-content; text-align: center;">Lees meer</a>
+          </div>
+          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; align-items: flex-start;">
+            <li style="display: flex; align-items: flex-start; gap: var(--spacing-sm); margin-bottom: var(--spacing-sm);">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: var(--color-primary); flex-shrink: 0; margin-top: 2px;">
+                <circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.2"/>
+                <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              </svg>
+              <span style="font-size: 14px; line-height: 1.5;"><strong>Direct contact:</strong> Geen tussenpersonen of agencies</span>
+            </li>
+            <li style="display: flex; align-items: flex-start; gap: var(--spacing-sm); margin-bottom: var(--spacing-sm);">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: var(--color-primary); flex-shrink: 0; margin-top: 2px;">
+                <circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.2"/>
+                <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              </svg>
+              <span style="font-size: 14px; line-height: 1.5;"><strong>1500+ creators:</strong> Gescreend talent in elke niche</span>
+            </li>
+          </ul>
+        </div>
+        <div class="feature-card" style="text-align: left; align-items: flex-start;">
+          <div style="display: flex; justify-content: center; margin-bottom: 12px; width: 100%;">
+            <div style="width: 51.2px; height: 51.2px; border-radius: 50%; background-color: rgba(33, 131, 226, 0.15); display: flex; align-items: center; justify-content: center;">
+              <svg width="25.6" height="25.6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: var(--color-primary);">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              </svg>
+            </div>
+          </div>
+          <div style="text-align: center; width: 100%;">
+            <h3 class="mb-xs" style="font-size: 24px; font-weight: var(--font-weight-bold); margin-bottom: 4px; text-align: center; width: 100%;">Kwaliteitsgarantie</h3>
+            <p class="mb-md" style="color: var(--color-text-secondary); font-size: 14px; margin-bottom: var(--spacing-md); text-align: center; width: 100%;">Hoogwaardige content gegarandeerd</p>
+          </div>
+          <p class="mb-lg" style="color: var(--color-text); font-size: 16px; line-height: 1.6; margin-bottom: var(--spacing-lg); text-align: center;">
+            UGC.NL controleert elke creator, zodat jij kunt rekenen op hoogwaardige content.
+          </p>
+          <div style="display: flex; justify-content: center; margin-bottom: var(--spacing-lg); width: 100%;">
+            <a href="#" class="btn btn-primary" style="display: flex; align-items: center; justify-content: center; width: fit-content; text-align: center;">Lees meer</a>
+          </div>
+          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; align-items: flex-start;">
+            <li style="display: flex; align-items: flex-start; gap: var(--spacing-sm); margin-bottom: var(--spacing-sm);">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: var(--color-primary); flex-shrink: 0; margin-top: 2px;">
+                <circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.2"/>
+                <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              </svg>
+              <span style="font-size: 14px; line-height: 1.5;"><strong>Handmatig gescreend:</strong> Elke creator wordt gecontroleerd</span>
+            </li>
+            <li style="display: flex; align-items: flex-start; gap: var(--spacing-sm); margin-bottom: var(--spacing-sm);">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: var(--color-primary); flex-shrink: 0; margin-top: 2px;">
+                <circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.2"/>
+                <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              </svg>
+              <span style="font-size: 14px; line-height: 1.5;"><strong>Altijd op maat:</strong> Content die perfect bij jouw merk past</span>
+            </li>
+          </ul>
+        </div>
+        <div class="feature-card" style="text-align: left; align-items: flex-start;">
+          <div style="display: flex; justify-content: center; margin-bottom: 12px; width: 100%;">
+            <div style="width: 51.2px; height: 51.2px; border-radius: 50%; background-color: rgba(33, 131, 226, 0.15); display: flex; align-items: center; justify-content: center;">
+              <svg width="25.6" height="25.6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: var(--color-primary);">
+                <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              </svg>
+            </div>
+          </div>
+          <div style="text-align: center; width: 100%;">
+            <h3 class="mb-xs" style="font-size: 24px; font-weight: var(--font-weight-bold); margin-bottom: 4px; text-align: center; width: 100%;">Niet tevreden? Geld terug!</h3>
+            <p class="mb-md" style="color: var(--color-text-secondary); font-size: 14px; margin-bottom: var(--spacing-md); text-align: center; width: 100%;">Volledige tevredenheidsgarantie</p>
+          </div>
+          <p class="mb-lg" style="color: var(--color-text); font-size: 16px; line-height: 1.6; margin-bottom: var(--spacing-lg); text-align: center;">
+            Ben je niet tevreden met de geleverde video? Dan krijg je gewoon je geld terug.
+          </p>
+          <div style="display: flex; justify-content: center; margin-bottom: var(--spacing-lg); width: 100%;">
+            <a href="#" class="btn btn-primary" style="display: flex; align-items: center; justify-content: center; width: fit-content; text-align: center;">Lees meer</a>
+          </div>
+          <ul style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; align-items: flex-start;">
+            <li style="display: flex; align-items: flex-start; gap: var(--spacing-sm); margin-bottom: var(--spacing-sm);">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: var(--color-primary); flex-shrink: 0; margin-top: 2px;">
+                <circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.2"/>
+                <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              </svg>
+              <span style="font-size: 14px; line-height: 1.5;"><strong>Geen risico:</strong> Volledige vrijheid om content te weigeren</span>
+            </li>
+            <li style="display: flex; align-items: flex-start; gap: var(--spacing-sm); margin-bottom: var(--spacing-sm);">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: var(--color-primary); flex-shrink: 0; margin-top: 2px;">
+                <circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.2"/>
+                <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              </svg>
+              <span style="font-size: 14px; line-height: 1.5;"><strong>Snelle terugbetaling:</strong> Geld direct terug op je rekening</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      
+      <!-- ALLES OP ÉÉN PLEK SECTION -->
+      <div style="margin-top: var(--spacing-3xl); margin-bottom: var(--spacing-3xl); padding-top: var(--spacing-3xl); position: relative; max-width: 1600px; margin-left: auto; margin-right: auto; padding-left: var(--container-padding); padding-right: var(--container-padding);">
+        <div class="dashboard-card" style="background-image: url('./Brief/bgugc/ugcfade.png'); background-size: cover; background-position: center; background-repeat: no-repeat; border-radius: 24px; padding: var(--spacing-3xl); position: relative; display: flex; align-items: center; gap: var(--spacing-3xl); overflow: hidden; flex-wrap: wrap;">
+          <!-- Left content -->
+          <div style="flex: 1; min-width: 300px; display: flex; flex-direction: column; justify-content: center; gap: var(--spacing-lg); z-index: 2;">
+            <h2 class="mb-sm" style="font-size: clamp(32px, 4vw, 48px); font-weight: var(--font-weight-bold); color: var(--color-text); margin: 0; line-height: 1.2;">Alles wat je nodig hebt, op één plek</h2>
+            <p class="body-large mb-lg" style="color: var(--color-text); font-size: clamp(16px, 2vw, 20px); margin: 0; line-height: 1.6;">Van nieuwe bestellingen tot snelle uitbetalingen — regel het makkelijk via ons dashboard.</p>
+            <a href="/registreren" class="btn btn-dark" style="background-color: #000000; color: white; padding: 14px 32px; border-radius: 999px; font-size: 16px; font-weight: 600; align-self: flex-start; transition: all 0.2s ease;">Begin direct</a>
+          </div>
+          
+          <!-- Right notifications with phone -->
+          <div style="flex: 1; position: relative; z-index: 10; display: flex; justify-content: center;">
+            <!-- Chat cards: absolute positioned, matching reference code -->
+            <div style="position: absolute; top: -100px; left: 24px; z-index: 3; display: flex; flex-direction: column; gap: 12px;">
+              <!-- Notification 1 -->
+              <div style="backdrop-filter: blur(12px); background: rgba(255, 255, 255, 0.9); border-radius: var(--radius-md); padding: 12px; display: flex; align-items: center; gap: 16px; max-width: 320px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); opacity: 1;">
+                <img src="https://i.pravatar.cc/42?img=1" alt="Creator X" style="width: 42px; height: 42px; border-radius: 50%; border: 2px solid var(--color-border); object-fit: cover; flex-shrink: 0;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2242%22 height=%2242%22%3E%3Ccircle cx=%2221%22 cy=%2221%22 r=%2221%22 fill=%22%23e5e5e5%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%234a4a4a%22 font-size=%2214%22%3ECX%3C/text%3E%3C/svg%3E';">
+                <div style="font-size: 14px; line-height: 1.4; color: var(--color-text);">
+                  <span style="color: var(--color-primary); font-weight: var(--font-weight-semibold);">Creator X</span> heeft je een voorstel gestuurd!
+                </div>
+              </div>
+              
+              <!-- Notification 2 -->
+              <div style="backdrop-filter: blur(12px); background: rgba(255, 255, 255, 0.9); border-radius: var(--radius-md); padding: 12px; display: flex; align-items: center; gap: 16px; max-width: 320px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); opacity: 0.8;">
+                <img src="https://i.pravatar.cc/42?img=2" alt="Natasha" style="width: 42px; height: 42px; border-radius: 50%; border: 2px solid var(--color-border); object-fit: cover; flex-shrink: 0;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2242%22 height=%2242%22%3E%3Ccircle cx=%2221%22 cy=%2221%22 r=%2221%22 fill=%22%23e5e5e5%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%234a4a4a%22 font-size=%2214%22%3EN%3C/text%3E%3C/svg%3E';">
+                <div style="font-size: 14px; line-height: 1.4; color: var(--color-text);">
+                  🎉 Nieuwe bestelling van <span style="color: var(--color-primary); font-weight: var(--font-weight-semibold);">Natasha</span>
+                </div>
+              </div>
+              
+              <!-- Notification 3 -->
+              <div style="backdrop-filter: blur(12px); background: rgba(255, 255, 255, 0.9); border-radius: var(--radius-md); padding: 12px; display: flex; align-items: center; gap: 16px; max-width: 320px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); opacity: 0.6;">
+                <img src="https://i.pravatar.cc/42?img=3" alt="Klant X" style="width: 42px; height: 42px; border-radius: 50%; border: 2px solid var(--color-border); object-fit: cover; flex-shrink: 0;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2242%22 height=%2242%22%3E%3Ccircle cx=%2221%22 cy=%2221%22 r=%2221%22 fill=%22%23e5e5e5%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%234a4a4a%22 font-size=%2214%22%3EKX%3C/text%3E%3C/svg%3E';">
+                <div style="font-size: 14px; line-height: 1.4; color: var(--color-text);">
+                  Nieuw bericht van <span style="color: var(--color-primary); font-weight: var(--font-weight-semibold);">Klant X</span>
+                </div>
+              </div>
+              
+              <!-- Notification 4 -->
+              <div style="backdrop-filter: blur(12px); background: rgba(255, 255, 255, 0.9); border-radius: var(--radius-md); padding: 12px; display: flex; align-items: center; gap: 16px; max-width: 320px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); opacity: 0.4;">
+                <img src="https://i.pravatar.cc/42?img=4" alt="Uitbetaling" style="width: 42px; height: 42px; border-radius: 50%; border: 2px solid var(--color-border); object-fit: cover; flex-shrink: 0;" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%2242%22 height=%2242%22%3E%3Ccircle cx=%2221%22 cy=%2221%22 r=%2221%22 fill=%22%23e5e5e5%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22%234a4a4a%22 font-size=%2214%22%3E€%3C/text%3E%3C/svg%3E';">
+                <div style="font-size: 14px; line-height: 1.4; color: var(--color-text);">
+                  💶 Je uitbetaling is verwerkt!
+                </div>
+              </div>
+            </div>
+            
+            <!-- Phone: positioned like reference code (-top-20 right-0 -mb-56 md:absolute) -->
+            <div style="position: absolute; top: -180px; right: 0; margin-bottom: -224px; z-index: 1;">
+              <aside style="position: relative; display: inline-flex; justify-content: flex-end;">
+                <!-- Phone screen image: absolute inset-x-[5%] inset-y-[2%] z-0 overflow-hidden flex rounded-3xl -->
+                <div style="position: absolute; left: 5%; right: 5%; top: 2%; bottom: 2%; z-index: 0; overflow: hidden; display: flex; border-radius: 24px;">
+                  <img alt="placeholder-03" loading="lazy" width="315" height="665" decoding="async" style="width: 100%; height: 100%; object-fit: cover; color: transparent;" src="alleswatjenodighebt/03.webp" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22315%22 height=%22665%22%3E%3Crect width=%22315%22 height=%22665%22 fill=%22%232484E4%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 fill=%22white%22 font-size=%2248%22%3EDashboard%3C/text%3E%3C/svg%3E';">
+                </div>
+                <!-- Phone frame SVG: pointer-events-none z-1 -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 215 438" width="256" style="pointer-events: none; z-index: 1; position: relative;">
+                  <path d="M214.2,112.3h-0.7V46.5c0-12.4,0-18.5-1.6-23.5c-3.3-10.1-11.2-18-21.2-21.3C185.7,0,179.6,0,167.3,0H47.8  C35.5,0,29.3,0,24.4,1.6C14.3,4.9,6.4,12.8,3.1,22.9c-1.6,5-1.6,11.2-1.6,23.5v23H0.8c-0.4,0-0.8,0.3-0.8,0.8V85  c0,0.4,0.3,0.8,0.8,0.8h0.8v15.3H0.8c-0.4,0-0.8,0.3-0.8,0.8V132c0,0.4,0.3,0.8,0.8,0.8h0.8v10.2H0.8c-0.4,0-0.8,0.3-0.8,0.8v30.1  c0,0.4,0.3,0.8,0.8,0.8h0.8v217c0,12.4,0,18.5,1.6,23.5c3.3,10.1,11.2,18,21.2,21.3c5,1.6,11.1,1.6,23.4,1.6h119.5  c12.3,0,18.5,0,23.4-1.6c10.1-3.3,17.9-11.2,21.2-21.3c1.6-5,1.6-11.2,1.6-23.5V163.9h0.7c0.4,0,0.8-0.3,0.8-0.8v-50  C215,112.7,214.7,112.3,214.2,112.3z M203.9,393.3c0,10.3,0,15.4-1.5,19.5c-2.4,6.4-7.5,11.5-13.9,14c-4.1,1.5-9.2,1.5-19.4,1.5  H46.1c-10.2,0-15.4,0-19.4-1.5c-6.4-2.4-11.5-7.5-13.9-14c-1.5-4.1-1.5-9.2-1.5-19.5V44.7c0-10.3,0-15.4,1.5-19.5  c2.4-6.4,7.5-11.5,13.9-14c4.1-1.5,9.2-1.5,19.4-1.5h6.5c1.5,0,2.8,1.3,2.8,2.8v2.3l0,0l0,0.3c0,6.1,4.9,11,10.9,11h82.4  c6,0,10.9-4.9,10.9-11l0-0.3l0,0v-2.3c0-1.6,1.3-2.8,2.8-2.8h6.5c10.2,0,15.4,0,19.4,1.5c6.4,2.4,11.5,7.5,13.9,14  c1.5,4.1,1.5,9.2,1.5,19.5V393.3z" fill="#333333"></path>
+                  <path d="M5.6,23.7C4.1,28.3,4.1,34,4.1,45.4v347.1c0,11.4,0,17.1,1.5,21.7c3,9.3,10.3,16.6,19.6,19.7  c4.6,1.5,10.3,1.5,21.6,1.5h121.5c11.4,0,17,0,21.6-1.5c9.3-3,16.6-10.3,19.6-19.7c1.5-4.6,1.5-10.3,1.5-21.7V45.4  c0-11.4,0-17.1-1.5-21.7c-3-9.3-10.3-16.6-19.6-19.7c-4.6-1.5-10.3-1.5-21.6-1.5H46.8c-11.4,0-17,0-21.6,1.5  C15.9,7.1,8.6,14.4,5.6,23.7z M55.4,12.5v2.3l0,0l0,0.3c0,6.1,4.9,11,10.9,11h82.4c6,0,10.9-4.9,10.9-11l0-0.3l0,0v-2.3  c0-1.6,1.3-2.8,2.8-2.8l6.5,0c10.2,0,15.4,0,19.4,1.5c6.4,2.4,11.5,7.5,13.9,14c1.5,4.1,1.5,9.2,1.5,19.5v348.5  c0,10.3,0,15.4-1.5,19.5c-2.4,6.4-7.5,11.5-13.9,14c-4.1,1.5-9.2,1.5-19.4,1.5H46.1c-10.2,0-15.4,0-19.4-1.5  c-6.4-2.4-11.5-7.5-13.9-14c-1.5-4.1-1.5-9.2-1.5-19.5V44.7c0-10.3,0-15.4,1.5-19.5c2.4-6.4,7.5-11.5,13.9-14  c4.1-1.5,9.2-1.5,19.4-1.5l6.5,0C54.2,9.7,55.4,11,55.4,12.5z" fill="#121515"></path>
+                  <path d="M129.1,20.4c2.2,0,4.1-1.8,4.1-4.1s-1.8-4.1-4.1-4.1c-2.2,0-4.1,1.8-4.1,4.1S126.9,20.4,129.1,20.4z" fill="#262C2D"></path>
+                  <path d="M129.1,18.9c1.4,0,2.5-1.1,2.5-2.6c0-1.4-1.1-2.6-2.5-2.6c-1.4,0-2.5,1.1-2.5,2.6  C126.6,17.7,127.7,18.9,129.1,18.9z" fill="#121515"></path>
+                  <path d="M129.1,15.8c0.3,0,0.5-0.2,0.5-0.5c0-0.3-0.2-0.5-0.5-0.5c-0.3,0-0.5,0.2-0.5,0.5  C128.6,15.6,128.9,15.8,129.1,15.8z" fill="#636F73"></path>
+                  <path d="M95.1,16.3c0-0.8,0.7-1.5,1.5-1.5h21.8c0.8,0,1.5,0.7,1.5,1.5s-0.7,1.5-1.5,1.5H96.6  C95.8,17.9,95.1,17.2,95.1,16.3z" fill="#262C2D"></path>
+                </svg>
+              </aside>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- CREATOR OVERVIEW -->
+      <div style="margin-top: var(--spacing-3xl); padding-top: var(--spacing-3xl);">
+        <!-- Creators uit chips -->
+        <div class="niche-filter" style="margin-bottom: var(--spacing-lg); justify-content: center; align-items: center;">
+          <span style="font-size: 14px; color: var(--color-text-secondary); margin-right: var(--spacing-sm);">Talen:</span>
+          <button class="niche-button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" fill="currentColor"/>
+          </svg>
+          Nederland
+          </button>
+          <button class="niche-button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" fill="currentColor"/>
+          </svg>
+          België
+          </button>
+          <button class="niche-button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" fill="currentColor"/>
+          </svg>
+          Verenigd Koninkrijk
+          </button>
+          <button class="niche-button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" fill="currentColor"/>
+          </svg>
+          Duitsland
+          </button>
+        </div>
+        
+        <!-- Titel -->
+        <div class="text-center mb-xl">
+          <h2 class="mb-lg">Creator marketing begint met bewezen talent</h2>
+        </div>
+        
+        <!-- Niches chips -->
+        <div class="niche-filter" style="margin-bottom: var(--spacing-xl);">
+        <button class="niche-button active">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h6v2H8v2h8v-2h-2v-2h6zM4 6h16v10H4V6z" fill="currentColor"/>
+          </svg>
+          Tech
+        </button>
+        <button class="niche-button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.1 13.34l2.83-2.83L3.91 3.5c-1.56 1.56-1.56 4.09 0 5.66l4.19 4.18zm6.78-1.81c1.53.71 3.68.21 5.27-1.38 1.91-1.91 2.28-4.65.81-6.12-1.46-1.46-4.2-1.1-6.12.81-1.59 1.59-2.09 3.74-1.38 5.27L3.7 19.87l1.41 1.41L12 14.41l6.88 6.88 1.41-1.41L13.41 13l1.47-1.47z" fill="currentColor"/>
+          </svg>
+          Food & Health
+        </button>
+        <button class="niche-button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19.5 3.5L18 2l-1.5 1.5L15 2l-1.5 1.5L12 2l-1.5 1.5L9 2 7.5 3.5 6 2v14H3v3c0 1.66 1.34 3 3 3h12c1.66 0 3-1.34 3-3V2l-1.5 1.5zM19 19c0 .55-.45 1-1 1s-1-.45-1-1v-3H8V5h11v14z" fill="currentColor"/>
+          </svg>
+          Fashion
+        </button>
+        <button class="niche-button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.94-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" fill="currentColor"/>
+            <rect x="10" y="2" width="4" height="6" rx="1" fill="currentColor"/>
+            <rect x="9" y="8" width="6" height="8" rx="1" fill="currentColor"/>
+          </svg>
+          Beauty
+        </button>
+        <button class="niche-button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/>
+          </svg>
+          Pets
+        </button>
+        <button class="niche-button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20.57 14.86L22 13.43 20.57 12 17 15.57 8.43 7 12 3.43 10.57 2 9.14 3.43 7.71 2 5.57 4.14 4.14 3 2.71 4.43l1.43 1.43L2 7.71l1.43 1.43L2 10.57 3.43 12 7 8.43 15.57 17 12 20.57 13.43 22l1.43-1.43L16.29 22l2.14-2.14L20.57 22 22 20.57l-1.43-1.71z" fill="currentColor"/>
+          </svg>
+          Fitness
+        </button>
+        <button class="niche-button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z" fill="currentColor"/>
+          </svg>
+          Travel
+        </button>
+        <button class="niche-button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z" fill="currentColor"/>
+          </svg>
+          Home & Interior
+        </button>
+        <button class="niche-button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M20 6h-2.18c.11-.31.18-.65.18-1a2.996 2.996 0 0 0-5.5-1.65l-.5.67-.5-.68C10.96 2.54 10 2 9 2 7.34 2 6 3.34 6 5c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-5-2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM9 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm11 15H4v-2h16v2zm0-5H4V8h5.08L7 10.83 8.62 12 11 8.76l1-1.36 1 1.36L15.38 12 17 10.83 14.92 8H20v6z" fill="currentColor"/>
+          </svg>
+          Recruitment
+        </button>
+        <button class="niche-button">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zm4 18v-6h-3l-2-2v-4h-2v4h-2v-4H9v4H7l-2 2H2v6h2v-4h2l2-2h2v4h2v-4h2l2 2h2v4h2z" fill="currentColor"/>
+          </svg>
+          Family & Kids
+          </button>
+        </div>
+        
+        <!-- Grid met exact 4 kolommen -->
+        <div class="creator-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--spacing-lg); margin-bottom: var(--spacing-xl);">
+          <div class="creator-card">
+          <div style="position: relative;">
+            <video src="tech_homepage/Case Study van het merk_ Halsbandje.mp4" alt="Creator" class="creator-video" loop muted playsinline preload="metadata"></video>
+            <div class="play-overlay">▶</div>
+          </div>
+          </div>
+          <div class="creator-card">
+          <div style="position: relative;">
+            <video src="tech_homepage/Case Study van het merk_ ZENN Store.mp4" alt="Creator" class="creator-video" loop muted playsinline preload="metadata"></video>
+            <div class="play-overlay">▶</div>
+          </div>
+          </div>
+          <div class="creator-card">
+          <div style="position: relative;">
+            <video src="tech_homepage/Colgate Video (1).mp4" alt="Creator" class="creator-video" loop muted playsinline preload="metadata"></video>
+            <div class="play-overlay">▶</div>
+          </div>
+          </div>
+          <div class="creator-card">
+          <div style="position: relative;">
+            <video src="tech_homepage/UGC-creator-T.mp4" alt="Creator" class="creator-video" loop muted playsinline preload="metadata"></video>
+            <div class="play-overlay">▶</div>
+          </div>
+          </div>
+        </div>
+        <div style="text-align: center;">
+          <a href="/vind-creators" class="btn btn-primary">Bekijk alle creators - het is gratis!</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ZO WERKT UGC.NL - EXPANDING CAROUSEL -->
+  <section class="section bg-fade-blue">
+    <div class="container">
+      <div class="text-center mb-2xl">
+        <h2 class="mb-sm">Zo werkt UGC.NL</h2>
+        <p class="body-large" style="color: var(--color-text-secondary); max-width: 700px; margin: 0 auto;">
+          Vind de perfecte creators, communiceer direct en ontvang advertentieklaar UGC dat perfect aansluit bij jouw merk en doelen.
+        </p>
+      </div>
+      <!-- Switcher -->
+      <div style="display: flex; justify-content: center; margin-bottom: var(--spacing-xl);">
+        <div class="view-switcher" style="display: inline-flex; background: var(--color-white); border: 1px solid var(--color-border); border-radius: 12px; padding: 4px; gap: 4px;">
+          <button class="view-switcher-btn active" data-view="bedrijven" style="padding: 8px 24px; border: none; background: var(--color-primary); color: var(--color-white); border-radius: 8px; font-size: 14px; font-weight: var(--font-weight-semibold); cursor: pointer; transition: all 0.2s ease;">
+            Bedrijven
+          </button>
+          <button class="view-switcher-btn" data-view="creators" style="padding: 8px 24px; border: none; background: transparent; color: var(--color-text-secondary); border-radius: 8px; font-size: 14px; font-weight: var(--font-weight-semibold); cursor: pointer; transition: all 0.2s ease;">
+            Creators
+          </button>
+        </div>
+      </div>
+      <!-- Bedrijven Cards -->
+      <div class="expanding-carousel-container" id="expanding-carousel-container-bedrijven">
+        <div class="expanding-carousel-drag-handle" id="expanding-carousel-drag-handle-bedrijven"></div>
+        <div class="expanding-carousel-track" id="expanding-carousel-track-bedrijven" tabindex="0">
+          <!-- Card 1: Zoek creators -->
+          <div class="expanding-card-wrapper" data-index="0">
+            <div class="expanding-card-panel active expanding-card-panel-bedrijven">
+              <div class="expanding-card-header">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </svg>
+                <h3>Zoek creators</h3>
+              </div>
+              <p class="expanding-card-subtext">Blader door ons platform met 1500+ gescreende creators en gebruik filters om de perfecte match te vinden voor jouw merk.</p>
+              <div class="expanding-card-media-container">
+                <img src="zowerkthet/1.png" alt="Zoek creators" class="expanding-card-image" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Stuur briefing -->
+          <div class="expanding-card-wrapper" data-index="1">
+            <div class="expanding-card-panel expanding-card-panel-bedrijven">
+              <div class="expanding-card-header">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                  <path d="M14 2v6h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </svg>
+                <h3>Stuur briefing</h3>
+              </div>
+              <p class="expanding-card-subtext">Deel je projectdetails, doelen en verwachtingen met de creator via ons platform.</p>
+            </div>
+          </div>
+
+          <!-- Card 3: Ontvang UGC -->
+          <div class="expanding-card-wrapper" data-index="2">
+            <div class="expanding-card-panel expanding-card-panel-bedrijven">
+              <div class="expanding-card-header">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z" fill="currentColor"/>
+                </svg>
+                <h3>Ontvang UGC</h3>
+              </div>
+              <p class="expanding-card-subtext">Krijg advertentieklaar UGC binnen 3 dagen, direct inzetbaar voor je social media campagnes.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Creators Cards -->
+      <div class="expanding-carousel-container" id="expanding-carousel-container-creators" style="display: none;">
+        <div class="expanding-carousel-drag-handle" id="expanding-carousel-drag-handle-creators"></div>
+        <div class="expanding-carousel-track" id="expanding-carousel-track-creators" tabindex="0">
+          <!-- Card 1: Kies je creator -->
+          <div class="expanding-card-wrapper" data-index="0">
+            <div class="expanding-card-panel active expanding-card-panel-creator">
+              <div class="expanding-card-header">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z" fill="currentColor"/>
+                </svg>
+                <h3>Kies je creator</h3>
+              </div>
+              <p class="expanding-card-subtext">Ga naar de 'Vind Creators' pagina en zoek door middel van de filters de perfecte creator die past bij jouw brand.</p>
+              <div class="expanding-card-media-container">
+                <img src="zowerkthet/1.png" alt="Kies je creator" class="expanding-card-image" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Chat & Brief -->
+          <div class="expanding-card-wrapper" data-index="1">
+            <div class="expanding-card-panel expanding-card-panel-creator">
+              <div class="expanding-card-header">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z" fill="currentColor"/>
+                </svg>
+                <h3>Chat & Brief</h3>
+              </div>
+              <p class="expanding-card-subtext">De juiste creator gevonden? Start gemakkelijk een gesprek en bespreek het project.</p>
+            </div>
+          </div>
+
+          <!-- Card 3: Ontvang Content -->
+          <div class="expanding-card-wrapper" data-index="2">
+            <div class="expanding-card-panel expanding-card-panel-creator">
+              <div class="expanding-card-header">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z" fill="currentColor"/>
+                </svg>
+                <h3>Ontvang Content</h3>
+              </div>
+              <p class="expanding-card-subtext">De UGC-creator gaat direct voor je aan de slag en heeft maximaal 3 dagen om de video(s) op te leveren.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UGC ADVERTENTIEVIDEO'S DIE BEDRIJVEN LATEN GROEIEN -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center mb-2xl">
+        <h2 class="mb-sm">UGC advertentievideo's die bedrijven laten groeien</h2>
+        <p class="body-large" style="color: var(--color-text-secondary); max-width: 700px; margin: 0 auto;">
+          Werk samen met ervaren UGC creators en ontvang snel advertentieklaar beeldmateriaal voor social media advertenties op TikTok, Instagram en Facebook.
+        </p>
+      </div>
+      <div class="platform-block-wrapper">
+        <!-- Voor bedrijven Blok -->
+        <div class="platform-block platform-block-light">
+          <h2 class="platform-title">Voor bedrijven</h2>
+          <p class="platform-subtitle">eCom, digitale producten, B2B</p>
+          <p class="platform-description">
+            Houd verse creator ads elke week gaande en zet budget achter wat daadwerkelijk converteert:
+          </p>
+          <ul class="platform-features">
+            <li class="platform-feature-item">• <strong>Bewezen briefings:</strong> Data-onderbouwde invalshoeken gebaseerd op echte winnaars</li>
+            <li class="platform-feature-item">• <strong>Creator matching:</strong> Performance-gerankt talent voor jouw niche</li>
+            <li class="platform-feature-item">• <strong>Test om te schalen:</strong> Start op creator profielen, verplaats naar betaalde ads</li>
+            <li class="platform-feature-item">• <strong>Actiegerichte inzichten:</strong> Hook Rate, CTR, ROAS met volgende stappen</li>
+          </ul>
+          <div class="platform-button-wrapper">
+            <a href="/services/e-commerce" class="btn btn-dark">Lees meer</a>
+          </div>
+        </div>
+        
+        <!-- Voor agencies Blok -->
+        <div class="platform-block platform-block-dark">
+          <h2 class="platform-title platform-title-dark">Voor agencies</h2>
+          <p class="platform-subtitle platform-subtitle-dark">Paid social, performance, marketing</p>
+          <p class="platform-description platform-description-dark">
+            Schaal ad productie, behaal klantdoelen en stroomlijn creatief beheer:
+          </p>
+          <ul class="platform-features platform-features-dark">
+            <li class="platform-feature-item">• <strong>Herbruikbare invalshoeken:</strong> Standaard formaten die je snel kunt aanpassen</li>
+            <li class="platform-feature-item">• <strong>Grote creator selectie:</strong> Gescreend talent per categorie en stijl</li>
+            <li class="platform-feature-item">• <strong>Schone workflow:</strong> Volg voortgang voor meerdere klanten op één plek</li>
+            <li class="platform-feature-item">• <strong>Performance signalen:</strong> Belangrijke metrics voor snelle beslissingen</li>
+          </ul>
+          <div class="platform-button-wrapper">
+            <a href="/services/agencies" class="btn btn-primary">Bekijk het aanbod</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VERGELIJKING CARROUSEL -->
+  <!-- COMPARISON TABLE -->
+  <section class="section bg-fade-blue-strong">
+    <div class="container">
+      <div style="max-width: 1200px; margin: 0 auto;">
+        <div class="text-center mb-xl">
+          <h2 class="mb-sm">De nieuwe standaard voor creator marketing</h2>
+          <p class="body-large" style="color: var(--color-text-secondary);">Zie waarom UGC.NL de slimmere keuze is voor hoogwaardige video's.</p>
+        </div>
+        
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table-new">
+            <thead>
+              <tr>
+                <th></th>
+                <th class="comparison-featured-header">
+                  <img src="symbollogo/symbollogo.png" alt="UGC.NL" style="height: 48px; width: auto; display: block; margin: 0 auto;">
+                </th>
+                <th>
+                  <div style="font-size: 18px; font-weight: var(--font-weight-semibold);">Andere platforms</div>
+                </th>
+                <th>
+                  <div style="font-size: 18px; font-weight: var(--font-weight-semibold);">Agencies</div>
+                </th>
+                <th>
+                  <div style="font-size: 18px; font-weight: var(--font-weight-semibold);">Freelancers</div>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="comparison-feature-cell">
+            <div class="comparison-feature">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: var(--color-text-secondary); flex-shrink: 0;">
+                      <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
+                      <text x="12" y="16" text-anchor="middle" font-size="12" font-weight="bold" fill="currentColor">i</text>
+                    </svg>
+                    <span>Budgetvriendelijk</span>
+            </div>
+                </td>
+                <td class="comparison-featured-cell">
+                  <div class="comparison-check">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="12" cy="12" r="12" fill="var(--color-primary)"/>
+                      <path d="M9 12l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    </svg>
+                  </div>
+                </td>
+                <td class="comparison-cell">
+            <div class="comparison-cross">✗</div>
+                </td>
+                <td class="comparison-cell">
+            <div class="comparison-cross">✗</div>
+                </td>
+                <td class="comparison-cell">
+                  <div class="comparison-cross">✗</div>
+                </td>
+              </tr>
+              <tr>
+                <td class="comparison-feature-cell">
+            <div class="comparison-feature">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: var(--color-text-secondary); flex-shrink: 0;">
+                      <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
+                      <text x="12" y="16" text-anchor="middle" font-size="12" font-weight="bold" fill="currentColor">i</text>
+                    </svg>
+                    <span>Kosteloos annuleren</span>
+            </div>
+                </td>
+                <td class="comparison-featured-cell">
+                  <div class="comparison-check">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="12" cy="12" r="12" fill="var(--color-primary)"/>
+                      <path d="M9 12l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    </svg>
+                  </div>
+                </td>
+                <td class="comparison-cell">
+            <div class="comparison-cross">✗</div>
+                </td>
+                <td class="comparison-cell">
+            <div class="comparison-cross">✗</div>
+                </td>
+                <td class="comparison-cell">
+                  <div class="comparison-cross">✗</div>
+                </td>
+              </tr>
+              <tr>
+                <td class="comparison-feature-cell">
+            <div class="comparison-feature">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: var(--color-text-secondary); flex-shrink: 0;">
+                      <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
+                      <text x="12" y="16" text-anchor="middle" font-size="12" font-weight="bold" fill="currentColor">i</text>
+                    </svg>
+                    <span>No cure, no pay</span>
+            </div>
+                </td>
+                <td class="comparison-featured-cell">
+                  <div class="comparison-check">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="12" cy="12" r="12" fill="var(--color-primary)"/>
+                      <path d="M9 12l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    </svg>
+                  </div>
+                </td>
+                <td class="comparison-cell">
+            <div style="color: var(--color-text-secondary);">Onbetrouwbaar</div>
+                </td>
+                <td class="comparison-cell">
+            <div class="comparison-cross">✗</div>
+                </td>
+                <td class="comparison-cell">
+                  <div class="comparison-cross">✗</div>
+                </td>
+              </tr>
+              <tr>
+                <td class="comparison-feature-cell">
+            <div class="comparison-feature">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: var(--color-text-secondary); flex-shrink: 0;">
+                      <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
+                      <text x="12" y="16" text-anchor="middle" font-size="12" font-weight="bold" fill="currentColor">i</text>
+                    </svg>
+              <span>Advertentieklaar geleverd</span>
+            </div>
+                </td>
+                <td class="comparison-featured-cell">
+                  <div class="comparison-check">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="12" cy="12" r="12" fill="var(--color-primary)"/>
+                      <path d="M9 12l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    </svg>
+                  </div>
+                </td>
+                <td class="comparison-cell">
+            <div class="comparison-cross">✗</div>
+                </td>
+                <td class="comparison-cell">
+            <div class="comparison-cross">✗</div>
+                </td>
+                <td class="comparison-cell">
+            <div class="comparison-cross">✗</div>
+                </td>
+              </tr>
+              <tr>
+                <td class="comparison-feature-cell">
+            <div class="comparison-feature">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: var(--color-text-secondary); flex-shrink: 0;">
+                      <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
+                      <text x="12" y="16" text-anchor="middle" font-size="12" font-weight="bold" fill="currentColor">i</text>
+                    </svg>
+                    <span>Grote creatorpool</span>
+            </div>
+                </td>
+                <td class="comparison-featured-cell">
+                  <div class="comparison-check">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="12" cy="12" r="12" fill="var(--color-primary)"/>
+                      <path d="M9 12l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    </svg>
+                  </div>
+                </td>
+                <td class="comparison-cell">
+                  <div style="color: var(--color-text-secondary);">Onbetrouwbaar</div>
+                </td>
+                <td class="comparison-cell">
+            <div class="comparison-cross">✗</div>
+                </td>
+                <td class="comparison-cell">
+            <div class="comparison-cross">✗</div>
+                </td>
+              </tr>
+              <tr>
+                <td class="comparison-feature-cell">
+            <div class="comparison-feature">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: var(--color-text-secondary); flex-shrink: 0;">
+                      <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
+                      <text x="12" y="16" text-anchor="middle" font-size="12" font-weight="bold" fill="currentColor">i</text>
+                    </svg>
+                    <span>Open marketplace</span>
+            </div>
+                </td>
+                <td class="comparison-featured-cell">
+                  <div class="comparison-check">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="12" cy="12" r="12" fill="var(--color-primary)"/>
+                      <path d="M9 12l2 2 4-4" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    </svg>
+                  </div>
+                </td>
+                <td class="comparison-cell">
+            <div class="comparison-cross">✗</div>
+                </td>
+                <td class="comparison-cell">
+            <div class="comparison-cross">✗</div>
+                </td>
+                <td class="comparison-cell">
+            <div class="comparison-cross">✗</div>
+                </td>
+              </tr>
+              <tr>
+                <td class="comparison-feature-cell"></td>
+                <td class="comparison-featured-cell comparison-button-cell">
+                  <a href="/registreren" class="btn btn-primary" style="background: var(--color-primary); color: var(--color-white); border: none; padding: 12px 24px; border-radius: 999px; font-weight: var(--font-weight-semibold); display: inline-block; text-decoration: none;">Probeer het nu!</a>
+                </td>
+                <td class="comparison-cell"></td>
+                <td class="comparison-cell"></td>
+                <td class="comparison-cell"></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MERKSUCCES CARROUSEL -->
+  <section class="section" style="background-color: var(--color-light-gray);">
+    <div class="container">
+      <div class="text-center mb-xl">
+        <h2 class="mb-sm">Merksucces, aangedreven door UGC.NL</h2>
+        <p class="body-large" style="color: var(--color-text-secondary);">Zie hoe merken UGC inzetten voor hogere ROAS en meer conversies.</p>
+      </div>
+      
+      <!-- Brand Tabs -->
+      <div class="case-study-tabs-container" style="display: flex; justify-content: center; gap: var(--spacing-sm); margin-bottom: var(--spacing-xl); flex-wrap: wrap; overflow-x: auto; -webkit-overflow-scrolling: touch;">
+        <button class="case-study-tab active" data-case-index="0" style="padding: 12px 24px; border: none; background: transparent; color: var(--color-text-secondary); font-size: 16px; font-weight: var(--font-weight-semibold); cursor: pointer; transition: all 0.2s; border-bottom: 2px solid transparent; white-space: nowrap;">Intelligence Media</button>
+        <button class="case-study-tab" data-case-index="1" style="padding: 12px 24px; border: none; background: transparent; color: var(--color-text-secondary); font-size: 16px; font-weight: var(--font-weight-semibold); cursor: pointer; transition: all 0.2s; border-bottom: 2px solid transparent; white-space: nowrap;">Brickster</button>
+        <button class="case-study-tab" data-case-index="2" style="padding: 12px 24px; border: none; background: transparent; color: var(--color-text-secondary); font-size: 16px; font-weight: var(--font-weight-semibold); cursor: pointer; transition: all 0.2s; border-bottom: 2px solid transparent; white-space: nowrap;">Adore Me</button>
+        <button class="case-study-tab" data-case-index="3" style="padding: 12px 24px; border: none; background: transparent; color: var(--color-text-secondary); font-size: 16px; font-weight: var(--font-weight-semibold); cursor: pointer; transition: all 0.2s; border-bottom: 2px solid transparent; white-space: nowrap;">Pineapple Products</button>
+          </div>
+      
+      <!-- Carousel Container -->
+      <div class="case-study-carousel-wrapper" style="position: relative; max-width: 1400px; margin: 0 auto;">
+        <!-- Navigation Arrows -->
+        <button class="case-study-nav-btn case-study-nav-prev" style="position: absolute; left: -60px; top: 50%; transform: translateY(-50%); width: 48px; height: 48px; border-radius: 50%; background: var(--color-white); border: 1px solid var(--color-border); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); transition: all 0.2s;" disabled>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M15 18l-6-6 6-6"/>
+          </svg>
+        </button>
+        <button class="case-study-nav-btn case-study-nav-next" style="position: absolute; right: -60px; top: 50%; transform: translateY(-50%); width: 48px; height: 48px; border-radius: 50%; background: var(--color-white); border: 1px solid var(--color-border); display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); transition: all 0.2s;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
+        </button>
+        
+        <!-- Case Study Card -->
+        <div class="case-study-card" style="background: var(--color-white); border-radius: 32px; overflow: hidden; box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08); display: grid; grid-template-columns: 1fr 1fr; gap: 0; min-height: 200px;">
+          <!-- Left: Video/Image Section -->
+          <div class="case-study-media" style="position: relative; background: #000; display: flex; align-items: center; justify-content: center; border-radius: 32px 0 0 32px;">
+            <video class="case-study-video" loop muted playsinline preload="metadata" style="width: 100%; height: 100%; object-fit: cover; display: none;"></video>
+            <img class="case-study-image" style="width: 100%; height: 100%; object-fit: cover; display: none;" alt="Case Study">
+            <div class="case-study-play-overlay" style="position: absolute; top: 20px; left: 20px; width: 48px; height: 48px; background: var(--color-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 2; display: none;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+        </div>
+            <div class="case-study-caption" style="position: absolute; bottom: 20px; left: 20px; right: 20px; color: white; font-size: 14px; z-index: 2; display: none;"></div>
+          </div>
+          
+          <!-- Right: Content Section -->
+          <div class="case-study-content" style="padding: var(--spacing-3xl); display: flex; flex-direction: column; justify-content: space-between;">
+            <!-- Testimonial -->
+            <div class="case-study-testimonial" style="margin-bottom: var(--spacing-xl);">
+              <p class="case-study-quote" style="font-size: 18px; line-height: 1.6; color: var(--color-text); margin-bottom: var(--spacing-md); max-width: 90%;"></p>
+              <p class="case-study-author" style="font-size: 14px; color: var(--color-text-secondary);"></p>
+        </div>
+            
+            <!-- Metrics -->
+            <div class="case-study-metrics" style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-xl); margin-bottom: var(--spacing-xl);"></div>
+            
+            <!-- CTA Link -->
+            <div class="case-study-cta">
+              <a class="case-study-link" href="#" style="color: var(--color-primary); font-size: 16px; font-weight: var(--font-weight-semibold); text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
+                Lees volledige case study
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </a>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+  
+  <script>
+    // Case Study Data
+    const caseStudies = [
+      {
+        name: "Intelligence Media",
+        image: "https://picsum.photos/400/600?cs1",
+        video: "tech_homepage/Case Study van het merk_ Halsbandje.mp4",
+        hasVideo: true,
+        caption: "and made of genuine leather",
+        quote: "We immediately published the first ad variations with UGC.NL's recommended structure, we didn't edit anything, and it already worked better than our previous ads. Our ROAS was better and acquisition costs went down. We were able to scale larger because of that.",
+        author: "Jorens",
+        role: "CEO",
+        metrics: [
+          { value: "+120%", label: "increase in total sales in just two months" },
+          { value: "+200%", label: "boost in net profit" }
+        ],
+        link: "/case-studies/intelligence-media"
+      },
+      {
+        name: "Brickster",
+        image: "https://picsum.photos/400/600?cs2",
+        video: "tech_homepage/Case Study van het merk_ ZENN Store.mp4",
+        hasVideo: true,
+        caption: "Premium quality products",
+        quote: "UGC.NL helped us scale our advertising efforts significantly. The creator content performed exceptionally well across all platforms.",
+        author: "Sarah",
+        role: "Marketing Director",
+        metrics: [
+          { value: "+85%", label: "increase in conversion rate" },
+          { value: "+150%", label: "growth in monthly revenue" }
+        ],
+        link: "/case-studies/brickster"
+      },
+      {
+        name: "Adore Me",
+        image: "https://picsum.photos/400/600?cs3",
+        video: "tech_homepage/Colgate Video (1).mp4",
+        hasVideo: true,
+        caption: "Luxury fashion collection",
+        quote: "The quality of creators and the speed of delivery exceeded our expectations. We saw immediate results in our campaign performance.",
+        author: "Michael",
+        role: "Head of Growth",
+        metrics: [
+          { value: "+95%", label: "improvement in ROAS" },
+          { value: "+180%", label: "increase in ad engagement" }
+        ],
+        link: "/case-studies/adore-me"
+      },
+      {
+        name: "Pineapple Products",
+        image: "https://picsum.photos/400/600?cs4",
+        video: "tech_homepage/UGC-creator-T.mp4",
+        hasVideo: true,
+        caption: "Sustainable lifestyle products",
+        quote: "Working with UGC.NL transformed our marketing strategy. The authentic creator content resonated perfectly with our target audience.",
+        author: "Emma",
+        role: "Brand Manager",
+        metrics: [
+          { value: "+110%", label: "boost in brand awareness" },
+          { value: "+165%", label: "increase in customer acquisition" }
+        ],
+        link: "/case-studies/pineapple-products"
+      }
+    ];
+    
+    // Initialize Case Study Carousel
+    let currentCaseIndex = 0;
+    
+    function updateCaseStudy(index) {
+      const caseData = caseStudies[index];
+      const card = document.querySelector('.case-study-card');
+      
+      // Update media
+      const videoEl = card.querySelector('.case-study-video');
+      const imageEl = card.querySelector('.case-study-image');
+      const playOverlay = card.querySelector('.case-study-play-overlay');
+      const caption = card.querySelector('.case-study-caption');
+      
+      if (caseData.hasVideo) {
+        videoEl.src = caseData.video;
+        videoEl.style.display = 'block';
+        imageEl.style.display = 'none';
+        playOverlay.style.display = 'flex';
+        caption.textContent = caseData.caption;
+        caption.style.display = 'block';
+      } else {
+        imageEl.src = caseData.image;
+        imageEl.style.display = 'block';
+        videoEl.style.display = 'none';
+        playOverlay.style.display = 'none';
+        caption.style.display = 'none';
+      }
+      
+      // Update content
+      card.querySelector('.case-study-quote').textContent = `"${caseData.quote}"`;
+      card.querySelector('.case-study-author').textContent = `- ${caseData.author}, ${caseData.role}`;
+      
+      // Update metrics
+      const metricsContainer = card.querySelector('.case-study-metrics');
+      metricsContainer.innerHTML = caseData.metrics.map(metric => `
+        <div>
+          <div style="font-size: 48px; font-weight: var(--font-weight-bold); color: var(--color-primary); line-height: 1; margin-bottom: var(--spacing-sm);">${metric.value}</div>
+          <div style="font-size: 14px; color: var(--color-text); line-height: 1.4;">${metric.label}</div>
+        </div>
+      `).join('');
+      
+      // Update link
+      card.querySelector('.case-study-link').href = caseData.link;
+      
+      // Update tabs
+      document.querySelectorAll('.case-study-tab').forEach((tab, i) => {
+        if (i === index) {
+          tab.classList.add('active');
+          tab.style.color = 'var(--color-text)';
+          tab.style.borderBottomColor = 'var(--color-primary)';
+        } else {
+          tab.classList.remove('active');
+          tab.style.color = 'var(--color-text-secondary)';
+          tab.style.borderBottomColor = 'transparent';
+        }
+      });
+      
+      // Update navigation buttons
+      const prevBtn = document.querySelector('.case-study-nav-prev');
+      const nextBtn = document.querySelector('.case-study-nav-next');
+      prevBtn.disabled = index === 0;
+      nextBtn.disabled = index === caseStudies.length - 1;
+      
+      if (prevBtn.disabled) {
+        prevBtn.style.opacity = '0.5';
+        prevBtn.style.cursor = 'not-allowed';
+      } else {
+        prevBtn.style.opacity = '1';
+        prevBtn.style.cursor = 'pointer';
+      }
+      
+      if (nextBtn.disabled) {
+        nextBtn.style.opacity = '0.5';
+        nextBtn.style.cursor = 'not-allowed';
+      } else {
+        nextBtn.style.opacity = '1';
+        nextBtn.style.cursor = 'pointer';
+      }
+    }
+    
+    // Tab click handlers
+    document.querySelectorAll('.case-study-tab').forEach((tab, index) => {
+      tab.addEventListener('click', () => {
+        currentCaseIndex = index;
+        updateCaseStudy(currentCaseIndex);
+      });
+    });
+    
+    // Navigation button handlers
+    document.querySelector('.case-study-nav-prev').addEventListener('click', () => {
+      if (currentCaseIndex > 0) {
+        currentCaseIndex--;
+        updateCaseStudy(currentCaseIndex);
+      }
+    });
+    
+    document.querySelector('.case-study-nav-next').addEventListener('click', () => {
+      if (currentCaseIndex < caseStudies.length - 1) {
+        currentCaseIndex++;
+        updateCaseStudy(currentCaseIndex);
+      }
+    });
+    
+    // Video play handler
+    document.querySelector('.case-study-play-overlay').addEventListener('click', function() {
+      const video = document.querySelector('.case-study-video');
+      if (video.paused) {
+        video.play();
+        this.style.display = 'none';
+      }
+    });
+    
+    // Initialize with first case
+    updateCaseStudy(0);
+  </script>
+
+  <!-- FLEXIBELE PRIJSOPTIEs -->
+  <section class="section">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-3xl); align-items: center;">
+        <div>
+          <h2 class="mb-xl">Flexibele prijsopties voor elke behoefte</h2>
+          <div style="display: flex; flex-direction: column; gap: var(--spacing-xl);">
+            <div style="display: flex; gap: var(--spacing-md); align-items: flex-start;">
+              <div style="width: 48px; height: 48px; background: var(--color-light-blue); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-size: 24px; color: var(--color-primary); flex-shrink: 0; margin-top: 2px;">✓</div>
+              <div style="flex: 1;">
+                <h4 class="mb-xs" style="font-size: 18px; font-weight: var(--font-weight-semibold); margin-bottom: 4px;">Pay-per-video</h4>
+                <p style="color: var(--color-text-secondary); font-size: 14px; line-height: 1.5; margin: 0;">Betaal alleen voor de video's die je bestelt.</p>
+              </div>
+            </div>
+            <div style="display: flex; gap: var(--spacing-md); align-items: flex-start;">
+              <div style="width: 48px; height: 48px; background: var(--color-light-blue); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-size: 24px; color: var(--color-primary); flex-shrink: 0; margin-top: 2px;">✓</div>
+              <div style="flex: 1;">
+                <h4 class="mb-xs" style="font-size: 18px; font-weight: var(--font-weight-semibold); margin-bottom: 4px;">Geen abonnement</h4>
+                <p style="color: var(--color-text-secondary); font-size: 14px; line-height: 1.5; margin: 0;">Geen maandelijkse kosten of verborgen fees.</p>
+              </div>
+            </div>
+            <div style="display: flex; gap: var(--spacing-md); align-items: flex-start;">
+              <div style="width: 48px; height: 48px; background: var(--color-light-blue); border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-size: 24px; color: var(--color-primary); flex-shrink: 0; margin-top: 2px;">✓</div>
+              <div style="flex: 1;">
+                <h4 class="mb-xs" style="font-size: 18px; font-weight: var(--font-weight-semibold); margin-bottom: 4px;">Transparante prijzen</h4>
+                <p style="color: var(--color-text-secondary); font-size: 14px; line-height: 1.5; margin: 0;">Zie direct wat je betaalt, zonder verrassingen.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card" style="padding: var(--spacing-xl); border-radius: 32px;">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: var(--spacing-md); padding-bottom: var(--spacing-md); border-bottom: 1px solid var(--color-border);">
+            <div>
+              <h3 class="mb-xs" style="font-size: 24px; font-weight: var(--font-weight-bold);">Basis video</h3>
+              <p style="color: var(--color-text-secondary); font-size: 14px; margin: 0;">Vanaf-prijs, per video</p>
+            </div>
+            <div style="text-align: right;">
+              <div style="font-size: 36px; font-weight: var(--font-weight-bold); line-height: 1;">€59</div>
+              <p style="color: var(--color-text-secondary); font-size: 14px; margin: 0;">excl. BTW</p>
+            </div>
+          </div>
+          
+          <div style="margin-bottom: var(--spacing-md); padding-bottom: var(--spacing-md); border-bottom: 1px solid var(--color-border);">
+            <h4 class="mb-sm" style="font-weight: var(--font-weight-semibold);">Mogelijkheden</h4>
+            <p style="color: var(--color-text-secondary); font-size: 14px; margin-bottom: var(--spacing-md);">Creators bieden de volgende opties aan:</p>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-sm);">
+              <div style="display: flex; align-items: center; gap: var(--spacing-xs);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #10b981; flex-shrink: 0;">
+                  <circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.2"/>
+                  <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </svg>
+                <span style="font-size: 14px;">Multi-platform content</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: var(--spacing-xs);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #10b981; flex-shrink: 0;">
+                  <circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.2"/>
+                  <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </svg>
+                <span style="font-size: 14px;">Script & Briefing</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: var(--spacing-xs);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #10b981; flex-shrink: 0;">
+                  <circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.2"/>
+                  <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </svg>
+                <span style="font-size: 14px;">Rauwe content</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: var(--spacing-xs);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #10b981; flex-shrink: 0;">
+                  <circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.2"/>
+                  <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </svg>
+                <span style="font-size: 14px;">Revisies</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: var(--spacing-xs);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #10b981; flex-shrink: 0;">
+                  <circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.2"/>
+                  <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </svg>
+                <span style="font-size: 14px;">Voice-overs</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: var(--spacing-xs);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #10b981; flex-shrink: 0;">
+                  <circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.2"/>
+                  <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </svg>
+                <span style="font-size: 14px;">Ondertiteling</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: var(--spacing-xs);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #10b981; flex-shrink: 0;">
+                  <circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.2"/>
+                  <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </svg>
+                <span style="font-size: 14px;">Editing</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: var(--spacing-xs);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #10b981; flex-shrink: 0;">
+                  <circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.2"/>
+                  <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </svg>
+                <span style="font-size: 14px;">Verschillende talen</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: var(--spacing-xs);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #10b981; flex-shrink: 0;">
+                  <circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.2"/>
+                  <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </svg>
+                <span style="font-size: 14px;">Foto's</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: var(--spacing-xs);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #10b981; flex-shrink: 0;">
+                  <circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.2"/>
+                  <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </svg>
+                <span style="font-size: 14px;">Muziek</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: var(--spacing-xs);">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="color: #10b981; flex-shrink: 0;">
+                  <circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.2"/>
+                  <path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </svg>
+                <span style="font-size: 14px;">En nog veel meer!</span>
+              </div>
+            </div>
+          </div>
+          
+          <div style="text-align: center;">
+            <a href="/vind-creators" class="btn btn-primary" style="width: 100%;">Ontdek nieuwe creators</a>
+          </div>
+        </div>
+      </div>
+      <!-- DEMO BOOKING BLOCK -->
+      <div style="margin-top: var(--spacing-3xl); background-image: url('./Brief/bgugc/ugcfade.png'); background-size: cover; background-position: center; background-repeat: no-repeat; border-radius: 32px; padding: var(--spacing-3xl);">
+        <div style="display: grid; grid-template-columns: 1.8fr 1fr; gap: var(--spacing-3xl); align-items: start; max-width: 1400px; margin: 0 auto;">
+          <!-- Left: Meeting Image -->
+          <div style="display: flex; align-items: flex-end; height: 100%;">
+            <img src="bedrijven/meeting/meeting.png" alt="Demo" style="width: 100%; height: 100%; object-fit: cover; border-radius: 24px; display: block;">
+          </div>
+          
+          <!-- Right: Text and CTA -->
+          <div style="display: flex; flex-direction: column; height: 100%; justify-content: center;">
+            <h2 class="mb-md" style="font-size: clamp(32px, 4vw, 48px); font-weight: var(--font-weight-bold); line-height: 1.2; text-align: left;">Benieuwd naar UGC.NL? Boek snel een demo.</h2>
+            <p style="font-size: 18px; line-height: 1.6; color: var(--color-text-secondary); text-align: left; max-width: 500px; margin-bottom: var(--spacing-md);">
+              Hoi, ik ben Marko! Plan een korte demo en ontdek hoe UGC.NL je helpt om snel video briefings te maken en de juiste creators te vinden. Kies een moment dat jou uitkomt.
+            </p>
+            <a href="/book-a-call" class="btn btn-primary" style="background-color: #000000; color: white; padding: 16px 32px; font-size: 16px; font-weight: 600; align-self: flex-start;">Boek een gesprek</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container">
+      <div class="faq-container">
+        <div class="text-center mb-xl">
+          <h2 class="mb-sm">Veelgestelde vragen</h2>
+        </div>
+        <div class="faq-tabs">
+          <button class="faq-tab active" data-target="bedrijven">Voor bedrijven</button>
+          <button class="faq-tab" data-target="creators">Voor creators</button>
+        </div>
+        <div class="faq-tab-panel active" data-panel="bedrijven">
+          <div class="faq-item">
+            <button class="faq-question">
+              Wat is UGC en waarom is het belangrijk?
+              <span class="faq-icon">▼</span>
+            </button>
+            <div class="faq-answer">
+              <p>UGC (User Generated Content) zijn authentieke video's gemaakt door creators die je product of dienst gebruiken. Deze content converteert vaak beter dan traditionele advertenties omdat het authentiek en betrouwbaar is.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Hoe lang duurt het voordat ik mijn video ontvang?
+              <span class="faq-icon">▼</span>
+            </button>
+            <div class="faq-answer">
+              <p>Meestal ontvang je je advertentieklaar UGC binnen 24-48 uur na goedkeuring van de briefing.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Wat als ik niet tevreden ben met de content?
+              <span class="faq-icon">▼</span>
+            </button>
+            <div class="faq-answer">
+              <p>Niet tevreden? Dan ontvang je je geld terug. We bieden volledige vrijheid om content te weigeren, ook na levering.</p>
+            </div>
+          </div>
+        </div>
+        <div class="faq-tab-panel" data-panel="creators">
+          <div class="faq-item">
+            <button class="faq-question">
+              Hoe word ik een UGC creator op UGC.NL?
+              <span class="faq-icon">▼</span>
+            </button>
+            <div class="faq-answer">
+              <p>Registreer je gratis als creator, maak je profiel compleet en begin met het accepteren van opdrachten van merken.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Wanneer word ik betaald?
+              <span class="faq-icon">▼</span>
+            </button>
+            <div class="faq-answer">
+              <p>Je wordt wekelijks automatisch uitbetaald voor goedgekeurde opdrachten.</p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Kan ik mijn eigen prijzen bepalen?
+              <span class="faq-icon">▼</span>
+            </button>
+            <div class="faq-answer">
+              <p>Ja, je hebt volledige controle over je prijzen en kunt deze aanpassen wanneer je wilt.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <img src="Logo/FULL LOGO.png" alt="UGC.NL" class="footer-logo">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h4>Platform</h4>
+          <ul>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/vind-creators">Vind Creators</a></li>
+            <li><a href="/case-studies">Succesverhalen</a></li>
+            <li><a href="/blog">Blog</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Bedrijf</h4>
+          <ul>
+            <li><a href="/over-ons">Over ons</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/book-a-call">Boek een demo</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Juridisch</h4>
+          <ul>
+            <li><a href="/voorwaarden">Algemene voorwaarden</a></li>
+            <li><a href="/privacy-policy">Privacyverklaring</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 UGC.NL. Alle rechten voorbehouden.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

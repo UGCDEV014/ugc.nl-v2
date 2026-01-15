@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zenn Store Case Study - UGC.NL</title>
+  <meta name="description" content="Zie hoe Zenn Store UGC.NL gebruikte om scripted UGC te schalen en hooks te testen, wat resulteerde in een 22% CTR lift, 83% langere play time en 15% lagere CPA.">
+  <link rel="stylesheet" href="../../styles.css">
+  <style>
+    /* Case Study Detail Page Styles */
+    .case-study-detail-hero {
+      padding: var(--spacing-3xl) 0 var(--spacing-2xl);
+      text-align: center;
+    }
+    
+    .case-study-detail-hero-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 var(--spacing-lg);
+    }
+    
+    .case-study-detail-category {
+      font-size: 14px;
+      color: var(--color-text-secondary);
+      margin-bottom: var(--spacing-md);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .case-study-detail-title {
+      font-size: clamp(40px, 5vw, 64px);
+      font-weight: var(--font-weight-bold);
+      color: var(--color-text);
+      margin-bottom: var(--spacing-lg);
+      line-height: 1.2;
+    }
+    
+    .case-study-detail-intro {
+      font-size: 18px;
+      color: var(--color-text-secondary);
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto var(--spacing-3xl);
+    }
+    
+    .case-study-kpis {
+      max-width: 1000px;
+      margin: 0 auto var(--spacing-sm);
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--spacing-xl);
+    }
+    
+    .case-study-kpi {
+      text-align: center;
+    }
+    
+    .case-study-kpi-value {
+      font-size: 48px;
+      font-weight: var(--font-weight-bold);
+      color: var(--color-primary);
+      margin-bottom: var(--spacing-sm);
+    }
+    
+    .case-study-kpi-label {
+      font-size: 15px;
+      color: var(--color-text);
+      line-height: 1.4;
+    }
+    
+    .case-study-main-card {
+      width: 100%;
+      margin: 0;
+      padding: var(--spacing-2xl);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--spacing-2xl);
+      background: white;
+      border-radius: 24px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      align-items: start;
+      box-sizing: border-box;
+    }
+    
+    .case-study-testimonial {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    
+    .case-study-testimonial-info-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--spacing-lg);
+      margin-bottom: var(--spacing-lg);
+    }
+    
+    .case-study-testimonial-info-item {
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .case-study-testimonial-label {
+      font-size: 12px;
+      color: var(--color-text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: var(--spacing-xs);
+    }
+    
+    .case-study-testimonial-value {
+      font-size: 16px;
+      font-weight: var(--font-weight-semibold);
+      color: var(--color-text);
+    }
+    
+    .case-study-quote {
+      position: relative;
+      padding-left: var(--spacing-lg);
+      margin-bottom: var(--spacing-xl);
+    }
+    
+    .case-study-quote::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: var(--color-primary);
+      border-radius: 2px;
+    }
+    
+    .case-study-quote-text {
+      font-size: 16px;
+      color: var(--color-text);
+      line-height: 1.7;
+      font-style: italic;
+    }
+    
+    .case-study-author {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      margin-bottom: var(--spacing-xl);
+    }
+    
+    .case-study-author-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      padding: 4px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    .case-study-author-info {
+      flex: 1;
+    }
+    
+    .case-study-author-name {
+      font-size: 15px;
+      font-weight: var(--font-weight-semibold);
+      color: var(--color-text);
+      margin-bottom: 2px;
+    }
+    
+    .case-study-author-title {
+      font-size: 14px;
+      color: var(--color-text-secondary);
+    }
+    
+    .case-study-cta-button {
+      display: inline-block;
+      padding: 14px 28px;
+      background: var(--color-primary);
+      color: white;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: var(--font-weight-semibold);
+      text-decoration: none;
+      transition: all 0.2s;
+      align-self: flex-start;
+    }
+    
+    .case-study-cta-button:hover {
+      background: #1a6fc7;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(36, 132, 228, 0.3);
+    }
+    
+    .case-study-video-carousel {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      justify-content: flex-start;
+    }
+    
+    .case-study-video-carousel-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: var(--spacing-md) 0;
+    }
+    
+    .case-study-video-carousel-container::-webkit-scrollbar {
+      display: none;
+    }
+    
+    .case-study-video-item {
+      width: 240px;
+      height: 480px;
+      position: relative;
+      background: #000;
+      border-radius: 32px;
+      padding: 8px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      margin: 0 auto;
+      overflow: visible;
+    }
+    
+    .case-study-video-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 24px;
+      display: block;
+    }
+    
+    .case-study-video-mute {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      width: 24px;
+      height: 24px;
+      background: rgba(36, 132, 228, 0.9);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 3;
+    }
+    
+    .case-study-video-mute svg {
+      width: 12px;
+      height: 12px;
+      color: white;
+    }
+    
+    .case-study-video-nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: var(--spacing-sm);
+      margin-top: var(--spacing-md);
+      width: 100%;
+    }
+    
+    .case-study-video-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #e0e0e0;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    
+    .case-study-video-dot.active {
+      background: var(--color-primary);
+      width: 24px;
+      border-radius: 4px;
+    }
+    
+    .case-study-video-nav-arrow {
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--color-primary);
+      transition: all 0.2s;
+    }
+    
+    .case-study-video-nav-arrow:hover {
+      color: #1a6fc7;
+    }
+    
+    .case-study-video-nav-arrow svg {
+      width: 16px;
+      height: 16px;
+    }
+    
+    .case-study-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: calc(var(--spacing-3xl) / 2) var(--spacing-lg) var(--spacing-3xl);
+    }
+    
+    .case-study-content-section {
+      margin-bottom: var(--spacing-3xl);
+    }
+    
+    .case-study-content-heading {
+      font-size: 14px;
+      font-weight: var(--font-weight-bold);
+      color: var(--color-text);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: var(--spacing-lg);
+    }
+    
+    .case-study-content-subheading {
+      font-size: 24px;
+      font-weight: var(--font-weight-bold);
+      color: var(--color-text);
+      margin-bottom: var(--spacing-md);
+      line-height: 1.3;
+    }
+    
+    .case-study-content-text {
+      font-size: 16px;
+      color: var(--color-text);
+      line-height: 1.7;
+      margin-bottom: var(--spacing-lg);
+    }
+    
+    .case-study-cta-block {
+      max-width: 1200px;
+      margin: 0 auto var(--spacing-3xl);
+      padding: var(--spacing-2xl) var(--spacing-lg);
+      background: linear-gradient(135deg, var(--color-primary) 0%, #1a6fc7 100%);
+      border-radius: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--spacing-xl);
+    }
+    
+    .case-study-cta-text {
+      font-size: 20px;
+      font-weight: var(--font-weight-semibold);
+      color: white;
+    }
+    
+    .case-study-cta-button-large {
+      padding: 16px 32px;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      color: white;
+      border: 2px solid white;
+      border-radius: 999px;
+      font-size: 16px;
+      font-weight: var(--font-weight-semibold);
+      text-decoration: none;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    
+    .case-study-cta-button-large:hover {
+      background: white;
+      color: var(--color-primary);
+    }
+    
+    .case-study-related {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: var(--spacing-3xl) var(--spacing-lg);
+    }
+    
+    .case-study-related-title {
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: var(--font-weight-bold);
+      color: var(--color-text);
+      text-align: center;
+      margin-bottom: var(--spacing-2xl);
+    }
+    
+    .case-study-related-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--spacing-xl);
+    }
+    
+    .case-study-related-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      transition: all 0.3s;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    
+    .case-study-related-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    }
+    
+    .case-study-related-image {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      position: relative;
+    }
+    
+    .case-study-related-tag {
+      position: absolute;
+      bottom: var(--spacing-md);
+      left: var(--spacing-md);
+      background: rgba(36, 132, 228, 0.9);
+      color: white;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: var(--font-weight-semibold);
+    }
+    
+    .case-study-related-content {
+      padding: var(--spacing-lg);
+    }
+    
+    .case-study-related-header {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      margin-bottom: var(--spacing-sm);
+    }
+    
+    .case-study-related-logo {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+    
+    .case-study-related-company {
+      font-size: 18px;
+      font-weight: var(--font-weight-bold);
+      color: var(--color-text);
+    }
+    
+    .case-study-related-meta {
+      font-size: 13px;
+      color: var(--color-text-secondary);
+      margin-bottom: var(--spacing-sm);
+    }
+    
+    .case-study-related-description {
+      font-size: 14px;
+      color: var(--color-text);
+      line-height: 1.5;
+    }
+    
+    @media (max-width: 968px) {
+      .case-study-main-card {
+        grid-template-columns: 1fr;
+      }
+      
+      .case-study-kpis {
+        grid-template-columns: 1fr;
+      }
+      
+      .case-study-related-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .case-study-cta-block {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .case-study-detail-hero {
+        padding: var(--spacing-xl) 0 var(--spacing-lg);
+      }
+      
+      .case-study-detail-hero-inner {
+        padding: 0 var(--spacing-md);
+      }
+      
+      .case-study-detail-category {
+        font-size: 12px;
+        margin-bottom: var(--spacing-sm);
+      }
+      
+      .case-study-detail-title {
+        font-size: clamp(28px, 7vw, 40px);
+        margin-bottom: var(--spacing-md);
+        line-height: 1.3;
+      }
+      
+      .case-study-detail-intro {
+        font-size: 15px;
+        line-height: 1.6;
+        margin-bottom: var(--spacing-2xl);
+        padding: 0;
+      }
+      
+      .case-study-kpis {
+        gap: var(--spacing-md);
+        padding: 0;
+        margin-bottom: 0;
+      }
+      
+      .case-study-kpi {
+        padding: var(--spacing-md) 0;
+      }
+      
+      .case-study-kpi-value {
+        font-size: 32px;
+        margin-bottom: var(--spacing-xs);
+      }
+      
+      .case-study-kpi-label {
+        font-size: 13px;
+        line-height: 1.4;
+        padding: 0 var(--spacing-xs);
+      }
+      
+      .case-study-main-card {
+        padding: var(--spacing-lg);
+        gap: var(--spacing-lg);
+      }
+      
+      .case-study-testimonial-info-group {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+      }
+      
+      .case-study-video-item {
+        width: 200px;
+        height: 400px;
+      }
+      
+      .case-study-content {
+        padding: var(--spacing-2xl) var(--spacing-md) var(--spacing-3xl);
+      }
+      
+      .case-study-content-subheading {
+        font-size: 20px;
+      }
+      
+      .case-study-cta-block {
+        padding: var(--spacing-xl) var(--spacing-md);
+        flex-direction: column;
+        text-align: center;
+        gap: var(--spacing-md);
+      }
+      
+      .case-study-cta-text {
+        font-size: 18px;
+      }
+      
+      .case-study-cta-button-large {
+        padding: 14px 24px;
+        font-size: 15px;
+      }
+      
+      .case-study-related {
+        padding: var(--spacing-2xl) var(--spacing-md);
+      }
+      
+      .case-study-related-title {
+        font-size: clamp(24px, 6vw, 36px);
+      }
+      
+      section[style*="max-width: 1400px"] {
+        padding-left: var(--spacing-md) !important;
+        padding-right: var(--spacing-md) !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-container">
+      <a href="../../" class="header-logo-link">
+        <img src="../../Logo/FULL LOGO.png" alt="UGC.NL" class="header-logo">
+      </a>
+      <nav class="header-nav">
+        <div class="header-dropdown">
+          <button class="header-nav-link header-dropdown-toggle" style="background: none; border: none; cursor: pointer; display: flex; align-items: center; gap: 4px;">
+            Diensten
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg" style="transition: transform 0.2s;">
+              <path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+        <a href="../../vind-creators/index.html" class="header-nav-link">Vind Creators</a>
+        <a href="../index.html" class="header-nav-link">Succesverhalen</a>
+      </nav>
+      <div class="header-cta">
+        <a href="../../login.html" class="header-nav-link">Inloggen</a>
+        <a href="../../registreren.html" class="btn btn-primary">Registreer</a>
+      </div>
+      <div class="header-dropdown-menu">
+        <div class="header-dropdown-content">
+          <div class="header-dropdown-column">
+            <div class="header-dropdown-section">
+              <div class="header-dropdown-section-title">Per platform</div>
+              <a href="../../diensten/tiktok.html" class="header-dropdown-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 12px; flex-shrink: 0;">
+                  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                </svg>
+                <div>
+                  <div class="header-dropdown-item-title">TikTok</div>
+                  <div class="header-dropdown-item-description">UGC video's voor TikTok advertenties</div>
+                </div>
+              </a>
+              <a href="../../diensten/instagram.html" class="header-dropdown-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 12px; flex-shrink: 0;">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+                <div>
+                  <div class="header-dropdown-item-title">Instagram</div>
+                  <div class="header-dropdown-item-description">UGC content voor Instagram Reels en Stories</div>
+                </div>
+              </a>
+              <a href="../../diensten/facebook.html" class="header-dropdown-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 12px; flex-shrink: 0;">
+                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                </svg>
+                <div>
+                  <div class="header-dropdown-item-title">Facebook</div>
+                  <div class="header-dropdown-item-description">UGC video's voor Facebook advertenties</div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="header-dropdown-column">
+            <div class="header-dropdown-section">
+              <div class="header-dropdown-section-title">Per bedrijfstype</div>
+              <a href="../../diensten/e-commerce.html" class="header-dropdown-item">
+                <div>
+                  <div class="header-dropdown-item-title">E-commerce</div>
+                  <div class="header-dropdown-item-description">UGC voor webshops en online retailers</div>
+                </div>
+              </a>
+              <a href="../../diensten/agencies.html" class="header-dropdown-item">
+                <div>
+                  <div class="header-dropdown-item-title">Agencies</div>
+                  <div class="header-dropdown-item-description">UGC voor marketing bureaus</div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="header-dropdown-image-column" style="position: relative;">
+            <a href="../../boek-een-demo.html" style="position: absolute; top: 16px; left: 16px; display: inline-flex; align-items: center; gap: 8px; color: var(--color-text); font-weight: var(--font-weight-semibold); font-size: 16px; text-decoration: none; z-index: 10; background: rgba(255, 255, 255, 0.9); padding: 8px 16px; border-radius: 8px; transition: all 0.2s;">
+              Boek een demo
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+            <img src="../../bedrijven/meeting/meeting.png" alt="UGC.NL Services" class="header-dropdown-image" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="case-study-detail-hero bg-fade-blue">
+    <div class="case-study-detail-hero-inner">
+      <div class="case-study-detail-category">Pets</div>
+      <h1 class="case-study-detail-title">Zenn Store</h1>
+      <p class="case-study-detail-intro">UGC.NL helped Zenn Store scale scripted UGC for a regulated cybersecurity product and test hooks at volume, driving a 22% CTR lift, 83% longer play time, and 15% lower CPA across Meta and TikTok.</p>
+      
+      <!-- KPI METRICS -->
+      <div class="case-study-kpis">
+        <div class="case-study-kpi">
+          <div class="case-study-kpi-value">15%</div>
+          <div class="case-study-kpi-label">lower CPA with UGC.NL video ads</div>
+        </div>
+        <div class="case-study-kpi">
+          <div class="case-study-kpi-value">22%</div>
+          <div class="case-study-kpi-label">CTR lift when using UGC.NL creator videos</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- MAIN CARD SECTION -->
+  <section style="max-width: 1400px; margin: 0 auto; padding: 0 24px calc(var(--spacing-3xl) / 2);">
+    <div class="case-study-main-card">
+      <div class="case-study-testimonial">
+        <div class="case-study-testimonial-info-group">
+          <div class="case-study-testimonial-info-item">
+            <div class="case-study-testimonial-label">Social platform</div>
+            <div class="case-study-testimonial-value">TikTok, Meta</div>
+          </div>
+          <div class="case-study-testimonial-info-item">
+            <div class="case-study-testimonial-label">Niche</div>
+            <div class="case-study-testimonial-value">Pets</div>
+          </div>
+        </div>
+        
+        <div class="case-study-quote">
+          <p class="case-study-quote-text">"If we wouldn't have UGC.NL, we wouldn't have the results we've had. The quality of the actors is strong, they execute scripted briefs on a high level, and the platform is very streamlined, so that has a big impact. As of now, around 75% of all our videos are from UGC.NL, and most of our successful videos are from UGC.NL too."</p>
+        </div>
+        
+        <div class="case-study-author">
+          <div class="case-study-author-icon">
+            <img src="../../brandlogoscasestudy/Zenn store.png" alt="Zenn Store" style="width: 100%; height: 100%; object-fit: contain;">
+          </div>
+          <div class="case-study-author-info">
+            <div class="case-study-author-name">Daryll</div>
+            <div class="case-study-author-title">Oprichter, Zenn Store</div>
+          </div>
+        </div>
+        
+        <a href="/registreren" class="case-study-cta-button">Ontdek creators — het is gratis!</a>
+      </div>
+      
+      <div class="case-study-video-carousel">
+        <div class="case-study-video-carousel-container">
+          <div class="case-study-video-item">
+            <div class="case-study-video-mute">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M11 5L6 9H2v6h4l5 4V5z"></path>
+                <line x1="23" y1="9" x2="17" y2="15"></line>
+                <line x1="17" y1="9" x2="23" y2="15"></line>
+              </svg>
+            </div>
+            <img src="../../casestudy-thumbnails/halsbandje.png" alt="Video">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENT SECTIONS -->
+  <section class="case-study-content">
+    <div class="case-study-content-section">
+      <div class="case-study-content-heading">CHALLENGE</div>
+      <h2 class="case-study-content-subheading">Build a high-volume UGC pipeline for a precise, regulated product</h2>
+      <p class="case-study-content-text">Zenn Store's ads had to be clear, compliant, and specific. That meant creators needed to follow tight scripts, deliver with charisma, and help the team test lots of variations without bogging down in casting, contracts, and back-and-forth.</p>
+    </div>
+    
+    <div class="case-study-content-section">
+      <div class="case-study-content-heading">IMPLEMENTATION</div>
+      <h2 class="case-study-content-subheading">Scale scripted UGC with repeatable testing</h2>
+      <p class="case-study-content-text">Zenn Store used UGC.NL to move quickly from casting to production to iteration. The team leaned on UGC.NL's Top Ad Performers to avoid wasted time, prioritized creators who matched their 35-55 audience, and ran a disciplined testing system built around hooks and multiple creators per script. Daryll leaned into volume: they needed a lot of quantity to find winners, fast.</p>
+      
+      <h3 class="case-study-content-subheading" style="font-size: 20px; margin-top: var(--spacing-xl);">Targeted creator selection</h3>
+      <p class="case-study-content-text">Zenn Store's target audience skewed older, so Daryll typically selected creators 30+. Instead of browsing endlessly, he started with UGC.NL's Top Ad Performers, then filtered by one main factor: charisma that made people stop scrolling.</p>
+      
+      <h3 class="case-study-content-subheading" style="font-size: 20px; margin-top: var(--spacing-xl);">Scripted briefs, executed cleanly</h3>
+      <p class="case-study-content-text">Because the product demanded precision, Zenn Store's briefs were highly scripted. Creators still delivered well: they read the script, followed it closely, and executed at a high level, without the team needing to train every creator from scratch.</p>
+      
+      <h3 class="case-study-content-subheading" style="font-size: 20px; margin-top: var(--spacing-xl);">Hook variation testing at volume</h3>
+      <p class="case-study-content-text">Zenn Store's core method was structured and repeatable: one script, four hook variations, and at least five creators. This approach helped narrow down what worked, reduce wasted effort, and keep performance from relying on luck.</p>
+      
+      <h3 class="case-study-content-subheading" style="font-size: 20px; margin-top: var(--spacing-xl);">Formats that matched how people watch</h3>
+      <p class="case-study-content-text">Zenn Store found that simple, low-production UGC performed best. TikTok-style hooks outperformed brand-first intros, especially early on when audiences didn't know Zenn Store yet. The team also leaned into a more square format, rather than fully vertical, as a consistent winner.</p>
+    </div>
+    
+    <div class="case-study-content-section">
+      <div class="case-study-content-heading">POSITIVE OUTCOMES</div>
+      <h2 class="case-study-content-subheading">Higher CTR, longer watch time, and a smoother workflow</h2>
+      <p class="case-study-content-text"><strong>Performance lift.</strong> CTR improved from 2.98% to 3.63%, average play time rose from 00:06 to 00:11, and CPA decreased by 15%.</p>
+      <p class="case-study-content-text"><strong>UGC.NL drove the winners.</strong> About 75% of Zenn Store's videos came from UGC.NL, including most of their top performers.</p>
+      <p class="case-study-content-text"><strong>Less overhead, more output.</strong> UGC.NL removed the time-consuming work of finding actors, handling contracts, and chasing people down, so the team could focus on creative performance instead of logistics.</p>
+      <p class="case-study-content-text"><strong>Reliable creator quality.</strong> Daryll reported that about 95% of UGC.NL creators he worked with were really good, with very few issues across high volume.</p>
+    </div>
+    
+    <div class="case-study-content-section">
+      <div class="case-study-content-heading">FUTURE PLANS AND RECOMMENDATIONS</div>
+      <h2 class="case-study-content-subheading">More platform coverage, expanded testing</h2>
+      <p class="case-study-content-text">Zenn Store planned to keep scaling UGC.NL as a primary content source while expanding on Meta and TikTok, as well as other channels. The team would continue running high-volume hook tests, relying on Top Ad Performers to move fast without sacrificing quality.</p>
+    </div>
+  </section>
+
+  <!-- CTA BLOCK -->
+  <section class="case-study-cta-block">
+    <div class="case-study-cta-text">Sluit je aan bij 2,000+ merken die UGC maken met UGC.NL</div>
+    <a href="/registreren" class="case-study-cta-button-large">Ontdek creators — het is gratis!</a>
+  </section>
+
+  <!-- RELATED STORIES -->
+  <section class="case-study-related">
+    <h2 class="case-study-related-title">Bekijk ook deze succesverhalen</h2>
+    <div class="case-study-related-grid">
+      <a href="../index.html" class="case-study-related-card">
+        <div style="position: relative;">
+          <img src="../../casestudy-thumbnails/halsbandje.png" alt="Intelligence Media" class="case-study-related-image">
+          <div class="case-study-related-tag">14.5% ROAS IMPROVEMENT</div>
+        </div>
+        <div class="case-study-related-content">
+          <div class="case-study-related-header">
+            <div class="case-study-related-company">Intelligence Media</div>
+          </div>
+          <p class="case-study-related-meta">Other • TikTok • Meta</p>
+          <p class="case-study-related-description">Marketing agency uses UGC.NL to boost ROAS and increase net profit</p>
+        </div>
+      </a>
+      
+      <a href="../index.html" class="case-study-related-card">
+        <div style="position: relative;">
+          <img src="../../casestudy-thumbnails/halsbandje.png" alt="Bickster" class="case-study-related-image">
+          <div class="case-study-related-tag">500% CPI (COST PER INSTALL) DROP</div>
+        </div>
+        <div class="case-study-related-content">
+          <div class="case-study-related-header">
+            <img src="../../brandlogoscasestudy/Zenn store.png" alt="Bickster" class="case-study-related-logo">
+            <div class="case-study-related-company">Bickster</div>
+          </div>
+          <p class="case-study-related-meta">Apps & Digital Services • Meta</p>
+          <p class="case-study-related-description">App company uses UGC.NL to dramatically reduce cost per install</p>
+        </div>
+      </a>
+      
+      <a href="../index.html" class="case-study-related-card">
+        <div style="position: relative;">
+          <img src="../../casestudy-thumbnails/halsbandje.png" alt="Peepers" class="case-study-related-image">
+          <div class="case-study-related-tag">INCREASED ENGAGEMENT AND CTR</div>
+        </div>
+        <div class="case-study-related-content">
+          <div class="case-study-related-header">
+            <img src="../../brandlogoscasestudy/Zenn store.png" alt="Peepers" class="case-study-related-logo">
+            <div class="case-study-related-company">Peepers</div>
+          </div>
+          <p class="case-study-related-meta">Health & Wellness • Meta</p>
+          <p class="case-study-related-description">Health brand uses UGC.NL to increase engagement and click-through rates</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Bovenste deel: 4 kolommen + branding -->
+      <div class="footer-top">
+        <nav class="footer-nav">
+        <div class="footer-column">
+            <h3 class="footer-heading">Diensten</h3>
+            <ul class="footer-links">
+              <li><a href="../../diensten/e-commerce.html" class="footer-link">E-commerce</a></li>
+              <li><a href="../../diensten/agencies.html" class="footer-link">Agencies</a></li>
+              <li><a href="../../diensten/tiktok.html" class="footer-link">TikTok</a></li>
+              <li><a href="../../diensten/instagram.html" class="footer-link">Instagram</a></li>
+              <li><a href="../../diensten/facebook.html" class="footer-link">Facebook</a></li>
+          </ul>
+        </div>
+          
+        <div class="footer-column">
+            <h3 class="footer-heading">Ontdek</h3>
+            <ul class="footer-links">
+              <li><a href="../../vind-creators/index.html" class="footer-link">Vind Creators</a></li>
+              <li><a href="../index.html" class="footer-link">Succesverhalen</a></li>
+              <li><a href="https://support.ugc.nl" target="_blank" rel="noopener noreferrer" class="footer-link">Support</a></li>
+          </ul>
+        </div>
+          
+        <div class="footer-column">
+            <h3 class="footer-heading"><a href="../../blog.html" class="footer-heading-link">Blog<svg class="footer-heading-arrow" width="8" height="8" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 11L11 1M11 1H1M11 1V11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></h3>
+            <ul class="footer-links">
+              <li><a href="../../blog.html?category=user-generated-content" class="footer-link">User-Generated-Content</a></li>
+              <li><a href="../../blog.html?category=ad-performance" class="footer-link">Ad Performance</a></li>
+              <li><a href="../../blog.html?category=ugc-academy" class="footer-link">UGC Academy</a></li>
+              <li><a href="../../blog.html?category=platform" class="footer-link">Platform</a></li>
+          </ul>
+        </div>
+          
+        <div class="footer-column">
+            <h3 class="footer-heading">Contact</h3>
+            <ul class="footer-links">
+              <li><a href="../../boek-een-demo.html" class="footer-link">Boek een demo</a></li>
+              <li><a href="mailto:contact@ugc.nl" class="footer-link">contact@ugc.nl</a></li>
+          </ul>
+        </div>
+          
+          <!-- Branding sectie rechts -->
+          <div class="footer-branding">
+            <img src="../../Logo/FULL LOGO.png" alt="UGC.NL" class="footer-branding-logo">
+            <p class="footer-tagline">Brengt creators en bedrijven samen</p>
+            <div class="footer-branding-divider"></div>
+            <div class="footer-experts">
+              <span class="footer-experts-label">Experts in</span>
+              <div class="footer-platform-logos">
+                <img src="../../socialmedialogos/meta1.png" alt="Meta" class="footer-platform-logo">
+                <img src="../../socialmedialogos/tiktok1.png" alt="TikTok" class="footer-platform-logo">
+      </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+      
+      <!-- Onderste deel: bottom bar -->
+      <div class="footer-bottom">
+        <div class="footer-bottom-content">
+          <nav class="footer-socials" aria-label="Social media links">
+            <ul class="footer-socials-list">
+              <li>
+                <a href="https://www.facebook.com/profile.php?id=61554995296593" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                  <div class="footer-social-icon-wrapper">
+                    <svg class="footer-social-icon" width="11" height="20" viewBox="0 0 11 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M7 11.5H9.5L10.5 7.5H7V5.5C7 4.47 7 3.5 9 3.5H10.5V0.14C10.174 0.0970001 8.943 0 7.643 0C4.928 0 3 1.657 3 4.7V7.5H0V11.5H3V20H7V11.5Z" fill="currentColor"></path>
+                    </svg>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/ugc.nl/" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                  <div class="footer-social-icon-wrapper">
+                    <svg class="footer-social-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" fill="currentColor"/>
+                    </svg>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.tiktok.com/@ugc.nl" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                  <div class="footer-social-icon-wrapper">
+                    <svg class="footer-social-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" fill="currentColor"/>
+                    </svg>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/company/ugc-nl/?originalSubdomain=nl" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                  <div class="footer-social-icon-wrapper">
+                    <svg class="footer-social-icon" width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M4.93994 1.99999C4.93968 2.53043 4.72871 3.03903 4.35345 3.41391C3.97819 3.7888 3.46937 3.99926 2.93894 3.99899C2.40851 3.99873 1.89991 3.78776 1.52502 3.4125C1.15014 3.03724 0.939676 2.52843 0.939942 1.99799C0.940207 1.46756 1.15117 0.958958 1.52644 0.584072C1.9017 0.209187 2.41051 -0.00127205 2.94094 -0.00100683C3.47137 -0.000741613 3.97998 0.210226 4.35486 0.585487C4.72975 0.960747 4.94021 1.46956 4.93994 1.99999ZM4.99994 5.47999H0.999942V18H4.99994V5.47999ZM11.3199 5.47999H7.33994V18H11.2799V11.43C11.2799 7.76999 16.0499 7.42999 16.0499 11.43V18H19.9999V10.07C19.9999 3.89999 12.9399 4.12999 11.2799 7.15999L11.3199 5.47999Z" fill="currentColor"></path>
+                    </svg>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.youtube.com/@UGCNL" class="footer-social-link" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                  <div class="footer-social-icon-wrapper">
+                    <svg class="footer-social-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="currentColor"/>
+                    </svg>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </nav>
+          
+          <div class="footer-bottom-right">
+            <nav class="footer-policies" aria-label="Legal links">
+              <ul class="footer-policies-list">
+                <li><a href="../../voorwaarden.html" class="footer-policy-link">Algemene voorwaarden</a></li>
+                <li><a href="../../privacy.html" class="footer-policy-link">Privacyverklaring</a></li>
+              </ul>
+            </nav>
+            <p class="footer-address">Keizersgracht 520H, 1017EK Amsterdam @ 2026 UGC.NL. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Header dropdown functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const dropdown = document.querySelector('.header-dropdown');
+      const dropdownToggle = document.querySelector('.header-dropdown-toggle');
+      const dropdownMenu = document.querySelector('.header-dropdown-menu');
+      
+      if (dropdownToggle && dropdownMenu) {
+        dropdownToggle.addEventListener('click', function(e) {
+          e.stopPropagation();
+          dropdown.classList.toggle('open');
+        });
+        
+        document.addEventListener('click', function(e) {
+          if (!dropdown.contains(e.target)) {
+            dropdown.classList.remove('open');
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>
